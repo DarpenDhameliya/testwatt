@@ -117,15 +117,199 @@ export function SectionHeading({
   );
 }
 
+function ServiceIcon({ id, className = "" }: { id: string; className?: string }) {
+  switch (id) {
+    case "01":
+      return (
+        <svg
+          className={className}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          <path d="M21 21l-3-3" strokeWidth="1.5" strokeOpacity="0.7" />
+          <path d="M18 15a4 4 0 1 0 0 6 4 4 0 0 0 0-6z" strokeWidth="1.5" />
+        </svg>
+      );
+    case "02":
+      return (
+        <svg
+          className={className}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+          <path d="M8 16l-4 4" />
+        </svg>
+      );
+    case "03":
+      return (
+        <svg
+          className={className}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="4" y="4" width="16" height="16" rx="2" />
+          <rect x="9" y="9" width="6" height="6" />
+          <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
+        </svg>
+      );
+    case "04":
+      return (
+        <svg
+          className={className}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M3 3v18h18" />
+          <path d="M7 16l5-6 4 4 6-8" />
+          <circle cx="12" cy="10" r="1.5" fill="currentColor" />
+          <circle cx="16" cy="14" r="1.5" fill="currentColor" />
+          <circle cx="22" cy="6" r="1.5" fill="currentColor" />
+        </svg>
+      );
+    case "05":
+      return (
+        <svg
+          className={className}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+          <circle cx="12" cy="12" r="2" fill="currentColor" />
+        </svg>
+      );
+    default:
+      return (
+        <svg
+          className={className}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        >
+          <path d="M12 2v20M2 12h20" />
+        </svg>
+      );
+  }
+}
+
 export function ServiceCard({ service }: { service: Service }) {
   return (
-    <article className="service-card">
-      <div className="service-card__number">{service.number}</div>
-      <h3 className="service-card__title">{service.title}</h3>
+    <article className={`service-card${service.featured ? " service-card--featured" : ""}`}>
+      {/* Top Header */}
+      <div className="service-card__top">
+        <div className="service-card__icon-wrap">
+          <ServiceIcon id={service.number} className="service-card__icon" />
+        </div>
+        <div className="service-card__meta">
+          {service.badge && (
+            <span className="service-card__badge">{service.badge}</span>
+          )}
+          <span className="service-card__num">{service.number}</span>
+        </div>
+      </div>
+
+      {/* Title & Tagline */}
+      <div className="service-card__heading-group">
+        <h3 className="service-card__title">{service.title}</h3>
+        {service.tagline && (
+          <p className="service-card__tagline">{service.tagline}</p>
+        )}
+      </div>
+
+      {/* Description */}
       <p className="service-card__body">{service.description}</p>
-      <Link href={service.link} className="service-card__link">
-        Learn more →
-      </Link>
+
+      {/* Key Highlights Checklist */}
+      {service.highlights && service.highlights.length > 0 && (
+        <div className="service-card__highlights">
+          <span className="service-card__section-label">Key Capabilities</span>
+          <ul className="service-card__list">
+            {service.highlights.map((item) => (
+              <li key={item} className="service-card__list-item">
+                <svg
+                  className="service-card__list-icon"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M3.5 8.5l3 3 6-7" />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Target Equipment */}
+      {service.targetEquipment && service.targetEquipment.length > 0 && (
+        <div className="service-card__equipment">
+          <span className="service-card__section-label">Target Equipment</span>
+          <div className="service-card__tags">
+            {service.targetEquipment.map((eq) => (
+              <span key={eq} className="service-card__tag">
+                {eq}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Footer: Metric & Action */}
+      <div className="service-card__footer">
+        {service.metric && (
+          <div className="service-card__metric">
+            <span className="service-card__metric-val">{service.metric.value}</span>
+            <span className="service-card__metric-lbl">{service.metric.label}</span>
+          </div>
+        )}
+        <Link href={service.link} className="service-card__link">
+          <span>Explore Service</span>
+          <svg
+            className="service-card__link-arrow"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 8h10M9 4l4 4-4 4" />
+          </svg>
+        </Link>
+      </div>
     </article>
   );
 }
@@ -160,9 +344,8 @@ export function NumberedItem({
 }) {
   return (
     <div
-      className={`numbered-item${light ? " numbered-item--light" : ""}${
-        last ? " numbered-item--last" : ""
-      }`}
+      className={`numbered-item${light ? " numbered-item--light" : ""}${last ? " numbered-item--last" : ""
+        }`}
     >
       <div className="numbered-item__number" aria-hidden="true">
         {step.step}

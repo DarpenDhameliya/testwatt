@@ -1,10 +1,19 @@
 import type { AppRoute } from "./site";
 
+export type ServiceCategory = "all" | "testing" | "servicing" | "modernisation";
+
 export type Service = {
   number: string;
   title: string;
+  tagline: string;
+  badge: string;
+  category: "testing" | "servicing" | "modernisation";
   description: string;
+  highlights: string[];
+  targetEquipment: string[];
+  metric: { value: string; label: string };
   link: AppRoute;
+  featured?: boolean;
 };
 
 export type FeatureItemData = { title: string; body: string };
@@ -16,36 +25,109 @@ export const SERVICES: Service[] = [
   {
     number: "01",
     title: "Load Bank Testing",
+    tagline: "Resistive, Reactive & Hybrid Full-Load Proofing",
+    badge: "Core Service",
+    category: "testing",
     description:
       "Resistive, reactive and hybrid load bank testing at full nameplate rating. We verify that generators, UPS systems and switchgear can deliver their rated output under sustained, controlled load — not just at idle or partial capacity.",
+    highlights: [
+      "Resistive, reactive & hybrid power factor testing",
+      "Full step-load testing (25%, 50%, 75%, 100% capacity)",
+      "Certified test reports to NFPA 110, ISO 8528 & NETA",
+    ],
+    targetEquipment: [
+      "Standby Generators",
+      "UPS Systems",
+      "Switchgear",
+      "ATS Panels",
+    ],
+    metric: { value: "100%", label: "Nameplate Load Proof" },
     link: "/load-bank-testing",
+    featured: true,
   },
   {
     number: "02",
     title: "Repairs & Servicing",
+    tagline: "Preventive Fleet Care & Emergency Response",
+    badge: "Field Engineering",
+    category: "servicing",
     description:
       "Scheduled and emergency servicing of load banks and associated power equipment. Preventive maintenance, fault diagnosis and component replacement by engineers who understand load testing equipment inside and out.",
+    highlights: [
+      "Calibrated sensor & instrument tuning",
+      "Thermal diagnostics & element inspection",
+      "Preventive servicing & warranty preservation",
+    ],
+    targetEquipment: [
+      "Portable Units",
+      "Permanent Installations",
+      "Auxiliary Blowers",
+    ],
+    metric: { value: "24/7", label: "Engineering Dispatch" },
     link: "/repairs-servicing",
   },
   {
     number: "03",
     title: "Spare Parts Supply",
+    tagline: "OEM-Grade Certified Replacement Components",
+    badge: "Documented Provenance",
+    category: "modernisation",
     description:
       "OEM-grade replacement parts for load banks, resistive elements, control systems and auxiliary components. Fast turnaround with documented provenance — no substitute parts, no guesswork.",
+    highlights: [
+      "Resistive grids & high-temp alloy elements",
+      "Heavy-duty contactors, relays & HRC fuses",
+      "Digital meters, thermal switches & cables",
+    ],
+    targetEquipment: [
+      "Resistor Banks",
+      "Contactors",
+      "Fan Motors",
+      "Protection Relays",
+    ],
+    metric: { value: "OEM", label: "Traceable Parts" },
     link: "/contact",
   },
   {
     number: "04",
     title: "Upgrades & Modernisation",
+    tagline: "Digital Controls & SCADA Telemetry Retrofits",
+    badge: "Asset Life Extension",
+    category: "modernisation",
     description:
       "Control system upgrades, digital metering retrofits, remote monitoring integration and capacity expansions. Extend the life and capability of existing load bank equipment without full replacement.",
+    highlights: [
+      "Digital PLC retrofits & automated step sequencing",
+      "Remote SCADA, Modbus & cloud data logging",
+      "Capacity expansions & variable power factor",
+    ],
+    targetEquipment: [
+      "Legacy Load Banks",
+      "Control Consoles",
+      "Data Loggers",
+    ],
+    metric: { value: "-60%", label: "Capex Savings vs New" },
     link: "/repairs-servicing",
   },
   {
     number: "05",
     title: "Training & Troubleshooting",
+    tagline: "Root-Cause Diagnosis & Operator Safety Certification",
+    badge: "Specialist Advisory",
+    category: "servicing",
     description:
       "Structured training programmes for in-house operations and maintenance teams. On-site troubleshooting for persistent faults, nuisance trips and unexplained failures across generator, UPS and switchgear installations.",
+    highlights: [
+      "In-house operator safety & test procedures",
+      "AVR drift, governor hunting & fault isolation",
+      "Formal engineering diagnosis & corrective plans",
+    ],
+    targetEquipment: [
+      "Facility Engineers",
+      "Operations Teams",
+      "Maintenance Techs",
+    ],
+    metric: { value: "Certified", label: "Audit Aligned" },
     link: "/repairs-servicing",
   },
 ];

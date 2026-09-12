@@ -1,15 +1,10 @@
 "use client";
 
-import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import type { FormEvent, ReactNode } from "react";
 import { ENQUIRY_SERVICES } from "@/lib/content";
 import { SUPPORT_EMAIL } from "@/lib/site";
 import { Kicker } from "./ui";
-
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 type Errors = Partial<Record<"name" | "company" | "email" | "service", string>>;
 
@@ -100,34 +95,33 @@ export default function ContactForm() {
 
     const data = new FormData(form);
 
-    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-      setSubmitError(
-        "Email delivery is not configured yet. Set NEXT_PUBLIC_EMAILJS_SERVICE_ID, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID and NEXT_PUBLIC_EMAILJS_PUBLIC_KEY in .env.local.",
-      );
-      setSending(false);
-      return;
-    }
-
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: data.get("name"),
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
           name: data.get("name"),
           company: data.get("company"),
           email: data.get("email"),
-          phone: data.get("phone") || "Not provided",
+          phone: data.get("phone") || "",
           service: data.get("service"),
-          message: data.get("details") || "No details provided",
-        },
-        EMAILJS_PUBLIC_KEY,
-      );
+          details: data.get("details") || "",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result?.error || "Failed to submit enquiry. Please try again.");
+      }
+
       setSent(true);
     } catch (error) {
-      const err = error as { text?: string; message?: string };
-      console.error("EmailJS error:", error);
-      setSubmitError(`Failed to send: ${err?.text || err?.message || "Unknown error"}`);
+      const err = error as { message?: string };
+      console.error("Submission error:", error);
+      setSubmitError(err?.message || "Failed to send enquiry. Please try again later.");
     } finally {
       setSending(false);
     }

@@ -60,8 +60,8 @@ export default function ScrollToTop() {
     >
       <svg
         className="scroll-top__ring"
-        width={SIZE}
-        height={SIZE}
+        width="100%"
+        height="100%"
         viewBox={`0 0 ${SIZE} ${SIZE}`}
         aria-hidden="true"
       >
