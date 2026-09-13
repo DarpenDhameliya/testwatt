@@ -90,7 +90,7 @@ export const SERVICES: Service[] = [
   },
   {
     number: "04",
-    title: "Upgrades & Modernisation",
+    title: "Load Bank Upgrades",
     tagline: "Digital Controls & SCADA Telemetry Retrofits",
     badge: "Asset Life Extension",
     category: "modernisation",
