@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import ScrollToTop from "@/components/scroll-to-top";
-import SiteFooter from "@/components/site-footer";
+// SiteFooter (the fuller four-column footer) is still exported from this file for later use.
+import { SiteFooterSimple } from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 import { SALES_EMAIL, SITE_NAME, SITE_URL, SUPPORT_EMAIL } from "@/lib/site";
 import "./globals.css";
@@ -23,9 +24,9 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Test Watt | Load Bank Testing & Critical Power Services",
+  title: "TestWatt | Load Bank Testing & Critical Power Services",
   description:
-    "Test Watt delivers load bank testing, generator testing, UPS testing, and critical power services to verify performance at full nameplate rating.",
+    "TestWatt delivers load bank testing, generator testing, UPS testing, and critical power services to verify performance at full nameplate rating.",
   keywords:
     "load bank testing, generator testing, UPS testing, switchgear testing, critical power services, full-load testing",
   robots: "index,follow",
@@ -35,14 +36,14 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     url: SITE_URL,
-    title: "Test Watt | Load Bank Testing & Critical Power Services",
+    title: "TestWatt | Load Bank Testing & Critical Power Services",
     description:
       "Independent load bank testing and critical power services for generators, UPS systems and switchgear.",
     images: ["/og-image.svg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Test Watt | Load Bank Testing & Critical Power Services",
+    title: "TestWatt | Load Bank Testing & Critical Power Services",
     description:
       "Independent load bank testing and critical power services for generators, UPS systems and switchgear.",
     images: ["/og-image.svg"],
@@ -93,7 +94,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div className="app-shell">
           <SiteHeader />
           <main id="main-content">{children}</main>
-          <SiteFooter />
+          <SiteFooterSimple />
         </div>
         <ScrollToTop />
       </body>

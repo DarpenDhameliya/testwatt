@@ -2,38 +2,39 @@ import { Button } from "@/components/ui";
 
 export default function Hero() {
   return (
-    <section className="lbt-hero" aria-labelledby="rs-heading">
+    <section className="lbt-hero" aria-labelledby="sp-heading">
       <div className="container lbt-hero__container">
         <div className="lbt-hero__content">
           <div className="lbt-hero__badge-row">
             <span className="lbt-hero__badge">
               <span className="lbt-hero__badge-dot" aria-hidden="true" />
-              Precision Maintenance &amp; Service Protection
+              Traceable Fleet Components &amp; Fast Logistics
             </span>
           </div>
 
           <div className="lbt-hero__kicker">
             <span className="lbt-hero__kicker-line" aria-hidden="true" />
-            Repairs &amp; Servicing Specialists
+            Spare Parts Supply &amp; Replacement
           </div>
 
-          <h1 id="rs-heading" className="lbt-hero__title">
-            Maximum uptime &amp; peak performance{" "}
-            <span className="lbt-hero__title-accent">for your test fleet.</span>
+          <h1 id="sp-heading" className="lbt-hero__title">
+            OEM-grade certified components{" "}
+            <span className="lbt-hero__title-accent">with documented provenance.</span>
           </h1>
 
           <p className="lbt-hero__body">
-            Keep your load testing assets operating at 100% capacity. TestWatt provides
-            comprehensive preventive maintenance, rapid engineering response, control
-            system modernizations, and genuine replacement parts.
+            Eliminate costly test downtime and protect asset warranties. TestWatt
+            stocks certified replacement resistor grids, heavy-duty contactors, digital
+            instrumentation, and high-temp blowers engineered specifically for load
+            testing systems.
           </p>
 
           {/* <div className="lbt-hero__actions">
             <Button to="/contact" variant="primary" size="lg">
-              Book a Service Visit
+              Request Parts Quotation
             </Button>
-            <Button href="#why-servicing" variant="outline-light" size="lg">
-              Why Servicing Matters ↓
+            <Button href="#parts-catalog" variant="outline-light" size="lg">
+              View Inventory Catalog ↓
             </Button>
           </div> */}
 
@@ -45,13 +46,13 @@ export default function Hero() {
             </div>
             <div className="lbt-hero__spec-divider" aria-hidden="true" />
             <div className="lbt-hero__spec-item">
-              <span className="lbt-hero__spec-val">24/7</span>
-              <span className="lbt-hero__spec-lbl">Rapid Mobilisation</span>
+              <span className="lbt-hero__spec-val">24–48h</span>
+              <span className="lbt-hero__spec-lbl">Express Air Dispatch</span>
             </div>
             <div className="lbt-hero__spec-divider" aria-hidden="true" />
             <div className="lbt-hero__spec-item">
-              <span className="lbt-hero__spec-val">ISO &amp; OEM</span>
-              <span className="lbt-hero__spec-lbl">Calibrated Standards</span>
+              <span className="lbt-hero__spec-val">500+</span>
+              <span className="lbt-hero__spec-lbl">Critical Spares In Stock</span>
             </div>
           </div> */}
         </div>

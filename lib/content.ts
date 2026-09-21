@@ -86,7 +86,7 @@ export const SERVICES: Service[] = [
       "Protection Relays",
     ],
     metric: { value: "OEM", label: "Traceable Parts" },
-    link: "/contact",
+    link: "/spare-parts-supply",
   },
   {
     number: "04",
@@ -107,7 +107,7 @@ export const SERVICES: Service[] = [
       "Data Loggers",
     ],
     metric: { value: "-60%", label: "Capex Savings vs New" },
-    link: "/repairs-servicing",
+    link: "/load-bank-upgrades",
   },
   {
     number: "05",
@@ -128,7 +128,7 @@ export const SERVICES: Service[] = [
       "Maintenance Techs",
     ],
     metric: { value: "Certified", label: "Audit Aligned" },
-    link: "/repairs-servicing",
+    link: "/training-troubleshooting",
   },
 ];
 
@@ -369,14 +369,11 @@ export const SPARE_PARTS = [
 ];
 
 export const ENQUIRY_SERVICES = [
-  "Load bank testing — generator",
-  "Load bank testing — UPS system",
-  "Load bank testing — switchgear",
-  "Repairs & servicing — load bank",
-  "Spare parts enquiry",
-  "Generator upgrade / modernisation",
-  "Training & troubleshooting",
-  "General enquiry",
+  "Load bank testing",
+  "Repairs & servicing",
+  "Spare parts supply",
+  "Load bank upgrade",
+  "Training & troubleshooting"
 ];
 
 export const STANDARDS_HOME: StandardRow[] = [
@@ -511,4 +508,456 @@ export const RESPONSE_TIMES = [
   { label: "Sales enquiries", value: "Within 1 business day" },
   { label: "Technical support", value: "Same business day" },
   { label: "Emergency callout", value: "Contact support directly" },
+];
+
+/* --------------------------------------------------------------------------
+   SPARE PARTS SUPPLY DATA
+   -------------------------------------------------------------------------- */
+
+export type DetailedPartCategory = {
+  id: string;
+  category: string;
+  leadTime: string;
+  description: string;
+  specs: string[];
+  items: { name: string; partCode: string; description: string }[];
+};
+
+export const DETAILED_PARTS_CATALOG: DetailedPartCategory[] = [
+  {
+    id: "resistors",
+    category: "Resistance Elements & Grids",
+    leadTime: "Immediate Stock / 24h",
+    description:
+      "High-grade nickel-chromium alloy resistive elements designed for extreme thermal cycles without resistance drift or thermal degradation.",
+    specs: ["AISI 304 / Incoloy alloy", "Rated to 800°C continuous", "Tolerances within ±2%"],
+    items: [
+      {
+        name: "Expanded Metal Mesh Resistor Banks",
+        partCode: "TW-RES-804",
+        description: "Heavy-duty continuous grid element modules for 50kW–250kW resistive load blocks.",
+      },
+      {
+        name: "Helical Wire Wound Resistor Modules",
+        partCode: "TW-RES-312",
+        description: "Precision ceramic-core wirewound resistors for low-kW trimming steps and fine resolution.",
+      },
+      {
+        name: "Fluid-Cooled Resistor Cartridges",
+        partCode: "TW-RES-950",
+        description: "Immersion-rated liquid cooled heating elements for ultra-compact high-density load banks.",
+      },
+      {
+        name: "Ceramic Insulator Stand-Off Posts",
+        partCode: "TW-INS-024",
+        description: "Steatite high-temperature dielectric standoff insulators rated to 5kV AC flashover.",
+      },
+    ],
+  },
+  {
+    id: "controls",
+    category: "Control Systems & Automation",
+    leadTime: "In Stock / 48h",
+    description:
+      "Digital load controllers, PLC modules, automated step sequencers, and safety trip relays with calibrated millisecond response times.",
+    specs: ["Modbus RTU / TCP compatible", "Fail-safe relay interlocking", "Class 0.2 power metering"],
+    items: [
+      {
+        name: "Load Step Sequencing PLC Controller",
+        partCode: "TW-CTRL-PLC2",
+        description: "Programmable logic controller configured with multi-tier fail-safe trip algorithms.",
+      },
+      {
+        name: "Digital Touchscreen HMI Display Panel",
+        partCode: "TW-HMI-700",
+        description: "7-inch IP65 industrial high-contrast color touch console with real-time waveform graphing.",
+      },
+      {
+        name: "Digital Power Quality Transducer",
+        partCode: "TW-MTR-300",
+        description: "True-RMS 3-phase transducer measuring V, I, kW, kVAR, kVA, PF, and total harmonic distortion.",
+      },
+      {
+        name: "Handheld Remote Test Console",
+        partCode: "TW-RMT-100",
+        description: "Ruggedized tethered remote control pendant with emergency stop and step-load rocker switches.",
+      },
+    ],
+  },
+  {
+    id: "switchgear",
+    category: "Switchgear & Circuit Protection",
+    leadTime: "Immediate Stock / 24h",
+    description:
+      "Heavy-duty definite-purpose contactors, thermal-magnetic breakers, and high-rupturing-capacity fuses engineered for continuous load switching.",
+    specs: ["AC-3 / AC-4 continuous duty", "Silver-cadmium oxide contacts", "100kA breaking capacity fuses"],
+    items: [
+      {
+        name: "High-Amperage Load Switching Contactors",
+        partCode: "TW-CON-630",
+        description: "3-pole contactors rated up to 630A continuous at 690V with auxiliary status feedback contacts.",
+      },
+      {
+        name: "High Rupturing Capacity (HRC) Fuses",
+        partCode: "TW-FUS-500",
+        description: "BS88 and DIN standard ultra-rapid semiconductor and motor protection fuse links.",
+      },
+      {
+        name: "Air Circuit Breakers & Moulded Cases",
+        partCode: "TW-BRK-120",
+        description: "Adjustable electronic trip units with shunt trips and instantaneous short-circuit protection.",
+      },
+      {
+        name: "Heavy Copper Terminal Busbars & Shunts",
+        partCode: "TW-BUS-800",
+        description: "Tin-plated electrolytic copper busbars rated for heavy continuous current density.",
+      },
+    ],
+  },
+  {
+    id: "cooling",
+    category: "Cooling & Auxiliary Systems",
+    leadTime: "In Stock / 24h",
+    description:
+      "High-velocity forced-air blower assemblies, thermal switches, pressure differential sensors, and air-velocity interlocks.",
+    specs: ["Class H high-temp motor insulation", "Airflow proving differential switches", "IP55 weather protection"],
+    items: [
+      {
+        name: "High-CFM Axial Forced-Draft Blowers",
+        partCode: "TW-FAN-450",
+        description: "Direct-drive balanced aluminum impeller fans rated for high static backpressures.",
+      },
+      {
+        name: "Bimetallic High-Temperature Cutouts",
+        partCode: "TW-THM-180",
+        description: "Manual and auto-reset snap-action thermal limit switches calibrated to 150°C–220°C.",
+      },
+      {
+        name: "Differential Airflow Pressure Proving Switches",
+        partCode: "TW-PRS-015",
+        description: "Diaphragm sensors ensuring element de-energisation upon immediate fan failure or intake block.",
+      },
+      {
+        name: "Cam-Lock Connectors & Flexible Test Cables",
+        partCode: "TW-CBL-400",
+        description: "Single-core flexible neoprene rubber power cables with single-pin 400A Cam-Lock connectors.",
+      },
+    ],
+  },
+];
+
+export const PARTS_QUALITY_POINTS: FeatureItemData[] = [
+  {
+    title: "Documented OEM Provenance",
+    body: "Every component is dispatched with manufacturer test certificates, material batch traceability, and formal compliance documentation. No unverified substitutes.",
+  },
+  {
+    title: "Thermal Stability & Calibrated Resistance",
+    body: "Resistor grids are fabricated from premium nickel-chrome alloys ensuring negligible temperature coefficient of resistance (TCR), preserving test accuracy across long burn-in runs.",
+  },
+  {
+    title: "100% Pre-Dispatch Quality Bench Testing",
+    body: "Critical switches, contactors, and digital meters undergo dielectric flashover testing and functional timing verification in our workshop prior to packing.",
+  },
+  {
+    title: "Preserves Factory Warranty & Compliance",
+    body: "Using factory-approved OEM parts guarantees your load bank continues to meet manufacturer safety guidelines and satisfies auditor review for NFPA and ISO testing.",
+  },
+  {
+    title: "Express 24/48-Hour Global Dispatch",
+    body: "We maintain stock of high-wear items for immediate emergency courier dispatch to minimise testing fleet downtime during urgent commissioning windows.",
+  },
+  {
+    title: "Engineering Installation Support",
+    body: "All replacement modules include wiring schematics, torque specifications, and direct telephone access to our senior field engineers.",
+  },
+];
+
+export const PARTS_ORDER_STEPS: StepData[] = [
+  {
+    step: "01",
+    title: "Identify Equipment & Part",
+    desc: "Send us your equipment make, model, serial number, or existing part photo. Our parts engineers identify the exact factory component or superseded revision.",
+  },
+  {
+    step: "02",
+    title: "Verify Fitment & Specifications",
+    desc: "We confirm electrical ratings, mounting dimensions, coil voltages, and thermal clearances to eliminate field incompatibility.",
+  },
+  {
+    step: "03",
+    title: "Express Packing & Dispatch",
+    desc: "Parts are shock-packed, certified, and dispatched via prioritized road or express air freight with end-to-end tracking.",
+  },
+  {
+    step: "04",
+    title: "Installation & Commissioning Support",
+    desc: "Receive comprehensive wiring diagrams, calibration guidance, and engineer sign-off assistance for rapid return to service.",
+  },
+];
+
+/* --------------------------------------------------------------------------
+   LOAD BANK UPGRADES DATA
+   -------------------------------------------------------------------------- */
+
+export type UpgradeSolution = {
+  id: string;
+  title: string;
+  tagline: string;
+  description: string;
+  benefits: string[];
+  keySpecs: string[];
+};
+
+export const UPGRADE_SOLUTIONS: UpgradeSolution[] = [
+  {
+    id: "plc-automation",
+    title: "Digital PLC & Touchscreen HMI Retrofits",
+    tagline: "Replace fragile analog toggle switches with rugged automation",
+    description:
+      "Transform manual load banks into automated testing systems. Our PLC retrofits introduce programmable multi-step load ramps, auto-abort safety interlocks, and crisp touchscreen operation.",
+    benefits: [
+      "Eliminates operator human error during complex step testing",
+      "Automated ramp-up, soak time, and ramp-down sequencing",
+      "Integrated emergency stop and multi-point thermal monitoring",
+    ],
+    keySpecs: ["Siemens / Schneider PLC hardware", "7\" or 10\" IP65 HMI Touchscreen", "0.1 kW step precision resolution"],
+  },
+  {
+    id: "scada-telemetry",
+    title: "Remote SCADA, Modbus & Cloud Telemetry",
+    tagline: "Live telemetry, real-time analytics, and instant audit reporting",
+    description:
+      "Connect your load bank into building management systems (BMS), industrial SCADA networks, or cloud data loggers. Stream real-time V, I, kW, kVAR, Hz, and exhaust temperatures with automated PDF certification.",
+    benefits: [
+      "Real-time synchronized data logging at sub-second intervals",
+      "Automated audit-ready PDF test certificates generated on-site",
+      "Safe standoff distance — operate load bank from control room or vehicle",
+    ],
+    keySpecs: ["Modbus TCP/IP & RTU interfaces", "Ethernet / Wi-Fi / 4G Cellular options", "Sub-second CSV and PDF reporting"],
+  },
+  {
+    id: "reactive-expansion",
+    title: "Reactive (kVAR) & Variable Power Factor Expansion",
+    tagline: "Convert pure resistive units into complete 0.8 PF proofing systems",
+    description:
+      "Upgrade existing resistive-only load banks by integrating modular inductive and capacitive reactive elements. Test generators and UPS systems at their true rated power factor without buying a new test bank.",
+    benefits: [
+      "Enables full alternator magnetic saturation and heating tests",
+      "Variable power factor tuning from 0.4 lagging to unity (1.0)",
+      "Essential for mission-critical data center and hospital commissioning",
+    ],
+    keySpecs: ["Adjustable inductive iron-core chokes", "Capacitor banks with harmonic detuning", "Unified resistive-reactive digital control"],
+  },
+  {
+    id: "cooling-airflow",
+    title: "Blower & Thermal Management Overhaul",
+    tagline: "High-temperature resilience and silent variable-speed cooling",
+    description:
+      "Modernize aging cooling systems with high-efficiency direct-drive fans, VFD speed controllers, and calibrated multi-zone duct thermal sensors to eliminate nuisance high-temp trips in hot ambient environments.",
+    benefits: [
+      "Operates reliably in ambient temperatures up to 55°C",
+      "Variable fan speed reduces acoustic noise during light loading",
+      "Prevents resistor element oxidation and thermal hotspot damage",
+    ],
+    keySpecs: ["High-static direct-drive fan assemblies", "Multi-point RTD / thermocouple arrays", "VFD modulated airflow control"],
+  },
+  {
+    id: "multi-voltage",
+    title: "Multi-Voltage Tap & Dual-Frequency Conversions",
+    tagline: "Test across 208V, 400V, 480V and 600V with a single asset",
+    description:
+      "Rewire internal resistor grouping and install heavy-duty voltage selector switches or transformer taps. Enable a single load bank to service international voltage standards and 50Hz/60Hz machinery without external gear.",
+    benefits: [
+      "Maximises utilization rate of your existing equipment fleet",
+      "Eliminates the need to mobilise separate load banks for different voltages",
+      "Maintains full rated kW capacity across selected voltage configurations",
+    ],
+    keySpecs: ["208V / 400V / 480V / 600V selector link bars", "50Hz & 60Hz compatible fan motors", "Automatic voltage sensing interlocks"],
+  },
+];
+
+export const UPGRADE_COMPARISON = [
+  {
+    feature: "Load Control Method",
+    legacy: "Manual toggle switches with coarse 25kW–50kW steps",
+    upgraded: "Automated digital PLC with 0.1kW fine resolution and presets",
+  },
+  {
+    feature: "Data Capture & Logging",
+    legacy: "Manual clipboard reading of analog needle gauges",
+    upgraded: "High-speed digital logging with real-time waveform capture",
+  },
+  {
+    feature: "Report Generation",
+    legacy: "Manual spreadsheet transcription hours or days later",
+    upgraded: "Instant one-click audit report with digital engineer sign-off",
+  },
+  {
+    feature: "Operator Safety",
+    legacy: "Operator standing beside high-voltage exhaust duct",
+    upgraded: "Wireless or remote control up to 300m away in control vehicle",
+  },
+  {
+    feature: "Protection & Interlocks",
+    legacy: "Basic thermal switch and single fan airflow vane",
+    upgraded: "Multi-point RTDs, phase loss detection, and auto-ramp abort",
+  },
+  {
+    feature: "Capital Investment",
+    legacy: "Full replacement cost for new modern unit (100% Capex)",
+    upgraded: "Saves up to 60% compared to purchasing new equipment",
+  },
+];
+
+export const UPGRADE_STEPS: StepData[] = [
+  {
+    step: "01",
+    title: "Engineering Audit & Fleet Survey",
+    desc: "We inspect the structural integrity, resistor condition, and wiring infrastructure of your current equipment to define feasibility and upgrade scope.",
+  },
+  {
+    step: "02",
+    title: "Electrical CAD & Software Design",
+    desc: "Our design team produces complete schematics, panel layout drawings, and custom PLC automation logic tailored to your testing protocols.",
+  },
+  {
+    step: "03",
+    title: "Workshop Retrofit & FAT Testing",
+    desc: "New enclosures, PLCs, busbars, and contactors are assembled and tested under full electrical load in our controlled workshop facility.",
+  },
+  {
+    step: "04",
+    title: "On-Site Commissioning & Operator Training",
+    desc: "We integrate the modernized asset into your fleet, verify all telemetry calibrations, and certify your operators on the new digital interface.",
+  },
+];
+
+/* --------------------------------------------------------------------------
+   TRAINING & TROUBLESHOOTING DATA
+   -------------------------------------------------------------------------- */
+
+export type TrainingCourse = {
+  code: string;
+  title: string;
+  audience: string;
+  duration: string;
+  format: string;
+  description: string;
+  modules: string[];
+  outcomes: string[];
+};
+
+export const TRAINING_COURSES: TrainingCourse[] = [
+  {
+    code: "TW-TRN-101",
+    title: "Critical Power Load Testing & NFPA 110 Compliance",
+    audience: "Facility Engineers, Commissioning Managers, Maintenance Teams",
+    duration: "2 Days (16 Hours)",
+    format: "Classroom Theory + Practical Live-Load Rig Demonstration",
+    description:
+      "A comprehensive curriculum covering the statutory standards, electrical safety, step-load execution, and report documentation mandated by NFPA 110, ISO 8528, and NETA ATS/MTS.",
+    modules: [
+      "Standards deep-dive: NFPA 110 Level 1/2, ISO 8528, and healthcare mandates",
+      "Load bank sizing, cable ampacity calculation, and grounding safety",
+      "Step-load testing protocols: 25%, 50%, 75%, 100%, and 110% overload",
+      "Dynamic transient testing: Block loading, frequency drop, and voltage recovery",
+      "Generating compliant, audit-ready reports and understanding pass/fail criteria",
+    ],
+    outcomes: [
+      "Certified operator qualification for NFPA 110 testing",
+      "Ability to identify generator deficiencies under full load",
+      "Elimination of testing hazards and equipment damage risks",
+    ],
+  },
+  {
+    code: "TW-TRN-202",
+    title: "High-Voltage Electrical Safety & Arc-Flash Hazard Mitigation",
+    audience: "Electricians, Test Technicians, Operations Supervisors",
+    duration: "1 Day (8 Hours)",
+    format: "Hands-on Workshop & Scenario Simulations",
+    description:
+      "Focused safety training for technicians operating temporary electrical hookups, medium-voltage load banks, high-amperage Cam-Locks, and emergency trip systems.",
+    modules: [
+      "Arc-flash hazard analysis and PPE boundary selection",
+      "Safe cable deployment, phase rotation verification, and torque specifications",
+      "Emergency shutdown hierarchy and thermal runaway containment",
+      "Lockout / Tagout (LOTO) protocols for temporary testing connections",
+    ],
+    outcomes: [
+      "Zero-incident protocol adherence during high-amperage testing",
+      "Rapid and coordinated emergency shutdown execution",
+      "Certified compliance with OSHA and NFPA 70E guidelines",
+    ],
+  },
+  {
+    code: "TW-TRN-303",
+    title: "In-House Load Bank Fleet Maintenance & Calibration",
+    audience: "Apparatus Technicians, Rental Fleet Mechanics, In-House Engineers",
+    duration: "2 Days (16 Hours)",
+    format: "Depot Hands-On Teardown & Calibration Labs",
+    description:
+      "Master the preventative maintenance, resistance element testing, contactor refurbishment, and instrument calibration required to keep load test fleets reliable.",
+    modules: [
+      "Micro-ohmmeter resistance measurement and element health assessment",
+      "High-potential (Hipot) and insulation resistance testing (Megger)",
+      "Contactor inspection, contact wear measurement, and coil testing",
+      "Calibrating digital transducers and troubleshooting PLC interlocks",
+    ],
+    outcomes: [
+      "Reduced dependence on third-party service providers",
+      "Longer asset lifespan and lower fleet maintenance costs",
+      "Documented calibration validity for audit requirements",
+    ],
+  },
+];
+
+export const TROUBLESHOOTING_AREAS: FeatureItemData[] = [
+  {
+    title: "Governor Hunting & Speed Instability",
+    body: "Oscillations in engine speed under load steps often trace to fuel rack binding, actuator deadband, or misconfigured PID speed controller loops. We isolate mechanical vs electronic causes.",
+  },
+  {
+    title: "Automatic Voltage Regulator (AVR) Drift & Droop",
+    body: "Voltage sag under load, voltage hunting, or failure to share reactive kVAR in parallel genset setups. We retune AVR excitation loops and verify rotating diode assemblies.",
+  },
+  {
+    title: "Harmonic Distortion & Non-Linear Load Resonance",
+    body: "Unexpected trips when testing UPS inverters or variable frequency drives. We deploy power analyzers to identify harmonic current amplification and resonance points.",
+  },
+  {
+    title: "Nuisance Thermal Cutout & Airflow Depletion",
+    body: "Load banks tripping on overtemperature during hot weather testing. We evaluate duct static pressure, blower motor slip, and sensor drift to restore reliable continuous cooling.",
+  },
+  {
+    title: "ATS Timing & Transfer Sequence Failures",
+    body: "Failure to transfer under emergency power conditions. We analyze contact travel timing, transition delays, and phase sync to ensure seamless building changeover.",
+  },
+  {
+    title: "Insulation Breakdown & Ground Fault Trips",
+    body: "Mysterious earth leakage trips when applying load. We perform systematic high-voltage insulation testing to pinpoint degraded cables or cracked ceramic standoffs.",
+  },
+];
+
+export const DIAGNOSTIC_METHODOLOGY: StepData[] = [
+  {
+    step: "01",
+    title: "Site Survey & Symptom Triangulation",
+    desc: "We review operational logs, maintenance history, and site electrical topology before connecting synchronized multi-channel digital power analyzers.",
+  },
+  {
+    step: "02",
+    title: "Controlled Step-Load Stress Testing",
+    desc: "By applying precise incremental loads with our calibrated mobile load banks, we recreate the fault conditions under safe, closely monitored parameters.",
+  },
+  {
+    step: "03",
+    title: "Root-Cause Electrical Isolation",
+    desc: "We capture transient waveforms, thermal imaging profiles, and control signal harmonics to pinpoint the root mechanism rather than masking symptoms.",
+  },
+  {
+    step: "04",
+    title: "Corrective Action Plan & Verification",
+    desc: "We provide an engineering diagnosis report with component-level repair instructions, followed by post-repair load testing to verify fault resolution.",
+  },
 ];

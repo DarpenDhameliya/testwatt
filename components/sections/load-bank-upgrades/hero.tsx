@@ -2,56 +2,57 @@ import { Button } from "@/components/ui";
 
 export default function Hero() {
   return (
-    <section className="lbt-hero" aria-labelledby="rs-heading">
+    <section className="lbt-hero" aria-labelledby="lbu-heading">
       <div className="container lbt-hero__container">
         <div className="lbt-hero__content">
           <div className="lbt-hero__badge-row">
             <span className="lbt-hero__badge">
               <span className="lbt-hero__badge-dot" aria-hidden="true" />
-              Precision Maintenance &amp; Service Protection
+              Asset Modernisation &amp; Capital Efficiency
             </span>
           </div>
 
           <div className="lbt-hero__kicker">
             <span className="lbt-hero__kicker-line" aria-hidden="true" />
-            Repairs &amp; Servicing Specialists
+            Load Bank Modernisation &amp; Retrofits
           </div>
 
-          <h1 id="rs-heading" className="lbt-hero__title">
-            Maximum uptime &amp; peak performance{" "}
-            <span className="lbt-hero__title-accent">for your test fleet.</span>
+          <h1 id="lbu-heading" className="lbt-hero__title">
+            Modernise legacy load banks{" "}
+            <span className="lbt-hero__title-accent">to digital SCADA precision.</span>
           </h1>
 
           <p className="lbt-hero__body">
-            Keep your load testing assets operating at 100% capacity. TestWatt provides
-            comprehensive preventive maintenance, rapid engineering response, control
-            system modernizations, and genuine replacement parts.
+            Extend the life and capability of existing load bank fleets without full
+            replacement. TestWatt engineers custom digital PLC automation, cloud telemetry,
+            reactive capacity expansions, and multi-voltage retrofits at up to 60% lower
+            cost than acquiring new units.
           </p>
 
           {/* <div className="lbt-hero__actions">
             <Button to="/contact" variant="primary" size="lg">
-              Book a Service Visit
+              Discuss Upgrade Project
             </Button>
-            <Button href="#why-servicing" variant="outline-light" size="lg">
-              Why Servicing Matters ↓
+            <Button href="#upgrade-solutions" variant="outline-light" size="lg">
+              Explore Modernisation Paths ↓
             </Button>
           </div> */}
 
           {/* Quick Technical Highlights Strip */}
           {/* <div className="lbt-hero__specs-strip">
             <div className="lbt-hero__spec-item">
-              <span className="lbt-hero__spec-val">100%</span>
-              <span className="lbt-hero__spec-lbl">OEM Traceable Parts</span>
+              <span className="lbt-hero__spec-val">-60%</span>
+              <span className="lbt-hero__spec-lbl">Capex vs New Unit</span>
             </div>
             <div className="lbt-hero__spec-divider" aria-hidden="true" />
             <div className="lbt-hero__spec-item">
-              <span className="lbt-hero__spec-val">24/7</span>
-              <span className="lbt-hero__spec-lbl">Rapid Mobilisation</span>
+              <span className="lbt-hero__spec-val">0.1 kW</span>
+              <span className="lbt-hero__spec-lbl">Precision Step Control</span>
             </div>
             <div className="lbt-hero__spec-divider" aria-hidden="true" />
             <div className="lbt-hero__spec-item">
-              <span className="lbt-hero__spec-val">ISO &amp; OEM</span>
-              <span className="lbt-hero__spec-lbl">Calibrated Standards</span>
+              <span className="lbt-hero__spec-val">SCADA / IoT</span>
+              <span className="lbt-hero__spec-lbl">Live Cloud Telemetry</span>
             </div>
           </div> */}
         </div>

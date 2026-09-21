@@ -4,11 +4,11 @@ import WhyServicing from "@/components/sections/repairs-servicing/why-servicing"
 import Training from "@/components/sections/repairs-servicing/training";
 import Modernisation from "@/components/sections/repairs-servicing/modernisation";
 import SpareParts from "@/components/sections/repairs-servicing/spare-parts";
-import RepairsServicingCta from "@/components/sections/repairs-servicing/cta";
+// import RepairsServicingCta from "@/components/sections/repairs-servicing/cta"; // CTA now lives in the footer
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Repairs & Servicing | Load Bank Maintenance & Modernisation | Test Watt",
+  title: "Repairs & Servicing | Load Bank Maintenance & Modernisation | TestWatt",
   description:
     "Load bank repairs, servicing, preventive maintenance, modernisation, troubleshooting and OEM-grade spare parts for reliable critical power test equipment.",
   keywords:
@@ -50,7 +50,7 @@ export default function RepairsServicingPage() {
       <Training />
       <Modernisation />
       <SpareParts />
-      <RepairsServicingCta />
+      {/* <RepairsServicingCta /> */}
     </div>
   );
 }

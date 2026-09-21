@@ -11,29 +11,29 @@ export default function Hero() {
 
       <div className="hero__inner container">
         <div className="hero__content">
-          <PositiveTag>Verified Backup Power Assurance &amp; Safety</PositiveTag>
+          <PositiveTag>Built on Engineering Expertise. Defined by Exceptional Service.</PositiveTag>
           <Kicker>Critical Power Testing Specialists</Kicker>
           <h1 id="hero-heading" className="hero__title">
             Full-load proof,
             <br />
             <span className="hero__title-muted">
-              <span className="hero__title-accent">100%</span> operational confidence.
+              <span className="hero__title-accent">100%</span> nameplate capacity. Zero guesswork.
             </span>
           </h1>
           <p className="hero__body">
-            Ensure your backup generators, UPS systems, and switchgear perform flawlessly
-            when needed most. Test Watt delivers resistive, reactive, and hybrid load bank
-            testing at full nameplate rating — giving facility managers complete peace of
-            mind and documented compliance.
+            A no-load test run won&apos;t tell you if your backup power can carry the building.
+            TestWatt brings mobile resistive, reactive, and hybrid load banks directly to your
+            site—stress-testing generators, UPS units, and switchgear up to 100% nameplate
+            capacity with certified NFPA and ISO compliance reports.
           </p>
-          <div className="hero__actions">
+          {/* <div className="hero__actions">
             <Button to="/contact" variant="primary" size="lg">
               Request a Free Proposal
             </Button>
             <Button to="/load-bank-testing" variant="outline-light" size="lg">
               Explore Testing Capabilities
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

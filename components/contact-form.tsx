@@ -6,7 +6,7 @@ import { ENQUIRY_SERVICES } from "@/lib/content";
 import { SUPPORT_EMAIL } from "@/lib/site";
 import { Kicker } from "./ui";
 
-type Errors = Partial<Record<"name" | "company" | "email" | "service", string>>;
+type Errors = Partial<Record<"name" | "company" | "email" | "service" | "phone" | "details", string>>;
 
 function FormField({
   label,
@@ -57,17 +57,48 @@ function validate(form: HTMLFormElement): Errors {
   const data = new FormData(form);
   const errors: Errors = {};
 
-  if (!String(data.get("name")).trim()) errors.name = "Full name is required.";
-  if (!String(data.get("company")).trim()) errors.company = "Company is required.";
-
-  const email = String(data.get("email")).trim();
-  if (!email) {
-    errors.email = "Email address is required.";
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    errors.email = "Enter a valid email address.";
+  const name = String(data.get("name") || "").trim();
+  if (!name) {
+    errors.name = "Full name is required.";
+  } else if (name.length < 2) {
+    errors.name = "Full name must be at least 2 characters.";
   }
 
-  if (!String(data.get("service"))) errors.service = "Please select a service.";
+  const company = String(data.get("company") || "").trim();
+  if (!company) {
+    errors.company = "Company name is required.";
+  } else if (company.length < 2) {
+    errors.company = "Company name must be at least 2 characters.";
+  }
+
+  const email = String(data.get("email") || "").trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email) {
+    errors.email = "Email address is required.";
+  } else if (!emailRegex.test(email)) {
+    errors.email = "Please enter a valid email address.";
+  }
+
+  const phone = String(data.get("phone") || "").trim();
+  const phoneDigits = phone.replace(/\D/g, "");
+  const phoneRegex = /^[+]?[\d\s\-().]{7,25}$/;
+  if (!phone) {
+    errors.phone = "Phone number is required.";
+  } else if (!phoneRegex.test(phone) || phoneDigits.length < 7 || phoneDigits.length > 15) {
+    errors.phone = "Please enter a valid phone number (7 to 15 digits).";
+  }
+
+  const service = String(data.get("service") || "").trim();
+  if (!service) {
+    errors.service = "Please select a service.";
+  }
+
+  const details = String(data.get("details") || "").trim();
+  if (!details) {
+    errors.details = "Please describe your project or equipment requirements.";
+  } else if (details.length < 10) {
+    errors.details = "Please provide more details (minimum 10 characters).";
+  }
 
   return errors;
 }
@@ -78,6 +109,13 @@ export default function ContactForm() {
   const [submitError, setSubmitError] = useState("");
   const [service, setService] = useState("");
   const [errors, setErrors] = useState<Errors>({});
+
+  function handleFormChange(event: FormEvent<HTMLFormElement>) {
+    const target = event.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    if (target?.name && errors[target.name as keyof Errors]) {
+      setErrors((prev) => ({ ...prev, [target.name]: undefined }));
+    }
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -105,9 +143,9 @@ export default function ContactForm() {
           name: data.get("name"),
           company: data.get("company"),
           email: data.get("email"),
-          phone: data.get("phone") || "",
+          phone: data.get("phone"),
           service: data.get("service"),
-          details: data.get("details") || "",
+          details: data.get("details"),
         }),
       });
 
@@ -143,7 +181,7 @@ export default function ContactForm() {
         </div>
         <h3 className="form-success__title">Enquiry Received</h3>
         <p className="form-success__body">
-          Thank you. A Test Watt engineer will review your enquiry and respond within one
+          Thank you. A TestWatt engineer will review your enquiry and respond within one
           business day. For urgent matters, contact{" "}
           <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> directly.
         </p>
@@ -158,7 +196,7 @@ export default function ContactForm() {
         <h2 className="contact-form-wrap__title">Send an Enquiry</h2>
       </div>
 
-      <form onSubmit={handleSubmit} noValidate>
+      <form onSubmit={handleSubmit} onChange={handleFormChange} noValidate>
         <div className="form-row">
           <FormField label="Full Name" id="name" required error={errors.name} />
           <FormField label="Company" id="company" required error={errors.company} />
@@ -172,7 +210,7 @@ export default function ContactForm() {
             required
             error={errors.email}
           />
-          <FormField label="Phone Number" id="phone" type="tel" />
+          <FormField label="Phone Number" id="phone" type="tel" required error={errors.phone} />
         </div>
 
         <FormField label="What do you need?" id="service" required error={errors.service}>
@@ -181,10 +219,14 @@ export default function ContactForm() {
             name="service"
             required
             value={service}
-            onChange={(event) => setService(event.target.value)}
-            className={`form-field__select${
-              service ? "" : " form-field__select--placeholder"
-            }${errors.service ? " form-field__input--error" : ""}`}
+            onChange={(event) => {
+              setService(event.target.value);
+              if (errors.service) {
+                setErrors((prev) => ({ ...prev, service: undefined }));
+              }
+            }}
+            className={`form-field__select${service ? "" : " form-field__select--placeholder"
+              }${errors.service ? " form-field__input--error" : ""}`}
             aria-describedby={errors.service ? "service-error" : undefined}
             aria-invalid={errors.service ? "true" : undefined}
           >
@@ -199,13 +241,16 @@ export default function ContactForm() {
           </select>
         </FormField>
 
-        <FormField label="Details" id="details">
+        <FormField label="Describe your requirement" id="details" required error={errors.details}>
           <textarea
             id="details"
             name="details"
             rows={6}
+            required
+            aria-describedby={errors.details ? "details-error" : undefined}
+            aria-invalid={errors.details ? "true" : undefined}
             placeholder="Describe your equipment (make, model, rating), site location, and what you need. The more context you provide, the more specific our proposal can be."
-            className="form-field__textarea"
+            className={`form-field__textarea${errors.details ? " form-field__input--error" : ""}`}
           />
         </FormField>
 
@@ -220,7 +265,7 @@ export default function ContactForm() {
         </button>
 
         <p className="form-consent">
-          By submitting this form you consent to Test Watt processing your details to
+          By submitting this form you consent to TestWatt processing your details to
           respond to your enquiry.
         </p>
       </form>

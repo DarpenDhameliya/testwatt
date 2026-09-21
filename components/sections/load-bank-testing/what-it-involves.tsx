@@ -29,7 +29,7 @@ export default function WhatItInvolves() {
               stable, and transfer systems operate within specification.
             </p>
             <p className="content-body">
-              Test Watt engineers operate calibrated portable load banks at your site. The
+              TestWatt engineers operate calibrated portable load banks at your site. The
               only utility supply interruption is the planned transfer to test load — all
               other site power is unaffected throughout.
             </p>

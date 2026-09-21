@@ -438,3 +438,122 @@ export function StandardsTable({
     </div>
   );
 }
+
+export type StandardsCardVariant = "dossier" | "tech" | "minimal";
+
+export function StandardsCards({
+  standards,
+  scopeLabel = "Scope",
+  variant = "dossier",
+}: {
+  standards: StandardRow[];
+  scopeLabel?: string;
+  variant?: StandardsCardVariant;
+}) {
+  return (
+    <ul className={`standards-cards standards-cards--${variant}`}>
+      {standards.map((row) => {
+        if (variant === "tech") {
+          return (
+            <li key={row.code} className="standard-card standard-card--tech">
+              <div className="standard-card__tech-top">
+                <span className="standard-card__tech-chip">{row.code}</span>
+                <span className="standard-card__tech-icon-wrap" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="standard-card__tech-icon"
+                  >
+                    <path
+                      d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <h3 className="standard-card__title standard-card__title--tech">
+                {row.title}
+              </h3>
+              <div className="standard-card__tech-footer">
+                <span className="standard-card__tech-label">{scopeLabel}</span>
+                <p className="standard-card__tech-desc">{row.scope}</p>
+              </div>
+            </li>
+          );
+        }
+
+        if (variant === "minimal") {
+          return (
+            <li key={row.code} className="standard-card standard-card--minimal">
+              <div className="standard-card__minimal-header">
+                <span className="standard-card__minimal-code">{row.code}</span>
+                <span className="standard-card__minimal-tag">Standard Spec</span>
+              </div>
+              <h3 className="standard-card__title standard-card__title--minimal">
+                {row.title}
+              </h3>
+              <div className="standard-card__minimal-scope">
+                <span className="standard-card__label">{scopeLabel}</span>
+                <p className="standard-card__text">{row.scope}</p>
+              </div>
+            </li>
+          );
+        }
+
+        // Default & Recommended: "dossier" (Certified Technical Spec Card)
+        return (
+          <li key={row.code} className="standard-card standard-card--dossier">
+            <div className="standard-card__header">
+              <div className="standard-card__code-badge">
+                <svg
+                  className="standard-card__shield-icon"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  aria-hidden="true"
+                >
+                  <path d="M10 2s6 2.5 6 7c0 5-3.5 8-6 9-2.5-1-6-4-6-9 0-4.5 6-7 6-7z" />
+                  <path
+                    d="M7.5 9.5l2 2 3.5-3.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span>{row.code}</span>
+              </div>
+              <span className="standard-card__status-pill">
+                <span className="standard-card__status-dot" aria-hidden="true" />
+                Verified Spec
+              </span>
+            </div>
+
+            <h3 className="standard-card__title">{row.title}</h3>
+
+            <div className="standard-card__scope-pod">
+              <div className="standard-card__scope-tag">
+                <svg
+                  className="standard-card__scope-icon"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm3.854-8.646a.5.5 0 0 0-.708-.708L7.5 9.293 5.354 7.146a.5.5 0 1 0-.708.708l2.5 2.5a.5.5 0 0 0 .708 0l4.5-4.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span>{scopeLabel}</span>
+              </div>
+              <p className="standard-card__scope-text">{row.scope}</p>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}

@@ -4,9 +4,9 @@ import ContactSection from "@/components/sections/contact/contact-section";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Test Watt | Request a Load Test, Service Quote or Support",
+  title: "Contact TestWatt | Request a Load Test, Service Quote or Support",
   description:
-    "Contact Test Watt for load bank testing proposals, equipment servicing, spare parts enquiries and critical power support.",
+    "Contact TestWatt for load bank testing proposals, equipment servicing, spare parts enquiries and critical power support.",
   keywords:
     "contact test watt, request load bank test, service quote, load bank support, critical power enquiry",
   alternates: { canonical: "/contact" },
@@ -17,10 +17,10 @@ const PAGE_SCHEMA = {
   "@graph": [
     {
       "@type": "ContactPage",
-      name: "Contact Test Watt",
+      name: "Contact TestWatt",
       url: `${SITE_URL}/contact`,
       description:
-        "Page for requesting testing, servicing, maintenance and engineering support from Test Watt.",
+        "Page for requesting testing, servicing, maintenance and engineering support from TestWatt.",
     },
   ],
 };

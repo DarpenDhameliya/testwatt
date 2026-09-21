@@ -1,4 +1,4 @@
-import { Kicker, SectionHeading, StandardsTable } from "@/components/ui";
+import { Kicker, SectionHeading, StandardsCards } from "@/components/ui";
 import { LOAD_TEST_ADVANTAGES, STANDARDS_LOAD_BANK } from "@/lib/content";
 
 export default function Standards() {
@@ -11,7 +11,7 @@ export default function Standards() {
           heading={<span id="standards-heading">Standards to which we test</span>}
           className="section-heading--mb-sm"
         />
-        <StandardsTable standards={STANDARDS_LOAD_BANK} scopeLabel="Application" />
+        <StandardsCards standards={STANDARDS_LOAD_BANK} scopeLabel="Application" />
 
         {/* Advantages Section */}
         <div className="advantages-section">

@@ -13,7 +13,7 @@ export default function Modernisation() {
             </h2>
             <p className="content-body content-body--light">
               Existing load bank equipment can often be upgraded to current capability
-              standards at significantly lower cost than replacement. Test Watt engineers
+              standards at significantly lower cost than replacement. TestWatt engineers
               assess each installation individually and specify upgrades that deliver
               measurable improvements in accuracy, connectivity or capacity.
             </p>

@@ -4,11 +4,11 @@ import WhatItInvolves from "@/components/sections/load-bank-testing/what-it-invo
 import LoadBankTypes from "@/components/sections/load-bank-testing/load-bank-types";
 import StepLoadProfile from "@/components/sections/load-bank-testing/step-load-profile";
 import Standards from "@/components/sections/load-bank-testing/standards";
-import LoadBankTestingCta from "@/components/sections/load-bank-testing/cta";
+// import LoadBankTestingCta from "@/components/sections/load-bank-testing/cta"; // CTA now lives in the footer
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Load Bank Testing | Generator, UPS & Switchgear Testing | Test Watt",
+  title: "Load Bank Testing | Generator, UPS & Switchgear Testing | TestWatt",
   description:
     "Independent full-load load bank testing for generators, UPS systems and switchgear. Resistive, reactive and hybrid testing at nameplate rating with certified reports.",
   keywords:
@@ -50,7 +50,7 @@ export default function LoadBankTestingPage() {
       <LoadBankTypes />
       <StepLoadProfile />
       <Standards />
-      <LoadBankTestingCta />
+      {/* <LoadBankTestingCta /> */}
     </div>
   );
 }

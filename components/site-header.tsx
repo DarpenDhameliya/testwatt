@@ -93,12 +93,11 @@ function MobileNav({
       <nav aria-label="Mobile navigation">
         {NAV_LINKS.map((link) => (
           <Link
-            key={link.to}
+            key={link.label}
             href={link.to}
             onClick={onClose}
-            className={`mobile-nav__link${
-              isActive(pathname, link.to) ? " mobile-nav__link--active" : ""
-            }`}
+            className={`mobile-nav__link${isActive(pathname, link.to) ? " mobile-nav__link--active" : ""
+              }`}
           >
             {link.label}
           </Link>
@@ -162,7 +161,7 @@ export default function SiteHeader() {
   return (
     <>
       {/* Full-width strip: stays at the top of the document and scrolls away. */}
-      <div className="site-topbar">
+      {/* <div className="site-topbar">
         <div className="site-topbar__inner container">
           <RotatingCredential />
           <span className="site-topbar__links">
@@ -175,12 +174,12 @@ export default function SiteHeader() {
             </a>
           </span>
         </div>
-      </div>
+      </div> */}
 
       {/* Floating pill: sticky, and pulled out of flow so it overlays the hero. */}
       <header className={`site-header${scrolled ? " site-header--scrolled" : ""}`}>
         <div className="site-header__inner container">
-          <Link href="/" className="site-header__logo" aria-label="Test Watt — home">
+          <Link href="/" className="site-header__logo" aria-label="TestWatt — home">
             <Image
               src={MARK}
               alt=""
@@ -194,13 +193,12 @@ export default function SiteHeader() {
           <nav className="site-header__nav" aria-label="Main navigation">
             {NAV_LINKS.map((link, index) => (
               <Link
-                key={link.to}
+                key={link.label}
                 href={link.to}
                 aria-current={isActive(pathname, link.to) ? "page" : undefined}
                 style={{ animationDelay: `${80 + index * 70}ms` }}
-                className={`site-header__nav-link${
-                  isActive(pathname, link.to) ? " site-header__nav-link--active" : ""
-                }`}
+                className={`site-header__nav-link${isActive(pathname, link.to) ? " site-header__nav-link--active" : ""
+                  }`}
               >
                 {link.label}
               </Link>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import CapabilityStrip from "@/components/sections/home/capability-strip";
-import HomeCta from "@/components/sections/home/cta";
+// import HomeCta from "@/components/sections/home/cta"; // CTA now lives in the footer
 import Hero from "@/components/sections/home/hero";
 import Services from "@/components/sections/home/services";
 import Standards from "@/components/sections/home/standards";
@@ -9,9 +9,9 @@ import WhyTestWatt from "@/components/sections/home/why-test-watt";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Test Watt | Load Bank Testing & Critical Power Services",
+  title: "TestWatt | Load Bank Testing & Critical Power Services",
   description:
-    "Test Watt delivers load bank testing, generator testing, UPS testing, and critical power services to verify performance at full nameplate rating.",
+    "TestWatt delivers load bank testing, generator testing, UPS testing, and critical power services to verify performance at full nameplate rating.",
   alternates: { canonical: "/" },
 };
 
@@ -55,12 +55,12 @@ export default function HomePage() {
       />
 
       <Hero />
-      <CapabilityStrip />
-      <Services />
+      {/* <CapabilityStrip /> */}
+      {/* <Services /> */}
       <WhyTestWatt />
-      <TestingProcess />
+      {/* <TestingProcess /> */}
       <Standards />
-      <HomeCta />
+      {/* <HomeCta /> */}
     </div>
   );
 }

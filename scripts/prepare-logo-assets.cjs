@@ -1,5 +1,5 @@
 /**
- * Prepares the Test Watt logo assets used by the site.
+ * Prepares the TestWatt logo assets used by the site.
  *
  * The artwork is used exactly as supplied — full stacked lockup, original
  * navy/red, nothing recoloured. The only operation is trimming the surrounding

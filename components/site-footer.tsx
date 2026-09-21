@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FOOTER_SERVICES, NAV_LINKS, SALES_EMAIL, SUPPORT_EMAIL } from "@/lib/site";
+import { FOOTER_SERVICES, NAV_LINKS, NAV_LINKS_FOOTER, SALES_EMAIL, SUPPORT_EMAIL } from "@/lib/site";
+import FooterCta from "./footer-cta";
 
 function ArrowRight() {
   return (
@@ -43,6 +44,77 @@ function MailIcon() {
   );
 }
 
+/**
+ * Compact footer: brand, the two mailboxes as tiles and a contact CTA on top;
+ * legal line and page links in a slimmer strip below.
+ * SiteFooter (below) is kept for later use.
+ */
+export function SiteFooterSimple() {
+  return (
+    <footer className="footer-simple">
+      <span className="footer-simple__glow" aria-hidden="true" />
+
+      {/* Site-wide call to action; hides itself on the contact page. */}
+      <FooterCta />
+
+      <div className="container footer-simple__main">
+        <div className="footer-simple__brand">
+          <Link href="/" className="footer-simple__logo" aria-label="TestWatt — home">
+            <Image
+              src="/images/testwatt-logo-trimmed.png"
+              alt="TestWatt Logo"
+              width={1032}
+              height={639}
+              className="footer-simple__logo-img"
+            />
+          </Link>
+          <p className="footer-simple__tagline">
+            Load bank testing &amp; critical power services.
+          </p>
+        </div>
+
+        <div className="footer-simple__contact">
+          <a href={`mailto:${SALES_EMAIL}`} className="footer-simple__tile">
+            <span className="footer-simple__tile-icon">
+              <MailIcon />
+            </span>
+            <span className="footer-simple__tile-text">
+              <span className="footer-simple__label">Sales</span>
+              <span className="footer-simple__value">{SALES_EMAIL}</span>
+            </span>
+          </a>
+          <a href={`mailto:${SUPPORT_EMAIL}`} className="footer-simple__tile">
+            <span className="footer-simple__tile-icon">
+              <MailIcon />
+            </span>
+            <span className="footer-simple__tile-text">
+              <span className="footer-simple__label">Support</span>
+              <span className="footer-simple__value">{SUPPORT_EMAIL}</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div className="footer-simple__bar">
+        <div className="container footer-simple__bar-inner">
+          <p className="footer-simple__copy">
+            © {new Date().getFullYear()} TestWatt. Load bank testing &amp; critical power
+            services.
+          </p>
+
+          <nav aria-label="Footer" className="footer-simple__nav">
+            {NAV_LINKS_FOOTER.map((link) => (
+              <Link key={link.label} href={link.to} className="footer-simple__nav-link">
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
@@ -50,10 +122,10 @@ export default function SiteFooter() {
         <div className="site-footer__grid">
           {/* Brand Column */}
           <div className="site-footer__brand">
-            <Link href="/" className="site-footer__logo" aria-label="Test Watt — home">
+            <Link href="/" className="site-footer__logo" aria-label="TestWatt — home">
               <Image
                 src="/images/testwatt-logo-trimmed.png"
-                alt="Test Watt Logo"
+                alt="TestWatt Logo"
                 width={1032}
                 height={639}
                 className="site-footer__logo-img"
@@ -75,7 +147,7 @@ export default function SiteFooter() {
             <div className="site-footer__col-heading">Navigation</div>
             <nav aria-label="Footer navigation" className="site-footer__nav-list">
               {NAV_LINKS.map((link) => (
-                <Link key={link.to} href={link.to} className="site-footer__link">
+                <Link key={link.label} href={link.to} className="site-footer__link">
                   <span className="site-footer__link-bullet" aria-hidden="true" />
                   <span>{link.label}</span>
                 </Link>
@@ -143,7 +215,7 @@ export default function SiteFooter() {
         {/* Footer Bottom Strip */}
         <div className="site-footer__bottom">
           <p className="site-footer__copy">
-            © {new Date().getFullYear()} Test Watt Ltd. All rights reserved.
+            © {new Date().getFullYear()} TestWatt Ltd. All rights reserved.
           </p>
           <div className="site-footer__bottom-links">
             <Link href="/load-bank-testing" className="site-footer__bottom-link">

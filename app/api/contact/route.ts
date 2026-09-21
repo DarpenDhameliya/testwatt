@@ -23,26 +23,47 @@ export async function POST(req: Request) {
     if (!name || typeof name !== "string" || !name.trim()) {
       return NextResponse.json({ error: "Full name is required." }, { status: 400 });
     }
+    if (name.trim().length < 2) {
+      return NextResponse.json({ error: "Full name must be at least 2 characters." }, { status: 400 });
+    }
 
     if (!company || typeof company !== "string" || !company.trim()) {
       return NextResponse.json({ error: "Company name is required." }, { status: 400 });
+    }
+    if (company.trim().length < 2) {
+      return NextResponse.json({ error: "Company name must be at least 2 characters." }, { status: 400 });
     }
 
     if (!email || typeof email !== "string" || !email.trim()) {
       return NextResponse.json({ error: "Email address is required." }, { status: 400 });
     }
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.trim())) {
       return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+    }
+
+    if (!phone || typeof phone !== "string" || !phone.trim()) {
+      return NextResponse.json({ error: "Phone number is required." }, { status: 400 });
+    }
+    const phoneDigits = phone.trim().replace(/\D/g, "");
+    const phoneRegex = /^[+]?[\d\s\-().]{7,25}$/;
+    if (!phoneRegex.test(phone.trim()) || phoneDigits.length < 7 || phoneDigits.length > 15) {
+      return NextResponse.json({ error: "Please enter a valid phone number (7 to 15 digits)." }, { status: 400 });
     }
 
     if (!service || typeof service !== "string" || !service.trim()) {
       return NextResponse.json({ error: "Please select a service." }, { status: 400 });
     }
 
+    if (!details || typeof details !== "string" || !details.trim()) {
+      return NextResponse.json({ error: "Please describe your project or equipment requirements." }, { status: 400 });
+    }
+    if (details.trim().length < 10) {
+      return NextResponse.json({ error: "Please provide more details (minimum 10 characters)." }, { status: 400 });
+    }
+
     const adminEmail = process.env.ADMIN_EMAIL || "admin@testwatt.com";
-    const fromAddress = process.env.RESEND_FROM_EMAIL || "Test Watt Leads <onboarding@resend.dev>";
+    const fromAddress = process.env.RESEND_FROM_EMAIL || "TestWatt Leads <onboarding@resend.dev>";
     const submittedAt = new Date().toLocaleString("en-US", {
       timeZone: "UTC",
       dateStyle: "full",
@@ -62,7 +83,7 @@ export async function POST(req: Request) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Service Request - Test Watt</title>
+  <title>New Service Request - TestWatt</title>
 </head>
 <body style="margin: 0; padding: 24px; background-color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #0f172a;">
   <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);">
@@ -136,7 +157,7 @@ export async function POST(req: Request) {
 
       <!-- Quick Action Button -->
       <div style="text-align: center; margin-bottom: 24px;">
-        <a href="mailto:${cleanEmail}?subject=Re: Enquiry for ${encodeURIComponent(cleanService)} - Test Watt" 
+        <a href="mailto:${cleanEmail}?subject=Re: Enquiry for ${encodeURIComponent(cleanService)} - TestWatt" 
            style="display: inline-block; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: #ffffff; text-decoration: none; padding: 12px 28px; border-radius: 6px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;">
           Reply Directly to Client
         </a>
@@ -144,7 +165,7 @@ export async function POST(req: Request) {
 
       <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; font-size: 12px; color: #94a3b8; display: flex; justify-content: space-between;">
         <span>Submitted: ${submittedAt} UTC</span>
-        <span>Test Watt Web Portal</span>
+        <span>TestWatt Web Portal</span>
       </div>
     </div>
   </div>

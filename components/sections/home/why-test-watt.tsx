@@ -156,7 +156,7 @@ export default function WhyTestWatt() {
         <div className="why-grid">
           {/* Left Sticky Column */}
           <div className="why-grid__sticky">
-            <Kicker>Why Test Watt</Kicker>
+            <Kicker>Why TestWatt</Kicker>
             <h2 id="why-heading" className="why-grid__title">
               The case for independent load testing
             </h2>

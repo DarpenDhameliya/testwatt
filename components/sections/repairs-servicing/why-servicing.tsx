@@ -176,7 +176,7 @@ export default function WhyServicing() {
               you have not.
             </p>
             <p className="why-grid__body">
-              Test Watt service intervals are aligned to manufacturer recommendations and
+              TestWatt service intervals are aligned to manufacturer recommendations and
               operating hours. Our engineers carry calibrated instruments for in-situ
               verification of load accuracy alongside all maintenance work.
             </p>
