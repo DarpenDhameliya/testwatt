@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Load Bank Upgrades | Digital Controls & SCADA Telemetry Retrofits | TestWatt",
   description:
-    "Digital PLC automation, SCADA cloud telemetry, reactive additions and multi-voltage retrofits. Modernise existing load bank fleets at 60% lower cost than new equipment.",
+    "Upgrade the load banks you already own with PLC automation, SCADA and cloud telemetry, reactive capacity and multi-voltage conversions, for around 60% less than buying new.",
   keywords:
     "load bank upgrades, load bank modernisation, load bank PLC retrofit, load bank SCADA, load bank reactive addition, load bank automation",
   alternates: { canonical: "/load-bank-upgrades" },
@@ -30,7 +30,7 @@ const PAGE_SCHEMA = {
       ],
       areaServed: "Worldwide",
       description:
-        "Comprehensive modernisation services for existing load banks, replacing manual controls with digital automation, remote telemetry, and multi-voltage capabilities.",
+        "Upgrades for existing load banks that replace manual controls with digital automation, remote telemetry and multi-voltage capability.",
     },
   ],
 };

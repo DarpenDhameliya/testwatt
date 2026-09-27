@@ -3,16 +3,15 @@ import Hero from "@/components/sections/repairs-servicing/hero";
 import WhyServicing from "@/components/sections/repairs-servicing/why-servicing";
 import Training from "@/components/sections/repairs-servicing/training";
 import Modernisation from "@/components/sections/repairs-servicing/modernisation";
-import SpareParts from "@/components/sections/repairs-servicing/spare-parts";
 // import RepairsServicingCta from "@/components/sections/repairs-servicing/cta"; // CTA now lives in the footer
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Repairs & Servicing | Load Bank Maintenance & Modernisation | TestWatt",
   description:
-    "Load bank repairs, servicing, preventive maintenance, modernisation, troubleshooting and OEM-grade spare parts for reliable critical power test equipment.",
+    "Repairs, servicing, routine maintenance, upgrades and fault-finding for load banks, so your test equipment is accurate and ready when you need it.",
   keywords:
-    "load bank servicing, load bank repair, preventative maintenance, load bank modernisation, spare parts, testing equipment support",
+    "load bank servicing, load bank repair, preventative maintenance, load bank modernisation, testing equipment support",
   alternates: { canonical: "/repairs-servicing" },
 };
 
@@ -28,11 +27,10 @@ const PAGE_SCHEMA = {
         "Emergency Repairs",
         "Load Bank Modernisation",
         "Technical Troubleshooting",
-        "Spare Parts Supply",
       ],
       areaServed: "Worldwide",
       description:
-        "Maintenance and repair services for portable and fixed load banks to restore accuracy, safety and readiness for critical power testing.",
+        "Maintenance and repair of portable and fixed load banks, so they read accurately, stay safe to use and are ready for testing.",
     },
   ],
 };
@@ -49,7 +47,6 @@ export default function RepairsServicingPage() {
       <WhyServicing />
       <Training />
       <Modernisation />
-      <SpareParts />
       {/* <RepairsServicingCta /> */}
     </div>
   );

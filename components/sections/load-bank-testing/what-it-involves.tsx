@@ -16,22 +16,21 @@ export default function WhatItInvolves() {
               Controlled loading to nameplate rating
             </h2>
             <p className="content-body">
-              A load bank test connects a calibrated resistive or reactive load — matched
-              to the equipment&apos;s rated output — and applies that load in defined
-              incremental steps. Each step is held for a minimum period while parameters
-              including voltage, current, frequency, power factor, temperature and fuel
-              consumption are recorded continuously.
+              We hook up a calibrated resistive or reactive load bank that matches the
+              equipment&apos;s rated output, then bring the load on in set steps. Each
+              step is held for a minimum time, and throughout we log voltage, current,
+              frequency, power factor, temperatures and fuel use.
             </p>
             <p className="content-body">
-              The test culminates in a full-duration run at 100% of nameplate rating. Only
-              this sustained full-load condition confirms that cooling systems are
-              adequate, fuel systems deliver under load, AVR and governor control is
-              stable, and transfer systems operate within specification.
+              The last stage is a full-duration run at 100% of nameplate rating. Only
+              a sustained run at full load shows whether the cooling system keeps up,
+              whether the fuel system can deliver, whether the AVR and governor stay
+              steady, and whether the transfer equipment does what it should.
             </p>
             <p className="content-body">
-              TestWatt engineers operate calibrated portable load banks at your site. The
-              only utility supply interruption is the planned transfer to test load — all
-              other site power is unaffected throughout.
+              Our engineers bring calibrated portable load banks to your site. Your
+              supply is only interrupted for the planned transfer onto the test load.
+              Everything else on site carries on as normal.
             </p>
           </div>
           <div>

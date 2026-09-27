@@ -1,3 +1,4 @@
+import HeroEyebrow from "@/components/hero-eyebrow";
 import { Button } from "@/components/ui";
 
 export default function Hero() {
@@ -5,30 +6,20 @@ export default function Hero() {
     <section className="lbt-hero" aria-labelledby="lbt-heading">
       <div className="container lbt-hero__container">
         <div className="lbt-hero__content">
-          <div className="lbt-hero__badge-row">
-            <span className="lbt-hero__badge">
-              <span className="lbt-hero__badge-dot" aria-hidden="true" />
-              Guaranteed Operational Readiness
-            </span>
-          </div>
-
-          <div className="lbt-hero__kicker">
-            <span className="lbt-hero__kicker-line" aria-hidden="true" />
-            Critical Power Testing Specialists
-          </div>
+          <HeroEyebrow icon="bolt">Critical Power Testing</HeroEyebrow>
 
           <h1 id="lbt-heading" className="lbt-hero__title">
             Full-load proof,{" "}
             <span className="lbt-hero__title-accent">
-              uncompromised power security.
+              not a best guess.
             </span>
           </h1>
 
           <p className="lbt-hero__body">
-            Verify your backup generators, UPS systems, and switchgear under full
-            nameplate capacity. We provide precise resistive, reactive, and hybrid load
-            proofing — empowering facility leaders with certified, audit-ready
-            compliance documentation.
+            We load test standby generators, UPS systems and switchgear on your site,
+            right up to their full nameplate rating. Depending on the equipment, we
+            use resistive, reactive or hybrid load. When we finish, you get a
+            certified report that's ready to show an auditor.
           </p>
 
           {/* <div className="lbt-hero__actions">

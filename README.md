@@ -9,8 +9,7 @@ critical power services.
 | --------------------------- | ------------------------------------------------------------------------ |
 | `/`                         | Hero, capability strip, services grid, why-us, testing process + chart, standards table, CTA |
 | `/load-bank-testing`        | Page hero, what the test involves, load bank types, step-load chart, standards, advantages |
-| `/repairs-servicing`        | Page hero, why servicing, troubleshooting steps, modernisation options, spare parts |
-| `/spare-parts-supply`       | Page hero, inventory catalog by category, OEM provenance assurance, logistics workflow |
+| `/repairs-servicing`        | Page hero, why servicing, troubleshooting steps, modernisation options |
 | `/load-bank-upgrades`       | Page hero, targeted retrofit pathways, legacy vs modernised comparison, engineering process |
 | `/training-troubleshooting` | Page hero, accredited training curriculum, specialist diagnostics, 4-phase methodology |
 | `/contact`                  | Contact cards, response times, validated enquiry form                     |

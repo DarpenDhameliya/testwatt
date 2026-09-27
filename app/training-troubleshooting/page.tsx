@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Training & Troubleshooting | Load Bank Certification & Diagnostics | TestWatt",
   description:
-    "Accredited operator training courses and on-site electrical root-cause diagnosis for load banks, generators, and UPS systems. Audit-aligned with NFPA 110.",
+    "Accredited operator training and on-site fault diagnosis for load banks, generators and UPS systems. Our courses follow NFPA 110 and are built to satisfy auditors.",
   keywords:
     "load bank training, load bank troubleshooting, NFPA 110 training, generator diagnostic services, AVR hunting, load bank operator certification",
   alternates: { canonical: "/training-troubleshooting" },
@@ -30,7 +30,7 @@ const PAGE_SCHEMA = {
       ],
       areaServed: "Worldwide",
       description:
-        "Structured training programmes for facility maintenance teams and expert on-site troubleshooting for generator, UPS, and load bank electrical anomalies.",
+        "Training courses for facility maintenance teams, plus on-site troubleshooting of electrical faults in generators, UPS systems and load banks.",
     },
   ],
 };

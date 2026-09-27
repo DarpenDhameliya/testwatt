@@ -9,7 +9,7 @@ export default function Solutions() {
         <SectionHeading
           kicker="Modernisation Pathways"
           heading={<span id="solutions-heading">Targeted retrofit packages for testing fleets</span>}
-          body="Whether you need precision automated step ramping, cloud SCADA integration, or variable power factor testing, our engineered retrofit modules transform aging machinery into state-of-the-art testing systems."
+          body="Maybe you need automated step ramping, cloud SCADA links or variable power factor testing. Whichever it is, we build a retrofit module for the gap and fit it to the equipment you already run."
           className="section-heading--mb"
         />
 

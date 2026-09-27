@@ -1,3 +1,4 @@
+import HeroEyebrow from "@/components/hero-eyebrow";
 import { Button } from "@/components/ui";
 
 export default function Hero() {
@@ -5,28 +6,18 @@ export default function Hero() {
     <section className="lbt-hero" aria-labelledby="tt-heading">
       <div className="container lbt-hero__container">
         <div className="lbt-hero__content">
-          <div className="lbt-hero__badge-row">
-            <span className="lbt-hero__badge">
-              <span className="lbt-hero__badge-dot" aria-hidden="true" />
-              Technical Competency &amp; Root-Cause Diagnostics
-            </span>
-          </div>
-
-          <div className="lbt-hero__kicker">
-            <span className="lbt-hero__kicker-line" aria-hidden="true" />
-            Specialist Engineering Advisory
-          </div>
+          <HeroEyebrow icon="training">Training &amp; Troubleshooting</HeroEyebrow>
 
           <h1 id="tt-heading" className="lbt-hero__title">
-            Expert root-cause diagnosis{" "}
-            <span className="lbt-hero__title-accent">&amp; certified operator training.</span>
+            Root-cause diagnosis{" "}
+            <span className="lbt-hero__title-accent">and training that actually sticks.</span>
           </h1>
 
           <p className="lbt-hero__body">
-            Resolve persistent electrical faults, governor hunting, and nuisance breaker
-            trips with data-backed engineering diagnostics. Empower your in-house
-            facility engineers with accredited, practical training courses aligned with
-            NFPA 110 and NETA standards.
+            We find the cause of recurring electrical faults, governor hunting and
+            breaker trips that have no obvious reason, using proper engineering
+            diagnostics. We also give your own team practical, accredited training
+            that follows NFPA 110 and NETA standards.
           </p>
 
           {/* <div className="lbt-hero__actions">

@@ -3,19 +3,19 @@ import { MODERNISATION_OPTIONS } from "@/lib/content";
 
 export default function Modernisation() {
   return (
-    <section className="section section--navy" aria-labelledby="mod-heading">
+    <section className="section section--alt" aria-labelledby="mod-heading">
       <div className="container">
         <div className="mod-grid">
           <div>
             <Kicker>Modernisation Options</Kicker>
-            <h2 id="mod-heading" className="content-heading content-heading--light">
+            <h2 id="mod-heading" className="content-heading">
               Extend capability without full replacement
             </h2>
-            <p className="content-body content-body--light">
-              Existing load bank equipment can often be upgraded to current capability
-              standards at significantly lower cost than replacement. TestWatt engineers
-              assess each installation individually and specify upgrades that deliver
-              measurable improvements in accuracy, connectivity or capacity.
+            <p className="content-body">
+              An older load bank can often be brought up to modern standards for far
+              less than a new unit would cost. We look at each installation
+              individually and only recommend upgrades that really improve accuracy,
+              connectivity or capacity.
             </p>
           </div>
           <div className="mod-options-grid">

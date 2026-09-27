@@ -31,7 +31,7 @@ export default function LoadBankTypes() {
           heading={
             <span id="types-heading">The right technology for your application</span>
           }
-          body="Independent testing requires calibrated equipment matched to your electrical load profile. We deploy resistive, reactive, and hybrid systems for every site requirement."
+          body="A load test only tells you something if the load bank suits your electrical setup. We have resistive, reactive and hybrid units, and we choose the one that fits your site."
           className="section-heading--mb"
         />
 

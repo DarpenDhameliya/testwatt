@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "TestWatt | Load Bank Testing & Critical Power Services",
   description:
-    "TestWatt delivers load bank testing, generator testing, UPS testing, and critical power services to verify performance at full nameplate rating.",
+    "TestWatt provides load bank testing for generators, UPS systems and switchgear, and checks that they perform at their full nameplate rating.",
   keywords:
     "load bank testing, generator testing, UPS testing, switchgear testing, critical power services, full-load testing",
   robots: "index,follow",

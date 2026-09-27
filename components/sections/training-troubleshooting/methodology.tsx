@@ -8,7 +8,7 @@ export default function Methodology() {
         <SectionHeading
           kicker="Diagnostic Protocol"
           heading={<span id="methodology-heading">4-phase root-cause investigation methodology</span>}
-          body="A systematic approach to diagnosing complex power anomalies, backed by real-time waveform capture and formal engineering corrective action plans."
+          body="We follow the same four steps on every job. Live waveform capture supports the diagnosis, and you receive a written corrective action plan at the end."
           className="section-heading--mb"
         />
 

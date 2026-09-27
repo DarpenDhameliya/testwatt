@@ -8,7 +8,7 @@ export default function Troubleshooting() {
         <SectionHeading
           kicker="Specialist Engineering Diagnostics"
           heading={<span id="troubleshooting-heading">Root-cause investigation for persistent faults</span>}
-          body="Intermittent trips, harmonic resonance, and governor oscillations cannot be fixed by guesswork or speculative parts replacement. We deploy high-frequency data acquisition equipment to isolate the root mechanism."
+          body="Intermittent trips, harmonic resonance and governor oscillation won't be solved by guessing or swapping parts. We record fast, detailed data to find out what is really behind the problem."
           className="section-heading--mb"
         />
 

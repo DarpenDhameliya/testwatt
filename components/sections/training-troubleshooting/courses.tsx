@@ -9,7 +9,7 @@ export default function Courses() {
         <SectionHeading
           kicker="Accredited Curriculum"
           heading={<span id="courses-heading">Professional training programmes &amp; certifications</span>}
-          body="Structured, hands-on operator courses designed by veteran commissioning engineers. Delivered at your facility or in our dedicated load-testing workshop."
+          body="Hands-on operator courses written by engineers who commission this equipment every day. We can run them at your facility or in our own load-testing workshop."
           className="section-heading--mb"
         />
 

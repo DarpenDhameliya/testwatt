@@ -13,9 +13,9 @@ const WHY_ITEMS: WhyItem[] = [
   {
     number: "01",
     badge: "Capacity Proof",
-    title: "Confirms True Rated Capacity",
-    tagline: "Eliminate Nameplate Assumptions",
-    body: "A paper rating is not proof. Load testing at 100% nameplate load for a sustained period is the only method that confirms your asset will perform when it must.",
+    title: "Confirms Real Capacity",
+    tagline: "Stop guessing from the nameplate",
+    body: "The nameplate is just what the manufacturer says the unit can do. Running it at 100% load for a sustained period is the only way to be sure it will cope when it matters.",
     icon: (className) => (
       <svg
         className={className}
@@ -37,9 +37,9 @@ const WHY_ITEMS: WhyItem[] = [
   {
     number: "02",
     badge: "Asset Longevity",
-    title: "Prevents Wet-Stacking",
-    tagline: "Carbon Burn-Off & Engine Health",
-    body: "Diesel generators running at low or no load accumulate unburned fuel in the exhaust — wet-stacking. Regular full-load testing burns off deposits and prevents long-term engine damage.",
+    title: "Stops Wet-Stacking",
+    tagline: "Burns off what idling leaves behind",
+    body: "A diesel generator that runs at low load collects unburnt fuel in the exhaust. A full-load test burns it off before it can damage the engine.",
     icon: (className) => (
       <svg
         className={className}
@@ -59,9 +59,9 @@ const WHY_ITEMS: WhyItem[] = [
   {
     number: "03",
     badge: "Fault Detection",
-    title: "Surfaces Hidden Faults",
-    tagline: "Pre-Failure Anomaly Capture",
-    body: "Voltage sag, frequency instability, governor hunting and cooling failures only manifest under load. Our monitoring systems capture every anomaly during the test cycle.",
+    title: "Finds What Idle Hides",
+    tagline: "Catches faults before they cause an outage",
+    body: "Voltage sag, unstable frequency, governor hunting and cooling problems only appear once the unit is carrying load. We pick them up while the test is running.",
     icon: (className) => (
       <svg
         className={className}
@@ -81,9 +81,9 @@ const WHY_ITEMS: WhyItem[] = [
   {
     number: "04",
     badge: "Compliance",
-    title: "Satisfies Compliance Requirements",
-    tagline: "Audit-Proof Regulatory Reports",
-    body: "NFPA 110, NETA, Uptime Institute and OEM warranty terms all mandate periodic load testing. Our reports provide the documentary evidence auditors require.",
+    title: "Meets Compliance Requirements",
+    tagline: "Paperwork auditors actually accept",
+    body: "NFPA 110, NETA, the Uptime Institute and most OEM warranties call for regular load testing. Our reports give you the evidence auditors ask to see.",
     icon: (className) => (
       <svg
         className={className}
@@ -103,9 +103,9 @@ const WHY_ITEMS: WhyItem[] = [
   {
     number: "05",
     badge: "Zero Downtime",
-    title: "Removes Utility Dependence",
-    tagline: "Zero Facility & Grid Disruption",
-    body: "Load testing is performed using our portable load banks — no utility supply interruption, no load-shedding coordination, no site dependency.",
+    title: "No Utility Involved",
+    tagline: "Your supply stays untouched",
+    body: "We bring our own load banks with us, so we don't draw on your supply. There's no load shedding to plan and nothing depends on building power.",
     icon: (className) => (
       <svg
         className={className}
@@ -127,9 +127,9 @@ const WHY_ITEMS: WhyItem[] = [
   {
     number: "06",
     badge: "Warranty Safeguard",
-    title: "Protects Warranty Terms",
-    tagline: "OEM Protection & Asset Security",
-    body: "Manufacturer warranties often require documented periodic testing to remain valid. Our calibrated test equipment and formal test reports satisfy OEM documentation requirements.",
+    title: "Protects the Warranty",
+    tagline: "Keeps the OEM paperwork covered",
+    body: "Many manufacturer warranties require documented testing at regular intervals. Our calibrated equipment and formal reports meet that condition.",
     icon: (className) => (
       <svg
         className={className}
@@ -161,10 +161,10 @@ export default function WhyTestWatt() {
               The case for independent load testing
             </h2>
             <p className="why-grid__body">
-              Generator manufacturers publish rated outputs. Installers commission to
-              spec. But only a full-load test at nameplate rating — under controlled,
-              documented conditions — can confirm that your critical power infrastructure
-              will actually deliver when called upon.
+              A manufacturer's rating and a commissioning sign-off don't prove much on
+              their own. The only way to know your critical power equipment will work
+              when you need it is to load it to 100% of nameplate, under controlled
+              and documented conditions, and see how it behaves.
             </p>
           </div>
 

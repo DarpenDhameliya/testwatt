@@ -98,7 +98,7 @@ export function SiteFooterSimple() {
       <div className="footer-simple__bar">
         <div className="container footer-simple__bar-inner">
           <p className="footer-simple__copy">
-            © {new Date().getFullYear()} TestWatt. Load bank testing &amp; critical power
+            © {new Date().getFullYear()} TestWatt LLC. Load bank testing &amp; critical power
             services.
           </p>
 
@@ -132,8 +132,8 @@ export default function SiteFooter() {
               />
             </Link>
             <p className="site-footer__tagline">
-              Specialist load bank testing, servicing and certified compliance for
-              generators, UPS systems and switchgear worldwide.
+              Load bank testing, servicing and compliance reports for generators,
+              UPS systems and switchgear, anywhere in the world.
             </p>
             <div className="site-footer__standards-pills">
               <span className="site-footer__pill">NFPA 110</span>
@@ -215,7 +215,7 @@ export default function SiteFooter() {
         {/* Footer Bottom Strip */}
         <div className="site-footer__bottom">
           <p className="site-footer__copy">
-            © {new Date().getFullYear()} TestWatt Ltd. All rights reserved.
+            © {new Date().getFullYear()} TestWatt LLC. All rights reserved.
           </p>
           <div className="site-footer__bottom-links">
             <Link href="/load-bank-testing" className="site-footer__bottom-link">

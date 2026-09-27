@@ -13,9 +13,9 @@ const SERVICING_ITEMS: ServicingReasonItem[] = [
   {
     number: "01",
     badge: "Test Accuracy",
-    title: "Maintains Test Accuracy",
-    tagline: "Calibrated Instrumentation & Valid Data",
-    body: "A load bank with degraded resistance elements or drifting instrumentation will produce inaccurate results. Scheduled calibration and component inspection ensures test data remains valid.",
+    title: "Keeps Test Results Accurate",
+    tagline: "Worn elements give you bad data",
+    body: "Tired resistance elements, or instruments that have drifted out of calibration, produce wrong readings. Regular inspection keeps your numbers reliable.",
     icon: (className) => (
       <svg
         className={className}
@@ -38,8 +38,8 @@ const SERVICING_ITEMS: ServicingReasonItem[] = [
     number: "02",
     badge: "Asset Longevity",
     title: "Extends Equipment Life",
-    tagline: "Prevent Catastrophic Thermal Degradation",
-    body: "Load banks operate at extreme thermal and electrical stress. Regular inspection, cleaning and preventive parts replacement prevents catastrophic failure and extends service life significantly.",
+    tagline: "Heat and cycling take a toll",
+    body: "Load banks run hot and carry heavy electrical loads. Inspecting, cleaning and replacing parts on schedule catches wear before it becomes a breakdown.",
     icon: (className) => (
       <svg
         className={className}
@@ -59,9 +59,9 @@ const SERVICING_ITEMS: ServicingReasonItem[] = [
   {
     number: "03",
     badge: "Zero Downtime",
-    title: "Eliminates Unexpected Downtime",
-    tagline: "Protect Mission-Critical Schedules",
-    body: "Unscheduled load bank failure at a critical test date causes programme delays and compliance risk. Preventive maintenance eliminates the failure modes that cause unexpected unavailability.",
+    title: "Avoids Downtime You Didn't Plan For",
+    tagline: "Don't find out on test day",
+    body: "If a load bank fails just before a booked test, you face delays and possible compliance problems. Routine maintenance makes that far less likely.",
     icon: (className) => (
       <svg
         className={className}
@@ -81,9 +81,9 @@ const SERVICING_ITEMS: ServicingReasonItem[] = [
   {
     number: "04",
     badge: "OEM Warranty",
-    title: "Preserves Manufacturer Warranty",
-    tagline: "Documented Audit Trails for Claims",
-    body: "OEM equipment warranties typically require scheduled maintenance by a competent party. Our service records provide the audit trail to support warranty claims and preserve asset integrity.",
+    title: "Protects the Manufacturer Warranty",
+    tagline: "Evidence for when you need it",
+    body: "Most OEM warranties expect regular maintenance by a competent provider. Our service records give you the proof if you ever need to make a claim.",
     icon: (className) => (
       <svg
         className={className}
@@ -103,9 +103,9 @@ const SERVICING_ITEMS: ServicingReasonItem[] = [
   {
     number: "05",
     badge: "Audit Proof",
-    title: "Supports Compliance Documentation",
-    tagline: "Calibrated Test Fleet Certification",
-    body: "Regular service records demonstrate that the test equipment used in compliance testing was itself maintained and calibrated — an auditor requirement many operators overlook.",
+    title: "Backs Up Your Compliance Paperwork",
+    tagline: "The bit auditors sometimes check",
+    body: "Auditors sometimes ask whether the test equipment itself was maintained and calibrated. People forget this, and our service records answer it.",
     icon: (className) => (
       <svg
         className={className}
@@ -127,9 +127,9 @@ const SERVICING_ITEMS: ServicingReasonItem[] = [
   {
     number: "06",
     badge: "Cost Reduction",
-    title: "Reduces Total Cost of Ownership",
-    tagline: "Avoid Emergency Repair Premiums",
-    body: "Scheduled maintenance is significantly cheaper than emergency repair or replacement. It also avoids the secondary costs of rescheduled tests and extended non-compliance windows.",
+    title: "Costs Less Than the Alternative",
+    tagline: "Cheaper than an emergency call-out",
+    body: "Planned maintenance costs less than an emergency repair, and you avoid paying to rebook a test that got cancelled.",
     icon: (className) => (
       <svg
         className={className}
@@ -164,21 +164,21 @@ export default function WhyServicing() {
               Load banks need maintenance too
             </h2>
             <p className="why-grid__body">
-              A load bank is a high-power resistive or reactive load device operating
-              continuously at rated current and voltage. Resistance elements degrade with
-              thermal cycling. Contactors and switchgear accumulate contact wear. Cooling
-              systems accumulate contamination. Control electronics age.
+              A load bank spends its working life at rated current and voltage. Heating
+              and cooling cycles wear down the resistance elements, contactors burn at
+              the contacts, dirt builds up in the cooling system, and the control
+              electronics get old. It's the same story as any machine that works hard.
             </p>
             <p className="why-grid__body">
-              An unmaintained load bank may indicate a lower load than it is actually
-              applying — or fail to achieve its rated capacity at all. Either outcome means
-              the generator test data is invalid: you believe you have tested to 100% when
-              you have not.
+              If a load bank isn't maintained, it may deliver less load than its display
+              says, or never reach its rated capacity. The generator results you get from
+              it can't be trusted, and you could believe you tested at 100% when you
+              didn't.
             </p>
             <p className="why-grid__body">
-              TestWatt service intervals are aligned to manufacturer recommendations and
-              operating hours. Our engineers carry calibrated instruments for in-situ
-              verification of load accuracy alongside all maintenance work.
+              We plan service intervals around the manufacturer's advice and the hours the
+              unit has actually run. Our engineers also bring calibrated instruments, so
+              they can check load accuracy on site while they do the maintenance.
             </p>
           </div>
 

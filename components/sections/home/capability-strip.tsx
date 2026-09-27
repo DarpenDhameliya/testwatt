@@ -48,27 +48,6 @@ const CAPABILITY_ITEMS: CapabilityItem[] = [
     ),
   },
   {
-    id: "spares",
-    label: "Spare Parts Supply",
-    href: "/contact",
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 20 20"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M10 2l7.5 4.2v7.6L10 18l-7.5-4.2V6.2L10 2z" />
-        <path d="M10 2v16" />
-        <path d="M2.5 6.2l7.5 4.3 7.5-4.3" />
-      </svg>
-    ),
-  },
-  {
     id: "upgrades",
     label: "Load Bank Upgrades",
     href: "/repairs-servicing",

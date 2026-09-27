@@ -8,7 +8,7 @@ export default function Comparison() {
         <SectionHeading
           kicker="Performance Comparison"
           heading={<span id="comparison-heading">Legacy operation vs modernised capability</span>}
-          body="Evaluate the operational benefits of modernising your existing fleet versus continuing with outdated manual gear or full capital equipment replacement."
+          body="Here's how an upgraded unit compares with old manual equipment, without the cost of a full replacement."
           className="section-heading--mb"
         />
 

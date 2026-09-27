@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact TestWatt | Request a Load Test, Service Quote or Support",
   description:
-    "Contact TestWatt for load bank testing proposals, equipment servicing, spare parts enquiries and critical power support.",
+    "Get in touch with TestWatt for a load bank testing proposal, servicing, upgrades or help with critical power equipment.",
   keywords:
     "contact test watt, request load bank test, service quote, load bank support, critical power enquiry",
   alternates: { canonical: "/contact" },
@@ -20,7 +20,7 @@ const PAGE_SCHEMA = {
       name: "Contact TestWatt",
       url: `${SITE_URL}/contact`,
       description:
-        "Page for requesting testing, servicing, maintenance and engineering support from TestWatt.",
+        "Ask TestWatt for testing, servicing, maintenance or engineering help.",
     },
   ],
 };

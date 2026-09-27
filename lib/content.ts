@@ -25,15 +25,15 @@ export const SERVICES: Service[] = [
   {
     number: "01",
     title: "Load Bank Testing",
-    tagline: "Resistive, Reactive & Hybrid Full-Load Proofing",
+    tagline: "Full Nameplate Load, Proven On Site",
     badge: "Core Service",
     category: "testing",
     description:
-      "Resistive, reactive and hybrid load bank testing at full nameplate rating. We verify that generators, UPS systems and switchgear can deliver their rated output under sustained, controlled load — not just at idle or partial capacity.",
+      "We put generators, UPS systems and switchgear under real resistive, reactive or hybrid load at their full nameplate rating, not half capacity. If the plate says 100%, we run it at 100% and check that it holds.",
     highlights: [
       "Resistive, reactive & hybrid power factor testing",
-      "Full step-load testing (25%, 50%, 75%, 100% capacity)",
-      "Certified test reports to NFPA 110, ISO 8528 & NETA",
+      "Step loading at 25%, 50%, 75%, 100% capacity",
+      "Reports built to NFPA 110, ISO 8528 & NETA",
     ],
     targetEquipment: [
       "Standby Generators",
@@ -48,15 +48,15 @@ export const SERVICES: Service[] = [
   {
     number: "02",
     title: "Repairs & Servicing",
-    tagline: "Preventive Fleet Care & Emergency Response",
+    tagline: "Scheduled Care, Fast Call-Outs",
     badge: "Field Engineering",
     category: "servicing",
     description:
-      "Scheduled and emergency servicing of load banks and associated power equipment. Preventive maintenance, fault diagnosis and component replacement by engineers who understand load testing equipment inside and out.",
+      "Planned maintenance and emergency call-outs for load banks and the equipment around them. Our engineers work on this gear every week, so they know how it behaves in practice as well as on paper.",
     highlights: [
-      "Calibrated sensor & instrument tuning",
-      "Thermal diagnostics & element inspection",
-      "Preventive servicing & warranty preservation",
+      "Sensor & instrument calibration",
+      "Thermal checks on resistor elements",
+      "Preventive servicing that protects your warranty",
     ],
     targetEquipment: [
       "Portable Units",
@@ -68,38 +68,16 @@ export const SERVICES: Service[] = [
   },
   {
     number: "03",
-    title: "Spare Parts Supply",
-    tagline: "OEM-Grade Certified Replacement Components",
-    badge: "Documented Provenance",
-    category: "modernisation",
-    description:
-      "OEM-grade replacement parts for load banks, resistive elements, control systems and auxiliary components. Fast turnaround with documented provenance — no substitute parts, no guesswork.",
-    highlights: [
-      "Resistive grids & high-temp alloy elements",
-      "Heavy-duty contactors, relays & HRC fuses",
-      "Digital meters, thermal switches & cables",
-    ],
-    targetEquipment: [
-      "Resistor Banks",
-      "Contactors",
-      "Fan Motors",
-      "Protection Relays",
-    ],
-    metric: { value: "OEM", label: "Traceable Parts" },
-    link: "/spare-parts-supply",
-  },
-  {
-    number: "04",
     title: "Load Bank Upgrades",
-    tagline: "Digital Controls & SCADA Telemetry Retrofits",
+    tagline: "New Controls On Equipment You Already Own",
     badge: "Asset Life Extension",
     category: "modernisation",
     description:
-      "Control system upgrades, digital metering retrofits, remote monitoring integration and capacity expansions. Extend the life and capability of existing load bank equipment without full replacement.",
+      "Most load banks don't need replacing. They need better controls. We add digital metering, remote monitoring and extra capacity to units already in your fleet.",
     highlights: [
-      "Digital PLC retrofits & automated step sequencing",
-      "Remote SCADA, Modbus & cloud data logging",
-      "Capacity expansions & variable power factor",
+      "PLC retrofits with automated step sequencing",
+      "SCADA, Modbus & cloud data logging",
+      "Capacity and power-factor upgrades",
     ],
     targetEquipment: [
       "Legacy Load Banks",
@@ -110,17 +88,17 @@ export const SERVICES: Service[] = [
     link: "/load-bank-upgrades",
   },
   {
-    number: "05",
+    number: "04",
     title: "Training & Troubleshooting",
-    tagline: "Root-Cause Diagnosis & Operator Safety Certification",
+    tagline: "Train Your Team, Or Send Us The Fault",
     badge: "Specialist Advisory",
     category: "servicing",
     description:
-      "Structured training programmes for in-house operations and maintenance teams. On-site troubleshooting for persistent faults, nuisance trips and unexplained failures across generator, UPS and switchgear installations.",
+      "We train in-house teams, and we get called in when nobody else can pin down a fault: nuisance trips, drift and intermittent failures on generators, UPS systems and switchgear.",
     highlights: [
-      "In-house operator safety & test procedures",
+      "Operator safety & test procedure training",
       "AVR drift, governor hunting & fault isolation",
-      "Formal engineering diagnosis & corrective plans",
+      "Written diagnosis and corrective plan",
     ],
     targetEquipment: [
       "Facility Engineers",
@@ -135,35 +113,34 @@ export const SERVICES: Service[] = [
 export const CAPABILITIES = [
   "Load Bank Testing",
   "Repairs & Servicing",
-  "Spare Parts Supply",
   "Load Bank Upgrades",
   "Training & Troubleshooting",
 ];
 
 export const WHY_TEST_WATT: FeatureItemData[] = [
   {
-    title: "Confirms True Rated Capacity",
-    body: "A paper rating is not proof. Load testing at 100% nameplate load for a sustained period is the only method that confirms your asset will perform when it must.",
+    title: "Confirms Real Capacity",
+    body: "The nameplate is just what the manufacturer says the unit can do. Running it at 100% load for a sustained period is the only way to be sure it will cope when it matters.",
   },
   {
-    title: "Prevents Wet-Stacking",
-    body: "Diesel generators running at low or no load accumulate unburned fuel in the exhaust — wet-stacking. Regular full-load testing burns off deposits and prevents long-term engine damage.",
+    title: "Stops Wet-Stacking",
+    body: "A diesel generator that runs at low load collects unburnt fuel in the exhaust. A full-load test burns it off before it can damage the engine.",
   },
   {
-    title: "Surfaces Hidden Faults",
-    body: "Voltage sag, frequency instability, governor hunting and cooling failures only manifest under load. Our monitoring systems capture every anomaly during the test cycle.",
+    title: "Finds What Idle Hides",
+    body: "Voltage sag, frequency drift, governor hunting and cooling problems only appear once the unit is carrying load. We pick them up during the test, not afterwards.",
   },
   {
-    title: "Satisfies Compliance Requirements",
-    body: "NFPA 110, NETA, Uptime Institute and OEM warranty terms all mandate periodic load testing. Our reports provide the documentary evidence auditors require.",
+    title: "Meets Compliance Requirements",
+    body: "NFPA 110, NETA, the Uptime Institute and most OEM warranties call for regular load testing. We give you the paperwork auditors ask for.",
   },
   {
-    title: "Removes Utility Dependence",
-    body: "Load testing is performed using our portable load banks — no utility supply interruption, no load-shedding coordination, no site dependency.",
+    title: "No Utility Involved",
+    body: "We bring our own load banks with us, so we don't draw on your supply. There's no load shedding to plan and nothing depends on building power.",
   },
   {
-    title: "Protects Warranty Terms",
-    body: "Manufacturer warranties often require documented periodic testing to remain valid. Our calibrated test equipment and formal test reports satisfy OEM documentation requirements.",
+    title: "Protects the Warranty",
+    body: "Many manufacturers make documented testing a condition of the warranty. Calibrated equipment and a formal report meet that condition.",
   },
 ];
 
@@ -171,27 +148,27 @@ export const TESTING_PROCESS: StepData[] = [
   {
     step: "01",
     title: "Connect",
-    desc: "Cable up load banks to the generator output terminals or UPS bus. Verify connections, instrument calibration and pre-test safety checks.",
+    desc: "We cable the load banks to the generator output or UPS bus, and complete calibration and safety checks before anything is switched on.",
   },
   {
     step: "02",
     title: "Load",
-    desc: "Apply resistive or reactive load in incremental steps — typically 25%, 50%, 75%, 100% of nameplate rating — according to the agreed test programme.",
+    desc: "We add load in steps, usually 25%, 50%, 75% and 100% of nameplate, following the test programme agreed beforehand.",
   },
   {
     step: "03",
     title: "Monitor",
-    desc: "Real-time monitoring of voltage, current, frequency, power factor, engine temperature, oil pressure and exhaust emissions throughout each step.",
+    desc: "Throughout the test we watch voltage, current, frequency, power factor, engine temperature, oil pressure and exhaust readings.",
   },
   {
     step: "04",
     title: "Record",
-    desc: "Continuous data capture at defined intervals. All parameters logged to time-stamped records with instrumentation uncertainty documented.",
+    desc: "Every reading is logged at set intervals with a timestamp, and the instrument uncertainty is noted next to it.",
   },
   {
     step: "05",
     title: "Report",
-    desc: "Formal written test report with tabulated results, trend analysis, compliance statement and recommendations issued within agreed timescales.",
+    desc: "Within the agreed timescale you receive a written report with tabulated results, trend charts, a compliance statement and any recommendations.",
   },
 ];
 
@@ -205,7 +182,7 @@ export const LOAD_BANK_TYPES = [
       "Wet-stack prevention",
     ],
     detail:
-      "Pure resistive load at unity power factor. Converts electrical energy to heat through resistance elements. Industry-standard for generator acceptance and maintenance testing to NFPA 110 and ISO 8528.",
+      "Purely resistive load at unity power factor, which turns electrical energy directly into heat. This is the usual method for generator acceptance and maintenance testing under NFPA 110 and ISO 8528.",
   },
   {
     type: "Reactive Load Banks",
@@ -216,7 +193,7 @@ export const LOAD_BANK_TYPES = [
       "Generator stability testing",
     ],
     detail:
-      "Inductive and capacitive reactive loading at adjustable power factor. Essential for testing UPS systems, generators designed to supply motor loads, and verifying AVR performance under varying power factor conditions.",
+      "Inductive and capacitive load with an adjustable power factor. You need it to test UPS systems and generators that supply motors, and to see how the AVR responds when the power factor changes.",
   },
   {
     type: "Hybrid (Combined) Load Banks",
@@ -227,34 +204,34 @@ export const LOAD_BANK_TYPES = [
       "Data centre resilience testing",
     ],
     detail:
-      "Simultaneous resistive and reactive loading to simulate real facility load profiles. Allows testing at any combination of kW, kVAR and kVA to match the specific load characteristics of the protected facility.",
+      "Resistive and reactive load applied at the same time, so the test looks like your facility's real demand. We can set any mix of kW, kVAR and kVA to match what the protected site actually draws.",
   },
 ];
 
 export const LOAD_TEST_ADVANTAGES: FeatureItemData[] = [
   {
-    title: "Confirms rated output under sustained load",
-    body: "Nameplate ratings are manufacturer claims. Our tests verify actual sustained output at full kW and kVA — with data to prove it.",
+    title: "Proves Output Under Real Load",
+    body: "The nameplate is only the manufacturer's claim. We measure the kW and kVA the unit actually sustains and give you the readings.",
   },
   {
-    title: "Detects voltage and frequency instability",
-    body: "Governor hunting, AVR drift and voltage sag under load are invisible at idle. Step-load testing reveals instability that predictive maintenance cannot.",
+    title: "Catches Voltage & Frequency Problems",
+    body: "Governor hunting, AVR drift and voltage sag rarely appear at idle. Step-load testing makes them show up so we can record them.",
   },
   {
-    title: "Prevents wet-stacking in diesel plant",
-    body: "Running diesel generators on light or no load causes fuel residue build-up. Periodic full-load testing burns off deposits and preserves engine condition.",
+    title: "Prevents Wet-Stacking",
+    body: "Diesel engines that run lightly loaded or idle collect unburnt fuel residue. Regular full-load runs burn it off and help the engine last.",
   },
   {
-    title: "Validates automatic transfer sequences",
-    body: "We test the complete transfer — sensing, changeover timing, load acceptance and return — not just the generator in isolation.",
+    title: "Tests the Whole Transfer, Not Just the Generator",
+    body: "We check sensing, changeover timing, load pick-up and retransfer, so you see the full sequence from start to finish.",
   },
   {
-    title: "Produces a compliance-ready test report",
-    body: "Every test generates a formal written report with tabulated data, trend analysis, standards compliance statement and engineer sign-off.",
+    title: "Produces a Report You Can Hand to an Auditor",
+    body: "Each test finishes with a written report containing the data tables, trend analysis, a compliance statement and the engineer's sign-off.",
   },
   {
-    title: "Portable — no utility disruption required",
-    body: "Our mobile load banks are brought to site and connected to your output. No supply interruption, no load-shedding and no dependency on building loads.",
+    title: "No Disruption to Your Supply",
+    body: "Our load banks are portable, so we bring them to site and connect to your output. There's no shutdown and no load shedding to arrange.",
   },
 ];
 
@@ -274,28 +251,28 @@ export const MONITORED_PARAMETERS = [
 
 export const SERVICING_REASONS: FeatureItemData[] = [
   {
-    title: "Maintains Test Accuracy",
-    body: "A load bank with degraded resistance elements or drifting instrumentation will produce inaccurate results. Scheduled calibration and component inspection ensures test data remains valid.",
+    title: "Keeps Test Results Accurate",
+    body: "Worn resistance elements or instrumentation that's drifted out of calibration will give you bad data. Scheduled inspection keeps the numbers trustworthy.",
   },
   {
     title: "Extends Equipment Life",
-    body: "Load banks operate at extreme thermal and electrical stress. Regular inspection, cleaning and preventive parts replacement prevents catastrophic failure and extends service life significantly.",
+    body: "Load banks take a beating — heat, electrical stress, constant cycling. Regular inspection and parts replacement stops that turning into a failure.",
   },
   {
-    title: "Eliminates Unexpected Downtime",
-    body: "Unscheduled load bank failure at a critical test date causes programme delays and compliance risk. Preventive maintenance eliminates the failure modes that cause unexpected unavailability.",
+    title: "Avoids Downtime You Didn't Plan For",
+    body: "A load bank failing right before a scheduled test causes delays and compliance headaches. Preventive maintenance is what stops that happening.",
   },
   {
-    title: "Preserves Manufacturer Warranty",
-    body: "OEM equipment warranties typically require scheduled maintenance by a competent party. Our service records provide the audit trail to support warranty claims.",
+    title: "Protects the Manufacturer Warranty",
+    body: "Most OEM warranties require scheduled maintenance by a competent party. Our service records are the evidence you'd need for a claim.",
   },
   {
-    title: "Supports Compliance Documentation",
-    body: "Regular service records demonstrate that the test equipment used in compliance testing was itself maintained and calibrated — an auditor requirement many operators overlook.",
+    title: "Backs Up Your Compliance Paperwork",
+    body: "Auditors sometimes check whether the test equipment itself was maintained and calibrated. It's easy to overlook — our records cover it.",
   },
   {
-    title: "Reduces Total Cost of Ownership",
-    body: "Scheduled maintenance is significantly cheaper than emergency repair or replacement. It also avoids the secondary costs of rescheduled tests and extended non-compliance windows.",
+    title: "Costs Less Than the Alternative",
+    body: "Scheduled maintenance is cheaper than an emergency repair, and it avoids the knock-on cost of a rescheduled test.",
   },
 ];
 
@@ -303,22 +280,22 @@ export const TROUBLESHOOTING_STEPS: StepData[] = [
   {
     step: "01",
     title: "Initial Assessment",
-    desc: "Site visit and equipment survey to understand the installation, operating history and any reported symptoms. Diagnostic testing before any work is carried out.",
+    desc: "We visit the site and survey the equipment. We review its history and the reported problem, then run diagnostics before we change anything.",
   },
   {
     step: "02",
     title: "Structured Diagnosis",
-    desc: "Systematic fault isolation using documented procedures. We do not replace components speculatively — every replacement is supported by diagnostic evidence.",
+    desc: "We isolate faults using a documented process. Parts are never swapped on a hunch, and each replacement is backed by test evidence.",
   },
   {
     step: "03",
     title: "Correction & Verification",
-    desc: "Repair or adjustment carried out with parts of documented provenance. Functional testing after every intervention to confirm the fault is resolved.",
+    desc: "We fit parts with a known source, then test after each repair to confirm the fault has actually gone.",
   },
   {
     step: "04",
     title: "Knowledge Transfer",
-    desc: "Engineers brief your team on findings, corrective actions and any changed operating procedures. Written summary provided with the service record.",
+    desc: "We talk your team through what we found and what we changed, and leave a written summary with the service record.",
   },
 ];
 
@@ -329,49 +306,9 @@ export const MODERNISATION_OPTIONS: [string, string][] = [
   ["Cooling system upgrades", "Resistance element replacement"],
 ];
 
-export const SPARE_PARTS = [
-  {
-    category: "Resistance Elements",
-    items: [
-      "Wire wound resistor banks",
-      "Stainless steel grid elements",
-      "Fluid-cooled resistance modules",
-      "High-temperature alloy elements",
-    ],
-  },
-  {
-    category: "Control Systems",
-    items: [
-      "Load step controllers",
-      "Auto-load sequencing modules",
-      "Protection relay upgrades",
-      "Metering and instrumentation",
-    ],
-  },
-  {
-    category: "Switchgear & Protection",
-    items: [
-      "Main contactors",
-      "HRC fuse links and holders",
-      "Circuit breakers",
-      "Overcurrent relays",
-    ],
-  },
-  {
-    category: "Cooling & Auxiliary",
-    items: [
-      "Fan motors and blades",
-      "Temperature switches",
-      "Thermal cutouts",
-      "Cable assemblies and connectors",
-    ],
-  },
-];
-
 export const ENQUIRY_SERVICES = [
   "Load bank testing",
   "Repairs & servicing",
-  "Spare parts supply",
   "Load bank upgrade",
   "Training & troubleshooting"
 ];
@@ -511,192 +448,6 @@ export const RESPONSE_TIMES = [
 ];
 
 /* --------------------------------------------------------------------------
-   SPARE PARTS SUPPLY DATA
-   -------------------------------------------------------------------------- */
-
-export type DetailedPartCategory = {
-  id: string;
-  category: string;
-  leadTime: string;
-  description: string;
-  specs: string[];
-  items: { name: string; partCode: string; description: string }[];
-};
-
-export const DETAILED_PARTS_CATALOG: DetailedPartCategory[] = [
-  {
-    id: "resistors",
-    category: "Resistance Elements & Grids",
-    leadTime: "Immediate Stock / 24h",
-    description:
-      "High-grade nickel-chromium alloy resistive elements designed for extreme thermal cycles without resistance drift or thermal degradation.",
-    specs: ["AISI 304 / Incoloy alloy", "Rated to 800°C continuous", "Tolerances within ±2%"],
-    items: [
-      {
-        name: "Expanded Metal Mesh Resistor Banks",
-        partCode: "TW-RES-804",
-        description: "Heavy-duty continuous grid element modules for 50kW–250kW resistive load blocks.",
-      },
-      {
-        name: "Helical Wire Wound Resistor Modules",
-        partCode: "TW-RES-312",
-        description: "Precision ceramic-core wirewound resistors for low-kW trimming steps and fine resolution.",
-      },
-      {
-        name: "Fluid-Cooled Resistor Cartridges",
-        partCode: "TW-RES-950",
-        description: "Immersion-rated liquid cooled heating elements for ultra-compact high-density load banks.",
-      },
-      {
-        name: "Ceramic Insulator Stand-Off Posts",
-        partCode: "TW-INS-024",
-        description: "Steatite high-temperature dielectric standoff insulators rated to 5kV AC flashover.",
-      },
-    ],
-  },
-  {
-    id: "controls",
-    category: "Control Systems & Automation",
-    leadTime: "In Stock / 48h",
-    description:
-      "Digital load controllers, PLC modules, automated step sequencers, and safety trip relays with calibrated millisecond response times.",
-    specs: ["Modbus RTU / TCP compatible", "Fail-safe relay interlocking", "Class 0.2 power metering"],
-    items: [
-      {
-        name: "Load Step Sequencing PLC Controller",
-        partCode: "TW-CTRL-PLC2",
-        description: "Programmable logic controller configured with multi-tier fail-safe trip algorithms.",
-      },
-      {
-        name: "Digital Touchscreen HMI Display Panel",
-        partCode: "TW-HMI-700",
-        description: "7-inch IP65 industrial high-contrast color touch console with real-time waveform graphing.",
-      },
-      {
-        name: "Digital Power Quality Transducer",
-        partCode: "TW-MTR-300",
-        description: "True-RMS 3-phase transducer measuring V, I, kW, kVAR, kVA, PF, and total harmonic distortion.",
-      },
-      {
-        name: "Handheld Remote Test Console",
-        partCode: "TW-RMT-100",
-        description: "Ruggedized tethered remote control pendant with emergency stop and step-load rocker switches.",
-      },
-    ],
-  },
-  {
-    id: "switchgear",
-    category: "Switchgear & Circuit Protection",
-    leadTime: "Immediate Stock / 24h",
-    description:
-      "Heavy-duty definite-purpose contactors, thermal-magnetic breakers, and high-rupturing-capacity fuses engineered for continuous load switching.",
-    specs: ["AC-3 / AC-4 continuous duty", "Silver-cadmium oxide contacts", "100kA breaking capacity fuses"],
-    items: [
-      {
-        name: "High-Amperage Load Switching Contactors",
-        partCode: "TW-CON-630",
-        description: "3-pole contactors rated up to 630A continuous at 690V with auxiliary status feedback contacts.",
-      },
-      {
-        name: "High Rupturing Capacity (HRC) Fuses",
-        partCode: "TW-FUS-500",
-        description: "BS88 and DIN standard ultra-rapid semiconductor and motor protection fuse links.",
-      },
-      {
-        name: "Air Circuit Breakers & Moulded Cases",
-        partCode: "TW-BRK-120",
-        description: "Adjustable electronic trip units with shunt trips and instantaneous short-circuit protection.",
-      },
-      {
-        name: "Heavy Copper Terminal Busbars & Shunts",
-        partCode: "TW-BUS-800",
-        description: "Tin-plated electrolytic copper busbars rated for heavy continuous current density.",
-      },
-    ],
-  },
-  {
-    id: "cooling",
-    category: "Cooling & Auxiliary Systems",
-    leadTime: "In Stock / 24h",
-    description:
-      "High-velocity forced-air blower assemblies, thermal switches, pressure differential sensors, and air-velocity interlocks.",
-    specs: ["Class H high-temp motor insulation", "Airflow proving differential switches", "IP55 weather protection"],
-    items: [
-      {
-        name: "High-CFM Axial Forced-Draft Blowers",
-        partCode: "TW-FAN-450",
-        description: "Direct-drive balanced aluminum impeller fans rated for high static backpressures.",
-      },
-      {
-        name: "Bimetallic High-Temperature Cutouts",
-        partCode: "TW-THM-180",
-        description: "Manual and auto-reset snap-action thermal limit switches calibrated to 150°C–220°C.",
-      },
-      {
-        name: "Differential Airflow Pressure Proving Switches",
-        partCode: "TW-PRS-015",
-        description: "Diaphragm sensors ensuring element de-energisation upon immediate fan failure or intake block.",
-      },
-      {
-        name: "Cam-Lock Connectors & Flexible Test Cables",
-        partCode: "TW-CBL-400",
-        description: "Single-core flexible neoprene rubber power cables with single-pin 400A Cam-Lock connectors.",
-      },
-    ],
-  },
-];
-
-export const PARTS_QUALITY_POINTS: FeatureItemData[] = [
-  {
-    title: "Documented OEM Provenance",
-    body: "Every component is dispatched with manufacturer test certificates, material batch traceability, and formal compliance documentation. No unverified substitutes.",
-  },
-  {
-    title: "Thermal Stability & Calibrated Resistance",
-    body: "Resistor grids are fabricated from premium nickel-chrome alloys ensuring negligible temperature coefficient of resistance (TCR), preserving test accuracy across long burn-in runs.",
-  },
-  {
-    title: "100% Pre-Dispatch Quality Bench Testing",
-    body: "Critical switches, contactors, and digital meters undergo dielectric flashover testing and functional timing verification in our workshop prior to packing.",
-  },
-  {
-    title: "Preserves Factory Warranty & Compliance",
-    body: "Using factory-approved OEM parts guarantees your load bank continues to meet manufacturer safety guidelines and satisfies auditor review for NFPA and ISO testing.",
-  },
-  {
-    title: "Express 24/48-Hour Global Dispatch",
-    body: "We maintain stock of high-wear items for immediate emergency courier dispatch to minimise testing fleet downtime during urgent commissioning windows.",
-  },
-  {
-    title: "Engineering Installation Support",
-    body: "All replacement modules include wiring schematics, torque specifications, and direct telephone access to our senior field engineers.",
-  },
-];
-
-export const PARTS_ORDER_STEPS: StepData[] = [
-  {
-    step: "01",
-    title: "Identify Equipment & Part",
-    desc: "Send us your equipment make, model, serial number, or existing part photo. Our parts engineers identify the exact factory component or superseded revision.",
-  },
-  {
-    step: "02",
-    title: "Verify Fitment & Specifications",
-    desc: "We confirm electrical ratings, mounting dimensions, coil voltages, and thermal clearances to eliminate field incompatibility.",
-  },
-  {
-    step: "03",
-    title: "Express Packing & Dispatch",
-    desc: "Parts are shock-packed, certified, and dispatched via prioritized road or express air freight with end-to-end tracking.",
-  },
-  {
-    step: "04",
-    title: "Installation & Commissioning Support",
-    desc: "Receive comprehensive wiring diagrams, calibration guidance, and engineer sign-off assistance for rapid return to service.",
-  },
-];
-
-/* --------------------------------------------------------------------------
    LOAD BANK UPGRADES DATA
    -------------------------------------------------------------------------- */
 
@@ -713,65 +464,65 @@ export const UPGRADE_SOLUTIONS: UpgradeSolution[] = [
   {
     id: "plc-automation",
     title: "Digital PLC & Touchscreen HMI Retrofits",
-    tagline: "Replace fragile analog toggle switches with rugged automation",
+    tagline: "Replace the toggle switches with controls you can rely on",
     description:
-      "Transform manual load banks into automated testing systems. Our PLC retrofits introduce programmable multi-step load ramps, auto-abort safety interlocks, and crisp touchscreen operation.",
+      "We turn manual load banks into automated ones. You get programmable step ramps, safety interlocks that abort the test automatically, and a touchscreen in place of a panel full of switches.",
     benefits: [
-      "Eliminates operator human error during complex step testing",
-      "Automated ramp-up, soak time, and ramp-down sequencing",
-      "Integrated emergency stop and multi-point thermal monitoring",
+      "Reduces operator mistakes during complex step tests",
+      "Automatic ramp-up, soak and ramp-down",
+      "Emergency stop and multi-point temperature monitoring included",
     ],
     keySpecs: ["Siemens / Schneider PLC hardware", "7\" or 10\" IP65 HMI Touchscreen", "0.1 kW step precision resolution"],
   },
   {
     id: "scada-telemetry",
     title: "Remote SCADA, Modbus & Cloud Telemetry",
-    tagline: "Live telemetry, real-time analytics, and instant audit reporting",
+    tagline: "Read the numbers without standing next to the exhaust",
     description:
-      "Connect your load bank into building management systems (BMS), industrial SCADA networks, or cloud data loggers. Stream real-time V, I, kW, kVAR, Hz, and exhaust temperatures with automated PDF certification.",
+      "We connect your load bank to a BMS, a SCADA network or a cloud logger. You can watch voltage, current, kW, kVAR, frequency and exhaust temperature live, and a PDF certificate is produced for you automatically.",
     benefits: [
-      "Real-time synchronized data logging at sub-second intervals",
-      "Automated audit-ready PDF test certificates generated on-site",
-      "Safe standoff distance — operate load bank from control room or vehicle",
+      "Readings logged in real time at sub-second intervals",
+      "Audit-ready PDF reports created on site",
+      "Run the test from a control room or a vehicle instead of beside the unit",
     ],
     keySpecs: ["Modbus TCP/IP & RTU interfaces", "Ethernet / Wi-Fi / 4G Cellular options", "Sub-second CSV and PDF reporting"],
   },
   {
     id: "reactive-expansion",
     title: "Reactive (kVAR) & Variable Power Factor Expansion",
-    tagline: "Convert pure resistive units into complete 0.8 PF proofing systems",
+    tagline: "Turn a resistive-only bank into a full power-factor test unit",
     description:
-      "Upgrade existing resistive-only load banks by integrating modular inductive and capacitive reactive elements. Test generators and UPS systems at their true rated power factor without buying a new test bank.",
+      "We fit inductive and capacitive elements to an existing resistive load bank, so it can test at the power factor your equipment really runs at. You don't have to buy a new unit.",
     benefits: [
-      "Enables full alternator magnetic saturation and heating tests",
-      "Variable power factor tuning from 0.4 lagging to unity (1.0)",
-      "Essential for mission-critical data center and hospital commissioning",
+      "Loads the alternator fully, including saturation and heating, which resistive load alone can't do",
+      "Power factor adjustable from 0.4 lagging to unity",
+      "Usually required for data centre and hospital commissioning",
     ],
     keySpecs: ["Adjustable inductive iron-core chokes", "Capacitor banks with harmonic detuning", "Unified resistive-reactive digital control"],
   },
   {
     id: "cooling-airflow",
     title: "Blower & Thermal Management Overhaul",
-    tagline: "High-temperature resilience and silent variable-speed cooling",
+    tagline: "Stop the nuisance trips before they wreck your schedule",
     description:
-      "Modernize aging cooling systems with high-efficiency direct-drive fans, VFD speed controllers, and calibrated multi-zone duct thermal sensors to eliminate nuisance high-temp trips in hot ambient environments.",
+      "Tired fans and worn temperature sensors often cause false over-temperature trips. We replace them with direct-drive fans, VFD speed control and calibrated sensors in several zones.",
     benefits: [
-      "Operates reliably in ambient temperatures up to 55°C",
-      "Variable fan speed reduces acoustic noise during light loading",
-      "Prevents resistor element oxidation and thermal hotspot damage",
+      "Rated to run in 55°C ambient without tripping",
+      "Variable fan speed makes the unit quieter at light load",
+      "Helps prevent resistor oxidation and hotspot damage",
     ],
     keySpecs: ["High-static direct-drive fan assemblies", "Multi-point RTD / thermocouple arrays", "VFD modulated airflow control"],
   },
   {
     id: "multi-voltage",
     title: "Multi-Voltage Tap & Dual-Frequency Conversions",
-    tagline: "Test across 208V, 400V, 480V and 600V with a single asset",
+    tagline: "One load bank for every voltage you test",
     description:
-      "Rewire internal resistor grouping and install heavy-duty voltage selector switches or transformer taps. Enable a single load bank to service international voltage standards and 50Hz/60Hz machinery without external gear.",
+      "We rewire the resistor groups and add voltage selector switches or transformer taps. One unit then covers 208V, 400V, 480V and 600V, and works with both 50Hz and 60Hz equipment.",
     benefits: [
-      "Maximises utilization rate of your existing equipment fleet",
-      "Eliminates the need to mobilise separate load banks for different voltages",
-      "Maintains full rated kW capacity across selected voltage configurations",
+      "Gets more use out of the fleet you already own",
+      "One unit can replace several that were bought for different voltages",
+      "Full rated kW output at every voltage setting",
     ],
     keySpecs: ["208V / 400V / 480V / 600V selector link bars", "50Hz & 60Hz compatible fan motors", "Automatic voltage sensing interlocks"],
   },
@@ -780,33 +531,33 @@ export const UPGRADE_SOLUTIONS: UpgradeSolution[] = [
 export const UPGRADE_COMPARISON = [
   {
     feature: "Load Control Method",
-    legacy: "Manual toggle switches with coarse 25kW–50kW steps",
-    upgraded: "Automated digital PLC with 0.1kW fine resolution and presets",
+    legacy: "Manual toggle switches, coarse 25kW–50kW steps",
+    upgraded: "Automated digital PLC, 0.1kW resolution with presets",
   },
   {
     feature: "Data Capture & Logging",
-    legacy: "Manual clipboard reading of analog needle gauges",
-    upgraded: "High-speed digital logging with real-time waveform capture",
+    legacy: "Analog gauges read by hand and written on a clipboard",
+    upgraded: "High-speed digital logging with waveform capture",
   },
   {
     feature: "Report Generation",
-    legacy: "Manual spreadsheet transcription hours or days later",
-    upgraded: "Instant one-click audit report with digital engineer sign-off",
+    legacy: "Readings typed into a spreadsheet hours or days later",
+    upgraded: "One-click audit report with digital sign-off",
   },
   {
     feature: "Operator Safety",
-    legacy: "Operator standing beside high-voltage exhaust duct",
-    upgraded: "Wireless or remote control up to 300m away in control vehicle",
+    legacy: "Operator standing beside the high-voltage exhaust duct",
+    upgraded: "Wireless or remote control up to 300m away",
   },
   {
     feature: "Protection & Interlocks",
-    legacy: "Basic thermal switch and single fan airflow vane",
-    upgraded: "Multi-point RTDs, phase loss detection, and auto-ramp abort",
+    legacy: "Basic thermal switch, single fan airflow vane",
+    upgraded: "Multi-point RTDs, phase loss detection, auto-ramp abort",
   },
   {
     feature: "Capital Investment",
-    legacy: "Full replacement cost for new modern unit (100% Capex)",
-    upgraded: "Saves up to 60% compared to purchasing new equipment",
+    legacy: "Full replacement cost for a new unit",
+    upgraded: "Up to 60% cheaper than buying new",
   },
 ];
 
@@ -814,22 +565,22 @@ export const UPGRADE_STEPS: StepData[] = [
   {
     step: "01",
     title: "Engineering Audit & Fleet Survey",
-    desc: "We inspect the structural integrity, resistor condition, and wiring infrastructure of your current equipment to define feasibility and upgrade scope.",
+    desc: "We inspect the structure, resistors and wiring of your current units to see what can realistically be done.",
   },
   {
     step: "02",
     title: "Electrical CAD & Software Design",
-    desc: "Our design team produces complete schematics, panel layout drawings, and custom PLC automation logic tailored to your testing protocols.",
+    desc: "Our designers prepare the schematics, panel layout and PLC logic around the way you run your tests.",
   },
   {
     step: "03",
     title: "Workshop Retrofit & FAT Testing",
-    desc: "New enclosures, PLCs, busbars, and contactors are assembled and tested under full electrical load in our controlled workshop facility.",
+    desc: "We fit new enclosures, PLCs, busbars and contactors, then run the unit at full load in our workshop before it leaves.",
   },
   {
     step: "04",
     title: "On-Site Commissioning & Operator Training",
-    desc: "We integrate the modernized asset into your fleet, verify all telemetry calibrations, and certify your operators on the new digital interface.",
+    desc: "We install the upgrade on your fleet, verify every telemetry calibration and train your operators on the new interface.",
   },
 ];
 
@@ -856,18 +607,18 @@ export const TRAINING_COURSES: TrainingCourse[] = [
     duration: "2 Days (16 Hours)",
     format: "Classroom Theory + Practical Live-Load Rig Demonstration",
     description:
-      "A comprehensive curriculum covering the statutory standards, electrical safety, step-load execution, and report documentation mandated by NFPA 110, ISO 8528, and NETA ATS/MTS.",
+      "Explains the standards, safety rules and reporting involved in load testing under NFPA 110, ISO 8528 and NETA ATS/MTS. It combines classroom sessions with hands-on work on a live rig.",
     modules: [
       "Standards deep-dive: NFPA 110 Level 1/2, ISO 8528, and healthcare mandates",
       "Load bank sizing, cable ampacity calculation, and grounding safety",
       "Step-load testing protocols: 25%, 50%, 75%, 100%, and 110% overload",
-      "Dynamic transient testing: Block loading, frequency drop, and voltage recovery",
-      "Generating compliant, audit-ready reports and understanding pass/fail criteria",
+      "Dynamic transient testing: block loading, frequency drop, voltage recovery",
+      "Building compliant, audit-ready reports and reading pass/fail criteria",
     ],
     outcomes: [
-      "Certified operator qualification for NFPA 110 testing",
-      "Ability to identify generator deficiencies under full load",
-      "Elimination of testing hazards and equipment damage risks",
+      "Qualified to carry out NFPA 110 load testing",
+      "Able to recognise generator faults that appear at full load",
+      "Knows how to avoid hazards that damage equipment",
     ],
   },
   {
@@ -877,7 +628,7 @@ export const TRAINING_COURSES: TrainingCourse[] = [
     duration: "1 Day (8 Hours)",
     format: "Hands-on Workshop & Scenario Simulations",
     description:
-      "Focused safety training for technicians operating temporary electrical hookups, medium-voltage load banks, high-amperage Cam-Locks, and emergency trip systems.",
+      "Safety training for anyone who works with temporary electrical connections, medium-voltage load banks, high-amp cam-locks and emergency trip systems.",
     modules: [
       "Arc-flash hazard analysis and PPE boundary selection",
       "Safe cable deployment, phase rotation verification, and torque specifications",
@@ -885,9 +636,9 @@ export const TRAINING_COURSES: TrainingCourse[] = [
       "Lockout / Tagout (LOTO) protocols for temporary testing connections",
     ],
     outcomes: [
-      "Zero-incident protocol adherence during high-amperage testing",
-      "Rapid and coordinated emergency shutdown execution",
-      "Certified compliance with OSHA and NFPA 70E guidelines",
+      "Follows arc-flash procedures without prompting",
+      "Can carry out an emergency shutdown quickly and in the correct order",
+      "Meets OSHA and NFPA 70E requirements",
     ],
   },
   {
@@ -897,7 +648,7 @@ export const TRAINING_COURSES: TrainingCourse[] = [
     duration: "2 Days (16 Hours)",
     format: "Depot Hands-On Teardown & Calibration Labs",
     description:
-      "Master the preventative maintenance, resistance element testing, contactor refurbishment, and instrument calibration required to keep load test fleets reliable.",
+      "Practical maintenance and calibration training. It covers resistance testing, contactor refurbishment and instrument calibration, which is what your team needs to keep a load bank fleet reliable in-house.",
     modules: [
       "Micro-ohmmeter resistance measurement and element health assessment",
       "High-potential (Hipot) and insulation resistance testing (Megger)",
@@ -905,9 +656,9 @@ export const TRAINING_COURSES: TrainingCourse[] = [
       "Calibrating digital transducers and troubleshooting PLC interlocks",
     ],
     outcomes: [
-      "Reduced dependence on third-party service providers",
-      "Longer asset lifespan and lower fleet maintenance costs",
-      "Documented calibration validity for audit requirements",
+      "Less dependence on outside service contractors",
+      "Equipment lasts longer and is cheaper to maintain",
+      "Calibration records that stand up in an audit",
     ],
   },
 ];
@@ -915,27 +666,27 @@ export const TRAINING_COURSES: TrainingCourse[] = [
 export const TROUBLESHOOTING_AREAS: FeatureItemData[] = [
   {
     title: "Governor Hunting & Speed Instability",
-    body: "Oscillations in engine speed under load steps often trace to fuel rack binding, actuator deadband, or misconfigured PID speed controller loops. We isolate mechanical vs electronic causes.",
+    body: "When engine speed swings under load, the cause is usually a sticking fuel rack, actuator deadband or a poorly tuned PID loop. We work out which one it is.",
   },
   {
     title: "Automatic Voltage Regulator (AVR) Drift & Droop",
-    body: "Voltage sag under load, voltage hunting, or failure to share reactive kVAR in parallel genset setups. We retune AVR excitation loops and verify rotating diode assemblies.",
+    body: "If you see voltage sag, hunting, or gensets that won't share reactive load in parallel, we retune the excitation loop and check the rotating diode assemblies.",
   },
   {
     title: "Harmonic Distortion & Non-Linear Load Resonance",
-    body: "Unexpected trips when testing UPS inverters or variable frequency drives. We deploy power analyzers to identify harmonic current amplification and resonance points.",
+    body: "UPS inverters and variable frequency drives can trip for no clear reason. We use power analysers to find the harmonic amplification behind it.",
   },
   {
     title: "Nuisance Thermal Cutout & Airflow Depletion",
-    body: "Load banks tripping on overtemperature during hot weather testing. We evaluate duct static pressure, blower motor slip, and sensor drift to restore reliable continuous cooling.",
+    body: "A load bank that trips on over-temperature in hot weather usually has a duct pressure problem, a slipping blower or a sensor that has drifted. We check all three.",
   },
   {
     title: "ATS Timing & Transfer Sequence Failures",
-    body: "Failure to transfer under emergency power conditions. We analyze contact travel timing, transition delays, and phase sync to ensure seamless building changeover.",
+    body: "When a transfer doesn't go cleanly in an emergency, we examine contact travel time, transition delay and phase sync until we locate the fault.",
   },
   {
     title: "Insulation Breakdown & Ground Fault Trips",
-    body: "Mysterious earth leakage trips when applying load. We perform systematic high-voltage insulation testing to pinpoint degraded cables or cracked ceramic standoffs.",
+    body: "An earth leakage trip that only appears under load often points to damaged cable or a cracked standoff insulator. We test step by step until we find it.",
   },
 ];
 
@@ -943,21 +694,21 @@ export const DIAGNOSTIC_METHODOLOGY: StepData[] = [
   {
     step: "01",
     title: "Site Survey & Symptom Triangulation",
-    desc: "We review operational logs, maintenance history, and site electrical topology before connecting synchronized multi-channel digital power analyzers.",
+    desc: "Before we connect our multi-channel power analysers, we read through the operating logs, the maintenance history and the site's electrical layout.",
   },
   {
     step: "02",
     title: "Controlled Step-Load Stress Testing",
-    desc: "By applying precise incremental loads with our calibrated mobile load banks, we recreate the fault conditions under safe, closely monitored parameters.",
+    desc: "Using our own calibrated mobile load banks, we add load in small steps to reproduce the fault safely while we watch closely.",
   },
   {
     step: "03",
     title: "Root-Cause Electrical Isolation",
-    desc: "We capture transient waveforms, thermal imaging profiles, and control signal harmonics to pinpoint the root mechanism rather than masking symptoms.",
+    desc: "We use transient waveforms, thermal imaging and control signal analysis to find the real cause, so the fix isn't just hiding the symptom.",
   },
   {
     step: "04",
     title: "Corrective Action Plan & Verification",
-    desc: "We provide an engineering diagnosis report with component-level repair instructions, followed by post-repair load testing to verify fault resolution.",
+    desc: "You receive a written diagnosis with repair instructions down to component level. After the repair we load test again to confirm it worked.",
   },
 ];

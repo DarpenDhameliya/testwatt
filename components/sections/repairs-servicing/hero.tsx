@@ -1,3 +1,4 @@
+import HeroEyebrow from "@/components/hero-eyebrow";
 import { Button } from "@/components/ui";
 
 export default function Hero() {
@@ -5,27 +6,17 @@ export default function Hero() {
     <section className="lbt-hero" aria-labelledby="rs-heading">
       <div className="container lbt-hero__container">
         <div className="lbt-hero__content">
-          <div className="lbt-hero__badge-row">
-            <span className="lbt-hero__badge">
-              <span className="lbt-hero__badge-dot" aria-hidden="true" />
-              Precision Maintenance &amp; Service Protection
-            </span>
-          </div>
-
-          <div className="lbt-hero__kicker">
-            <span className="lbt-hero__kicker-line" aria-hidden="true" />
-            Repairs &amp; Servicing Specialists
-          </div>
+          <HeroEyebrow icon="wrench">Repairs &amp; Servicing</HeroEyebrow>
 
           <h1 id="rs-heading" className="lbt-hero__title">
-            Maximum uptime &amp; peak performance{" "}
-            <span className="lbt-hero__title-accent">for your test fleet.</span>
+            Keep your test fleet{" "}
+            <span className="lbt-hero__title-accent">running at 100%.</span>
           </h1>
 
           <p className="lbt-hero__body">
-            Keep your load testing assets operating at 100% capacity. TestWatt provides
-            comprehensive preventive maintenance, rapid engineering response, control
-            system modernizations, and genuine replacement parts.
+            We look after your load banks with routine maintenance, quick call-outs,
+            control system upgrades and repairs using traceable replacement parts.
+            The aim is simple: your equipment works on the day you need to test.
           </p>
 
           {/* <div className="lbt-hero__actions">

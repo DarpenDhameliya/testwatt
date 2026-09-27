@@ -8,7 +8,7 @@ export default function Process() {
         <SectionHeading
           kicker="Engineering Workflow"
           heading={<span id="upgrade-process-heading">From initial fleet audit to site commissioning</span>}
-          body="Every retrofit follows a rigorous engineering lifecycle ensuring seamless hardware fitment, verified calibration, and operator empowerment."
+          body="Every retrofit follows the same four stages. That way the hardware fits, the calibration is checked, and your operators know how to use the unit before we leave."
           className="section-heading--mb"
         />
 

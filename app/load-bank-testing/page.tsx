@@ -10,7 +10,7 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Load Bank Testing | Generator, UPS & Switchgear Testing | TestWatt",
   description:
-    "Independent full-load load bank testing for generators, UPS systems and switchgear. Resistive, reactive and hybrid testing at nameplate rating with certified reports.",
+    "Independent on-site load bank testing for generators, UPS systems and switchgear. We test at full nameplate rating using resistive, reactive or hybrid load and give you a certified report.",
   keywords:
     "load bank testing, generator load testing, UPS load test, switchgear testing, resistive load bank, reactive load bank, hybrid load bank",
   alternates: { canonical: "/load-bank-testing" },
@@ -32,7 +32,7 @@ const PAGE_SCHEMA = {
       ],
       areaServed: "Worldwide",
       description:
-        "Full-load proof testing for critical energy systems under controlled, documented conditions at full nameplate rating.",
+        "On-site full-load testing of generators, UPS systems and switchgear at their nameplate rating, with every reading documented.",
     },
   ],
 };

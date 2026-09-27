@@ -1,3 +1,4 @@
+import HeroEyebrow from "@/components/hero-eyebrow";
 import { Button } from "@/components/ui";
 
 export default function Hero() {
@@ -5,28 +6,18 @@ export default function Hero() {
     <section className="lbt-hero" aria-labelledby="lbu-heading">
       <div className="container lbt-hero__container">
         <div className="lbt-hero__content">
-          <div className="lbt-hero__badge-row">
-            <span className="lbt-hero__badge">
-              <span className="lbt-hero__badge-dot" aria-hidden="true" />
-              Asset Modernisation &amp; Capital Efficiency
-            </span>
-          </div>
-
-          <div className="lbt-hero__kicker">
-            <span className="lbt-hero__kicker-line" aria-hidden="true" />
-            Load Bank Modernisation &amp; Retrofits
-          </div>
+          <HeroEyebrow icon="upgrade">Load Bank Upgrades</HeroEyebrow>
 
           <h1 id="lbu-heading" className="lbt-hero__title">
-            Modernise legacy load banks{" "}
-            <span className="lbt-hero__title-accent">to digital SCADA precision.</span>
+            Bring an old load bank{" "}
+            <span className="lbt-hero__title-accent">up to a digital standard.</span>
           </h1>
 
           <p className="lbt-hero__body">
-            Extend the life and capability of existing load bank fleets without full
-            replacement. TestWatt engineers custom digital PLC automation, cloud telemetry,
-            reactive capacity expansions, and multi-voltage retrofits at up to 60% lower
-            cost than acquiring new units.
+            Buying a new load bank isn&apos;t always necessary. We can add PLC
+            automation, cloud telemetry, extra reactive capacity or multi-voltage
+            switching to the units you already own, and it typically costs about 60%
+            less than replacing them.
           </p>
 
           {/* <div className="lbt-hero__actions">

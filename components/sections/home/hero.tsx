@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button, Kicker, PositiveTag } from "@/components/ui";
+import HeroEyebrow from "@/components/hero-eyebrow";
 
 export default function Hero() {
   return (
@@ -11,29 +11,25 @@ export default function Hero() {
 
       <div className="hero__inner container">
         <div className="hero__content">
-          <PositiveTag>Built on Engineering Expertise. Defined by Exceptional Service.</PositiveTag>
-          <Kicker>Critical Power Testing Specialists</Kicker>
+          <HeroEyebrow icon="bolt">Critical Power Testing</HeroEyebrow>
+
           <h1 id="hero-heading" className="hero__title">
             Full-load proof,
             <br />
             <span className="hero__title-muted">
-              <span className="hero__title-accent">100%</span> nameplate capacity. Zero guesswork.
+              <span className="hero__title-accent">100%</span> nameplate capacity,
+              <br />
+              no guesswork.
             </span>
           </h1>
+
           <p className="hero__body">
-            A no-load test run won&apos;t tell you if your backup power can carry the building.
-            TestWatt brings mobile resistive, reactive, and hybrid load banks directly to your
-            site—stress-testing generators, UPS units, and switchgear up to 100% nameplate
-            capacity with certified NFPA and ISO compliance reports.
+            Running a generator with no load doesn&apos;t show whether it can carry your
+            building. We bring mobile{" "}
+            <strong>resistive, reactive and hybrid</strong> load banks to your site and take generators, UPS units and switchgear up to{" "}
+            <strong>full nameplate capacity</strong>. You finish with reports that meet{" "}
+            <strong>NFPA and ISO</strong> requirements.
           </p>
-          {/* <div className="hero__actions">
-            <Button to="/contact" variant="primary" size="lg">
-              Request a Free Proposal
-            </Button>
-            <Button to="/load-bank-testing" variant="outline-light" size="lg">
-              Explore Testing Capabilities
-            </Button>
-          </div> */}
         </div>
       </div>
     </section>

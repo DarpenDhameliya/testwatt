@@ -11,7 +11,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "TestWatt | Load Bank Testing & Critical Power Services",
   description:
-    "TestWatt delivers load bank testing, generator testing, UPS testing, and critical power services to verify performance at full nameplate rating.",
+    "TestWatt provides load bank testing for generators, UPS systems and switchgear, and checks that they perform at their full nameplate rating.",
   alternates: { canonical: "/" },
 };
 
@@ -23,7 +23,7 @@ const PAGE_SCHEMA = {
       name: SITE_NAME,
       url: SITE_URL,
       description:
-        "Independent load bank testing and critical power testing services for generators, UPS systems, and switchgear.",
+        "Independent load bank testing for generators, UPS systems and switchgear.",
       potentialAction: {
         "@type": "SearchAction",
         target: `${SITE_URL}/?q={search_term_string}`,

@@ -11,7 +11,7 @@ export default function StepLoadProfile() {
           heading={
             <span id="profile-heading">Incremental loading to full nameplate rating</span>
           }
-          body="Load is applied in 25% incremental steps, each held for a minimum dwell period before progressing. This allows engine and electrical systems to stabilise at each level before full-load is achieved. All parameters are recorded continuously throughout."
+          body="We add load in 25% steps and hold each one for a minimum time before going higher. This lets the engine and electrical systems settle at every level on the way to full load. All readings are recorded from start to finish."
           light
           maxWidth={640}
           className="section-heading--mb"
