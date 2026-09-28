@@ -1,5 +1,5 @@
 import { SectionHeading } from "@/components/ui";
-import { SPARE_PARTS } from "@/lib/content";
+// import { SPARE_PARTS } from "@/lib/content";
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   "Resistance Elements": (
@@ -83,7 +83,7 @@ export default function SpareParts() {
           className="section-heading--mb-sm"
         />
 
-        <div className="spare-cards-grid">
+        {/* <div className="spare-cards-grid">
           {SPARE_PARTS.map((group) => (
             <article key={group.category} className="spare-card">
               <div className="spare-card__header">
@@ -103,7 +103,7 @@ export default function SpareParts() {
               </ul>
             </article>
           ))}
-        </div>
+        </div> */}
 
         <div className="spare-note">
           <svg

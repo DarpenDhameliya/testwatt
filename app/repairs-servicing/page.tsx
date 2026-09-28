@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/repairs-servicing/hero";
-import WhyServicing from "@/components/sections/repairs-servicing/why-servicing";
-import Training from "@/components/sections/repairs-servicing/training";
-import Modernisation from "@/components/sections/repairs-servicing/modernisation";
-// import RepairsServicingCta from "@/components/sections/repairs-servicing/cta"; // CTA now lives in the footer
+import Capabilities from "@/components/sections/repairs-servicing/capabilities";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -44,10 +41,7 @@ export default function RepairsServicingPage() {
       />
 
       <Hero />
-      <WhyServicing />
-      <Training />
-      <Modernisation />
-      {/* <RepairsServicingCta /> */}
+      <Capabilities />
     </div>
   );
 }

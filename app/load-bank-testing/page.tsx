@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/load-bank-testing/hero";
-import WhatItInvolves from "@/components/sections/load-bank-testing/what-it-involves";
-import LoadBankTypes from "@/components/sections/load-bank-testing/load-bank-types";
-import StepLoadProfile from "@/components/sections/load-bank-testing/step-load-profile";
+import Overview from "@/components/sections/load-bank-testing/overview";
 import Standards from "@/components/sections/load-bank-testing/standards";
+import Capabilities from "@/components/sections/load-bank-testing/capabilities";
+import Reporting from "@/components/sections/load-bank-testing/reporting";
 // import LoadBankTestingCta from "@/components/sections/load-bank-testing/cta"; // CTA now lives in the footer
 import { SITE_URL } from "@/lib/site";
 
@@ -46,10 +46,10 @@ export default function LoadBankTestingPage() {
       />
 
       <Hero />
-      <WhatItInvolves />
-      <LoadBankTypes />
-      <StepLoadProfile />
+      <Overview />
       <Standards />
+      <Capabilities />
+      <Reporting />
       {/* <LoadBankTestingCta /> */}
     </div>
   );

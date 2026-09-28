@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/training-troubleshooting/hero";
 import Courses from "@/components/sections/training-troubleshooting/courses";
-import Troubleshooting from "@/components/sections/training-troubleshooting/troubleshooting";
-import Methodology from "@/components/sections/training-troubleshooting/methodology";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Training & Troubleshooting | Load Bank Certification & Diagnostics | TestWatt",
+  title: "Training & Troubleshooting | Load Bank Operator Training | TestWatt",
   description:
-    "Accredited operator training and on-site fault diagnosis for load banks, generators and UPS systems. Our courses follow NFPA 110 and are built to satisfy auditors.",
+    "On-site operational, maintenance, troubleshooting and start-up training for load banks, taught on your own equipment and tailored to your team's experience.",
   keywords:
-    "load bank training, load bank troubleshooting, NFPA 110 training, generator diagnostic services, AVR hunting, load bank operator certification",
+    "load bank training, load bank troubleshooting, NFPA 110 training, load bank maintenance training, on-site start-up training, load bank operator training",
   alternates: { canonical: "/training-troubleshooting" },
 };
 
@@ -22,15 +20,14 @@ const PAGE_SCHEMA = {
       name: "Training & Troubleshooting",
       provider: { "@id": `${SITE_URL}#organization` },
       serviceType: [
-        "Load Bank Operator Training",
-        "NFPA 110 Compliance Courses",
-        "Root-Cause Electrical Diagnostics",
-        "AVR & Governor Tuning",
-        "Power Quality & Harmonic Analysis",
+        "Operational Training",
+        "Maintenance Training",
+        "Troubleshooting Training",
+        "On-Site Start-Up Training",
       ],
       areaServed: "Worldwide",
       description:
-        "Training courses for facility maintenance teams, plus on-site troubleshooting of electrical faults in generators, UPS systems and load banks.",
+        "On-site training for the people who run, maintain and troubleshoot load banks, plus commissioning training when a new or refurbished unit arrives.",
     },
   ],
 };
@@ -45,8 +42,6 @@ export default function TrainingTroubleshootingPage() {
 
       <Hero />
       <Courses />
-      {/* <Troubleshooting /> */}
-      {/* <Methodology /> */}
     </div>
   );
 }

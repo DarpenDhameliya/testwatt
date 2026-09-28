@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/load-bank-upgrades/hero";
-import Solutions from "@/components/sections/load-bank-upgrades/solutions";
-import Comparison from "@/components/sections/load-bank-upgrades/comparison";
-import Process from "@/components/sections/load-bank-upgrades/process";
+import Capabilities from "@/components/sections/load-bank-upgrades/capabilities";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Load Bank Upgrades | Digital Controls & SCADA Telemetry Retrofits | TestWatt",
+  title: "Load Bank Upgrades | Controls, Modbus & Remote Capability Retrofits | TestWatt",
   description:
-    "Upgrade the load banks you already own with PLC automation, SCADA and cloud telemetry, reactive capacity and multi-voltage conversions, for around 60% less than buying new.",
+    "Upgrade the load bank you already own with automatic or manual control conversions, auto load leveling, Modbus communication, regenerative power handling and more.",
   keywords:
-    "load bank upgrades, load bank modernisation, load bank PLC retrofit, load bank SCADA, load bank reactive addition, load bank automation",
+    "load bank upgrades, load bank PLC conversion, load bank Modbus, load bank auto load level, load bank Wi-Fi control, load bank networking",
   alternates: { canonical: "/load-bank-upgrades" },
 };
 
@@ -19,18 +17,22 @@ const PAGE_SCHEMA = {
   "@graph": [
     {
       "@type": "Service",
-      name: "Load Bank Upgrades & Modernisation",
+      name: "Load Bank Upgrades",
       provider: { "@id": `${SITE_URL}#organization` },
       serviceType: [
-        "Load Bank Modernisation",
-        "Digital PLC Retrofits",
-        "SCADA Telemetry Integration",
-        "Reactive Power Factor Additions",
-        "Cooling & Thermal Overhauls",
+        "Manual to Automatic Control Conversion",
+        "Automatic to Manual Control Conversion",
+        "Auto Load Level Capability",
+        "Modbus Communication Capability",
+        "Regenerative Power Capability",
+        "Power Export Control Capability",
+        "Wi-Fi Control Capability",
+        "Customized Testing Capability",
+        "Networking Capability",
       ],
       areaServed: "Worldwide",
       description:
-        "Upgrades for existing load banks that replace manual controls with digital automation, remote telemetry and multi-voltage capability.",
+        "Upgrades for existing load banks, including control conversions, auto load leveling, Modbus communication, regenerative power handling, export control, Wi-Fi control, customized testing and networking.",
     },
   ],
 };
@@ -44,9 +46,7 @@ export default function LoadBankUpgradesPage() {
       />
 
       <Hero />
-      <Solutions />
-      <Comparison />
-      {/* <Process /> */}
+      <Capabilities />
     </div>
   );
 }

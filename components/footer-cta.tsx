@@ -18,8 +18,9 @@ export default function FooterCta() {
           Ready to test at <span>full nameplate load?</span>
         </h2>
         <p className="footer-simple__cta-body">
-          Tell us which equipment needs testing, servicing or upgrading, and one of our
-          engineers will reply with a clear proposal.
+          Need a compliance test scheduled, or not sure which test your site requires?
+          Send us your generator rating and the standard you&apos;re inspected against,
+          and we&apos;ll recommend a test plan.
         </p>
       </div>
       <div className="footer-simple__cta-actions">
