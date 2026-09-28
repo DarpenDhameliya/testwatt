@@ -1,5 +1,5 @@
 import { SectionHeading } from "@/components/ui";
-import { UPGRADE_COMPARISON } from "@/lib/content";
+// import { UPGRADE_COMPARISON } from "@/lib/content";
 
 export default function Comparison() {
   return (
@@ -32,7 +32,7 @@ export default function Comparison() {
               </tr>
             </thead>
             <tbody>
-              {UPGRADE_COMPARISON.map((row, index) => (
+              {/* {UPGRADE_COMPARISON.map((row, index) => (
                 <tr
                   key={row.feature}
                   className={
@@ -54,7 +54,7 @@ export default function Comparison() {
                     {row.upgraded}
                   </td>
                 </tr>
-              ))}
+              ))} */}
             </tbody>
           </table>
         </div>

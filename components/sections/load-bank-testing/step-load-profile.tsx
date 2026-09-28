@@ -1,6 +1,6 @@
 import TechnicalChart from "@/components/technical-chart";
 import { SectionHeading } from "@/components/ui";
-import { STEP_LOAD_PROFILE } from "@/lib/content";
+// import { STEP_LOAD_PROFILE } from "@/lib/content";
 
 export default function StepLoadProfile() {
   return (
@@ -16,11 +16,11 @@ export default function StepLoadProfile() {
           maxWidth={640}
           className="section-heading--mb"
         />
-        <TechnicalChart
+        {/* <TechnicalChart
           data={STEP_LOAD_PROFILE}
           label="Typical Step-Load Test Profile — % Nameplate Rating vs Elapsed Time"
           height={260}
-        />
+        /> */}
       </div>
     </section>
   );

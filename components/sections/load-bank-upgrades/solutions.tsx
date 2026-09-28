@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SectionHeading } from "@/components/ui";
-import { UPGRADE_SOLUTIONS } from "@/lib/content";
+// import { UPGRADE_SOLUTIONS } from "@/lib/content";
 
 export default function Solutions() {
   return (
@@ -14,7 +14,7 @@ export default function Solutions() {
         />
 
         <div className="solutions-grid">
-          {UPGRADE_SOLUTIONS.map((solution) => (
+          {/* {UPGRADE_SOLUTIONS.map((solution) => (
             <article key={solution.id} className="solution-card">
               <div className="solution-card__header">
                 <h3 className="solution-card__title">{solution.title}</h3>
@@ -62,7 +62,7 @@ export default function Solutions() {
                 </Link>
               </div>
             </article>
-          ))}
+          ))} */}
         </div>
       </div>
     </section>

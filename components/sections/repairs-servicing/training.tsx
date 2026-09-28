@@ -1,5 +1,5 @@
 import { SectionHeading } from "@/components/ui";
-import { TROUBLESHOOTING_STEPS } from "@/lib/content";
+// import { TROUBLESHOOTING_STEPS } from "@/lib/content";
 
 export default function Training() {
   return (
@@ -15,7 +15,7 @@ export default function Training() {
           className="section-heading--mb"
         />
 
-        <div className="training-cards-grid">
+        {/* <div className="training-cards-grid">
           {TROUBLESHOOTING_STEPS.map((step) => (
             <article key={step.step} className="training-card">
               <span className="training-card__step">{step.step}</span>
@@ -23,7 +23,7 @@ export default function Training() {
               <p className="training-card__desc">{step.desc}</p>
             </article>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import { Kicker } from "@/components/ui";
-import { MODERNISATION_OPTIONS } from "@/lib/content";
+// import { MODERNISATION_OPTIONS } from "@/lib/content";
 
 export default function Modernisation() {
   return (
@@ -18,7 +18,7 @@ export default function Modernisation() {
               connectivity or capacity.
             </p>
           </div>
-          <div className="mod-options-grid">
+          {/* <div className="mod-options-grid">
             {MODERNISATION_OPTIONS.map(([left, right], index) => (
               <div key={index} className="mod-options-row">
                 <div className="mod-options-cell mod-options-cell--border-right">
@@ -31,7 +31,7 @@ export default function Modernisation() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

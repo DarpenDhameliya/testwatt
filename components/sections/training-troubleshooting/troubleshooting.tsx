@@ -1,5 +1,5 @@
 import { FeatureItem, SectionHeading } from "@/components/ui";
-import { TROUBLESHOOTING_AREAS } from "@/lib/content";
+// import { TROUBLESHOOTING_AREAS } from "@/lib/content";
 
 export default function Troubleshooting() {
   return (
@@ -12,11 +12,11 @@ export default function Troubleshooting() {
           className="section-heading--mb"
         />
 
-        <div className="features-grid">
+        {/* <div className="features-grid">
           {TROUBLESHOOTING_AREAS.map((area) => (
             <FeatureItem key={area.title} item={area} />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

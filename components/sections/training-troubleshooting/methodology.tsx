@@ -1,5 +1,5 @@
 import { NumberedItem, SectionHeading } from "@/components/ui";
-import { DIAGNOSTIC_METHODOLOGY } from "@/lib/content";
+// import { DIAGNOSTIC_METHODOLOGY } from "@/lib/content";
 
 export default function Methodology() {
   return (
@@ -12,7 +12,7 @@ export default function Methodology() {
           className="section-heading--mb"
         />
 
-        <div className="process-grid">
+        {/* <div className="process-grid">
           {DIAGNOSTIC_METHODOLOGY.map((step, index) => (
             <NumberedItem
               key={step.step}
@@ -20,7 +20,7 @@ export default function Methodology() {
               last={index === DIAGNOSTIC_METHODOLOGY.length - 1}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

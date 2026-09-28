@@ -1,5 +1,5 @@
 import { NumberedItem, SectionHeading } from "@/components/ui";
-import { UPGRADE_STEPS } from "@/lib/content";
+// import { UPGRADE_STEPS } from "@/lib/content";
 
 export default function Process() {
   return (
@@ -13,13 +13,13 @@ export default function Process() {
         />
 
         <div className="process-grid">
-          {UPGRADE_STEPS.map((step, index) => (
+          {/* {UPGRADE_STEPS.map((step, index) => (
             <NumberedItem
               key={step.step}
               step={step}
               last={index === UPGRADE_STEPS.length - 1}
             />
-          ))}
+          ))} */}
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { Kicker } from "@/components/ui";
-import { MONITORED_PARAMETERS } from "@/lib/content";
+// import { MONITORED_PARAMETERS } from "@/lib/content";
 
 export default function WhatItInvolves() {
   return (
@@ -36,14 +36,14 @@ export default function WhatItInvolves() {
           <div>
             <div className="params-box">
               <div className="params-box__heading">Parameters Monitored During Test</div>
-              <ul className="params-list" aria-label="Monitored parameters">
+              {/* <ul className="params-list" aria-label="Monitored parameters">
                 {MONITORED_PARAMETERS.map((parameter) => (
                   <li key={parameter} className="params-list__item">
                     <span className="params-list__dot" aria-hidden="true" />
                     {parameter}
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>
