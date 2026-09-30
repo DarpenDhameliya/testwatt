@@ -59,7 +59,7 @@ export default function HomePage() {
       {/* <Services /> */}
       <WhyTestWatt />
       {/* <TestingProcess /> */}
-      <Standards />
+      {/* <Standards /> */}
       {/* <HomeCta /> */}
     </div>
   );

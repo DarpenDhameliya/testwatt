@@ -698,9 +698,44 @@ main {
    ========================================================================== */
 
 .site-footer {
-  background: var(--color-navy);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
   position: relative;
+}
+
+/* Contact page's footer reuses the compact footer's tile markup, which is
+   styled for a dark background — re-tint it for this footer's white one. */
+.site-footer .footer-simple__main {
+  border-top: none;
+}
+
+.site-footer .footer-simple__logo-img {
+  height: 80px;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.site-footer .footer-simple__tagline {
+  color: var(--color-grey);
+}
+
+.site-footer .footer-simple__tile {
+  background: var(--color-off-white);
+  border-color: var(--color-border);
+}
+
+.site-footer .footer-simple__tile:hover {
+  background: var(--color-light-grey);
+  border-color: rgba(225, 29, 68, 0.35);
+}
+
+.site-footer .footer-simple__label {
+  color: var(--color-grey);
+}
+
+.site-footer .footer-simple__value {
+  color: var(--color-navy);
 }
 
 /* Pre-footer trust & contact strip (mirrors site-topbar) */
@@ -1064,6 +1099,14 @@ main {
   position: relative;
 }
 
+/* Same photo-hero treatment as the homepage, sized for a page whose main
+   content (a form, a card grid) should still show up without a full scroll. */
+.hero--compact .hero__inner {
+  min-height: 0;
+  padding-top: 72px;
+  padding-bottom: 64px;
+}
+
 .hero__content {
   flex-direction: column;
   max-width: 780px;
@@ -1138,6 +1181,90 @@ main {
   white-space: nowrap;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+}
+
+/* Text-only variant (no background photo) — the shadows below were tuned
+   for legibility over a photo and aren't needed on a flat background. */
+.hero--plain {
+  background: var(--color-navy);
+}
+
+.hero--plain .hero__title,
+.hero--plain .hero__body {
+  text-shadow: none;
+}
+
+.hero--plain .hero__body strong {
+  background: none;
+  padding: 0;
+  white-space: normal;
+}
+
+/* Contact hero: font size steps up and down per line instead of a photo,
+   with a color shift on the opening and closing lines for emphasis. */
+.contact-title-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-title-line {
+  display: block;
+  line-height: 1.18;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: contact-title-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.contact-title-line:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.contact-title-line:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.contact-title-line:nth-child(3) {
+  animation-delay: 0.27s;
+}
+
+.contact-title-line--xl {
+  font-size: clamp(32px, 4.2vw, 50px);
+}
+
+.contact-title-line--md {
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.contact-title-line--sm {
+  font-size: clamp(15px, 1.7vw, 19px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d7dee9cc;
+  margin: 2px 0 4px;
+}
+
+.contact-title-inline-accent {
+  font-weight: 700;
+  text-shadow: 0 0 32px rgba(225, 29, 72, 0.45);
+}
+
+@keyframes contact-title-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-title-line {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .hero__actions {
@@ -2444,6 +2571,15 @@ main {
   font-weight: 700;
 }
 
+/* This section already has its own full-width heading above the grid, so the
+   left column's heading needs to read as a secondary sub-heading, not a
+   second page title of the same size and weight. */
+#upgrade-capabilities .why-grid__title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
 .why-grid__body {
   font-size: var(--text-base);
   color: var(--color-grey);
@@ -2590,9 +2726,9 @@ main {
   margin: 0;
 }
 
-.why-card__body p + p,
-.why-card__body p + ul,
-.why-card__body ul + p {
+.why-card__body p+p,
+.why-card__body p+ul,
+.why-card__body ul+p {
   margin-top: 14px;
 }
 
@@ -3334,6 +3470,17 @@ main {
   line-height: 1.75;
 }
 
+.content-body strong {
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
+.content-body--label {
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 16px 0;
+}
+
 .content-body--light {
   color: #ffffffa6;
 }
@@ -3460,7 +3607,7 @@ main {
 }
 
 .advantages-section__title {
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   color: var(--color-navy);
   margin: 0 0 40px;
   font-weight: 700;
@@ -3855,7 +4002,7 @@ main {
 
 .form-field__textarea {
   resize: vertical;
-  min-height: 140px;
+  min-height: 80px;
 }
 
 .form-field__input--error,
@@ -3869,6 +4016,141 @@ main {
   margin-top: 6px;
   font-size: 12px;
   display: block;
+}
+
+.form-field__hint {
+  color: var(--color-placeholder, #94a3b8);
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  display: block;
+}
+
+.form-field__dropzone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 28px 16px;
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #f8fafc;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.form-field__dropzone:hover {
+  border-color: var(--color-navy);
+  background: var(--color-white);
+}
+
+.form-field__dropzone--active {
+  border-color: var(--color-red);
+  background: rgba(225, 29, 72, 0.05);
+}
+
+.form-field__dropzone--error {
+  border-color: var(--color-red);
+}
+
+.form-field__dropzone-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.form-field__dropzone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(10, 25, 47, 0.06);
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.form-field__dropzone--active .form-field__dropzone-icon {
+  background: rgba(225, 29, 72, 0.12);
+  color: var(--color-red);
+}
+
+.form-field__dropzone-text {
+  font-size: 13.5px;
+  color: var(--color-grey);
+}
+
+.form-field__dropzone-text strong {
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
+.form-field__dropzone .form-field__hint {
+  margin-top: 0;
+}
+
+.form-field__file-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field__file-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.form-field__file-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.form-field__file-size {
+  color: var(--color-grey);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.form-field__file-remove {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--color-grey);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.form-field__file-remove:hover {
+  background: rgba(225, 29, 72, 0.1);
+  color: var(--color-red);
 }
 
 .form-consent {
@@ -4524,6 +4806,7 @@ main {
    Header responsive behaviour
    --------------------------------------------------------------- */
 @media (width<1499px) {
+
   .site-header__nav-link,
   .site-header__actions .site-header__cta {
     font-size: 11px;
@@ -4824,6 +5107,34 @@ main {
 
 .lbt-hero__title-accent {
   color: rgba(255, 255, 255, 0.72);
+}
+
+/* Same staggered fade-in-up treatment as the contact hero's stacked title. */
+.lbt-hero__title-line {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: contact-title-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.lbt-hero__title-line--1 {
+  animation-delay: 0.05s;
+}
+
+.lbt-hero__title-line--2 {
+  animation-delay: 0.22s;
+}
+
+.lbt-hero__title-line--3 {
+  animation-delay: 0.38s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lbt-hero__title-line {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .lbt-hero__body {
@@ -5383,18 +5694,26 @@ main {
   }
 }
 
-/* Capabilities cards carry full detailed content (paragraphs + tables), so
-   they need to drop the sticky two-column layout earlier than the standard
+/* Load Bank Testing capabilities: always single column, stacked like the
+   mobile view, with no sticky left/right split at any screen width. */
+#capabilities .why-grid--equal {
+  grid-template-columns: 1fr;
+  gap: 40px 0;
+}
+
+#capabilities .why-grid__sticky {
+  position: static;
+}
+
+/* Upgrade capabilities cards carry full detailed content (paragraphs + tables),
+   so they need to drop the sticky two-column layout earlier than the standard
    why-grid--equal breakpoint. */
 @media (max-width: 1500px) {
-
-  #capabilities .why-grid--equal,
   #upgrade-capabilities .why-grid--equal {
     grid-template-columns: 1fr;
     gap: 40px 0;
   }
 
-  #capabilities .why-grid__sticky,
   #upgrade-capabilities .why-grid__sticky {
     position: static;
   }
@@ -5645,148 +5964,6 @@ main {
 }
 
 /* ==========================================================================
-   Contact Page Hero - Refined, Attractive Technical Hero
-   ========================================================================== */
-.contact-hero {
-  position: relative;
-  background: var(--color-navy);
-  color: var(--color-white);
-  padding: 68px 0 60px;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.contact-hero__bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.contact-hero__ambient-glow {
-  position: absolute;
-  top: -20%;
-  left: 35%;
-  width: 650px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(225, 29, 72, 0.12) 0%, rgba(10, 25, 47, 0) 70%);
-  filter: blur(45px);
-}
-
-.contact-hero__grid-pattern {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse at 40% 40%, rgba(0, 0, 0, 0.8) 20%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse at 40% 40%, rgba(0, 0, 0, 0.8) 20%, transparent 80%);
-}
-
-.contact-hero__container {
-  position: relative;
-  z-index: 2;
-}
-
-.contact-hero__content {
-  max-width: 860px;
-}
-
-.contact-hero__title {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 3.8vw, 48px);
-  line-height: 1.15;
-  letter-spacing: 0.01em;
-  color: var(--color-white);
-  margin: 16px 0 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.contact-hero__title-accent {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.contact-hero__body {
-  font-family: var(--font-body);
-  font-size: var(--text-md);
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.7;
-  max-width: 680px;
-  margin: 0 0 32px;
-}
-
-.contact-hero__specs-strip {
-  display: flex;
-  align-items: center;
-  background: rgba(17, 34, 64, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
-  padding: 14px 22px;
-  gap: 22px;
-  width: fit-content;
-  max-width: 100%;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.contact-hero__spec-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-hero__spec-val {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--color-white);
-  line-height: 1.1;
-}
-
-.contact-hero__spec-lbl {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.52);
-  margin-top: 3px;
-}
-
-.contact-hero__spec-divider {
-  width: 1px;
-  height: 28px;
-  background: rgba(255, 255, 255, 0.12);
-  flex-shrink: 0;
-}
-
-.contact-hero__bottom-border {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(225, 29, 72, 0.35) 25%, rgba(255, 255, 255, 0.15) 75%, transparent 100%);
-}
-
-@media (max-width: 768px) {
-  .contact-hero {
-    padding: 44px 0 36px;
-  }
-
-  .contact-hero__specs-strip {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    width: 100%;
-  }
-
-  .contact-hero__spec-divider {
-    display: none;
-  }
-}
-
-/* ==========================================================================
    Simple footer (SiteFooterSimple) — carries the site-wide call to action
    ========================================================================== */
 .footer-simple {
@@ -5916,7 +6093,7 @@ main {
 
 .footer-simple__contact {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 14px;
 }
 
@@ -6709,50 +6886,111 @@ main {
 }
 
 .compliance-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: var(--color-white);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: 16px;
   padding: 24px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+
 .compliance-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px -10px rgba(10, 25, 47, 0.12);
-  border-color: rgba(225, 29, 72, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px -8px rgba(10, 25, 47, 0.1);
+  border-color: rgba(225, 29, 72, 0.25);
+}
+
+
+.compliance-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .compliance-card__code {
   align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--color-off-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: 6px;
+  padding: 6px 11px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.035);
+}
+
+.compliance-card__code-main {
   font-family: var(--font-display);
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
   color: var(--color-navy);
-  background: var(--color-off-white);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  padding: 6px 12px;
-  margin-bottom: 18px;
 }
 
-.compliance-card__row + .compliance-card__row {
+.compliance-card__code-sub {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-grey);
+}
+
+.compliance-card__status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid var(--color-border);
+  padding: 3px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.compliance-card__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  flex-shrink: 0;
+}
+
+.compliance-card__row+.compliance-card__row {
   margin-top: 14px;
   padding-top: 14px;
   border-top: 1px solid var(--color-light-grey);
 }
 
 .compliance-card__label {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-red);
   margin-bottom: 6px;
+}
+
+.compliance-card__label-icon {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
 }
 
 .compliance-card__text {
@@ -6762,8 +7000,21 @@ main {
   margin: 0;
 }
 
+.compliance-card__row.compliance-card__row--meet {
+  background: rgba(225, 29, 72, 0.025);
+  border: 1px solid rgba(225, 29, 72, 0.1);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 14px;
+}
+
+.compliance-card__row--meet .compliance-card__label {
+  color: #b91c3c;
+}
+
 .compliance-card__row--meet .compliance-card__text {
   color: var(--color-navy);
+  font-weight: 500;
 }
 
 @media (max-width: 1100px) {

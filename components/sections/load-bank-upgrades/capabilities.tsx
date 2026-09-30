@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Kicker } from "@/components/ui";
+import { SectionHeading } from "@/components/ui";
 
 interface UpgradeItem {
   number: string;
@@ -356,17 +356,21 @@ export default function Capabilities() {
       aria-labelledby="upgrade-capabilities-heading"
     >
       <div className="container">
+        <SectionHeading
+          kicker="Load Bank Upgrades"
+          heading={
+            <span id="upgrade-capabilities-heading">
+              Get more out of the load bank you already own
+            </span>
+          }
+          body="TestWatt upgrades existing load banks with automatic controls, manual controls, communications, site-specific functions and more."
+          className="section-heading--mb"
+        />
+
         <div className="why-grid--equal">
           {/* Left Sticky Column */}
           <div className="why-grid__sticky">
-            <Kicker>Load Bank Upgrades</Kicker>
-            <h2 id="upgrade-capabilities-heading" className="why-grid__title">
-              Get more out of the load bank you already own
-            </h2>
-            <p className="why-grid__body">
-              TestWatt upgrades existing load banks with automatic controls, manual
-              controls, communications, site-specific functions and more.
-            </p>
+            <h3 className="why-grid__title">Why upgrade instead</h3>
             <p className="why-grid__body">
               The resistor elements, cooling system and enclosure on a well-kept load
               bank often have years of life left after the controls have fallen

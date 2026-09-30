@@ -1,28 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FOOTER_SERVICES, NAV_LINKS, NAV_LINKS_FOOTER, SALES_EMAIL, SUPPORT_EMAIL } from "@/lib/site";
+import { NAV_LINKS_FOOTER, PHONE_NUMBER, SALES_EMAIL, SUPPORT_EMAIL } from "@/lib/site";
 import FooterCta from "./footer-cta";
-
-function ArrowRight() {
-  return (
-    <svg
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-      style={{ marginLeft: 6 }}
-    >
-      <path
-        d="M5 12h14M13 6l6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 function MailIcon() {
   return (
@@ -44,10 +23,29 @@ function MailIcon() {
   );
 }
 
+function PhoneIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      style={{ flexShrink: 0 }}
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
 /**
  * Compact footer: brand, the two mailboxes as tiles and a contact CTA on top;
  * legal line and page links in a slimmer strip below.
- * SiteFooter (below) is kept for later use.
+ * Used on every page except /contact, which gets the fuller SiteFooter below.
  */
 export function SiteFooterSimple() {
   return (
@@ -92,6 +90,15 @@ export function SiteFooterSimple() {
               <span className="footer-simple__value">{SUPPORT_EMAIL}</span>
             </span>
           </a>
+          <a href={`tel:${PHONE_NUMBER.replace(/[^+\d]/g, "")}`} className="footer-simple__tile">
+            <span className="footer-simple__tile-icon">
+              <PhoneIcon />
+            </span>
+            <span className="footer-simple__tile-text">
+              <span className="footer-simple__label">Phone</span>
+              <span className="footer-simple__value">{PHONE_NUMBER}</span>
+            </span>
+          </a>
         </div>
       </div>
 
@@ -115,121 +122,55 @@ export function SiteFooterSimple() {
   );
 }
 
+/** Fuller 4-column footer, used only on the /contact page — see AppFooter. */
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div className="container site-footer__main">
-        <div className="site-footer__grid">
-          {/* Brand Column */}
-          <div className="site-footer__brand">
-            <Link href="/" className="site-footer__logo" aria-label="TestWatt — home">
-              <Image
-                src="/images/testwatt-logo-trimmed.png"
-                alt="TestWatt Logo"
-                width={1032}
-                height={639}
-                className="site-footer__logo-img"
-              />
-            </Link>
-            <p className="site-footer__tagline">
-              Load bank testing, servicing and compliance reports for generators,
-              UPS systems and switchgear, anywhere in the world.
-            </p>
-            <div className="site-footer__standards-pills">
-              <span className="site-footer__pill">NFPA 110</span>
-              <span className="site-footer__pill">NETA ATS</span>
-              <span className="site-footer__pill">ISO 8528</span>
-            </div>
-          </div>
-
-          {/* Navigation Column */}
-          <div className="site-footer__col">
-            <div className="site-footer__col-heading">Navigation</div>
-            <nav aria-label="Footer navigation" className="site-footer__nav-list">
-              {NAV_LINKS.map((link) => (
-                <Link key={link.label} href={link.to} className="site-footer__link">
-                  <span className="site-footer__link-bullet" aria-hidden="true" />
-                  <span>{link.label}</span>
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Services Column */}
-          <div className="site-footer__col">
-            <div className="site-footer__col-heading">Services</div>
-            <ul className="site-footer__list" aria-label="Services">
-              {FOOTER_SERVICES.map((service) => (
-                <li key={service} className="site-footer__list-item">
-                  <Link
-                    href={
-                      service.toLowerCase().includes("repair")
-                        ? "/repairs-servicing"
-                        : service.toLowerCase().includes("contact")
-                          ? "/contact"
-                          : "/load-bank-testing"
-                    }
-                    className="site-footer__link"
-                  >
-                    <span className="site-footer__link-bullet" aria-hidden="true" />
-                    <span>{service}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact & CTA Column */}
-          <div className="site-footer__col site-footer__col--contact">
-            <div className="site-footer__col-heading">Get in Touch</div>
-            <div className="site-footer__contact">
-              <div className="site-footer__contact-item">
-                <span className="site-footer__contact-label">Sales Inquiries</span>
-                <a href={`mailto:${SALES_EMAIL}`} className="site-footer__contact-link">
-                  <MailIcon />
-                  <span>{SALES_EMAIL}</span>
-                </a>
-              </div>
-              <div className="site-footer__contact-item">
-                <span className="site-footer__contact-label">Engineering Support</span>
-                <a href={`mailto:${SUPPORT_EMAIL}`} className="site-footer__contact-link">
-                  <MailIcon />
-                  <span>{SUPPORT_EMAIL}</span>
-                </a>
-              </div>
-
-              <div className="site-footer__action-wrap">
-                <Link href="/contact" className="btn btn-primary btn-sm site-footer__cta-btn">
-                  <span>Get a Quote</span>
-                  <ArrowRight />
-                </Link>
-                {/* <span className="site-footer__response-note">
-                  <span className="site-footer__dot site-footer__dot--emerald" aria-hidden="true" />
-                  <span>Responses within 2 hours</span>
-                </span> */}
-              </div>
-            </div>
-          </div>
+      {/* Brand + contact tiles, same look as the compact footer's top row */}
+      <div className="container footer-simple__main">
+        <div className="footer-simple__brand">
+          <Link href="/" className="footer-simple__logo" aria-label="TestWatt — home">
+            <Image
+              src="/images/testwatt-logo-trimmed.png"
+              alt="TestWatt Logo"
+              width={1032}
+              height={639}
+              className="footer-simple__logo-img"
+            />
+          </Link>
+          <p className="footer-simple__tagline">
+            Load bank testing &amp; critical power services.
+          </p>
         </div>
 
-        {/* Footer Bottom Strip */}
-        <div className="site-footer__bottom">
-          <p className="site-footer__copy">
-            © {new Date().getFullYear()} TestWatt LLC. All rights reserved.
-          </p>
-          <div className="site-footer__bottom-links">
-            <Link href="/load-bank-testing" className="site-footer__bottom-link">
-              Capabilities
-            </Link>
-            <span className="site-footer__bottom-sep" aria-hidden="true">·</span>
-            <Link href="/repairs-servicing" className="site-footer__bottom-link">
-              Servicing
-            </Link>
-            <span className="site-footer__bottom-sep" aria-hidden="true">·</span>
-            <Link href="/contact" className="site-footer__bottom-link">
-              Contact
-            </Link>
-          </div>
+        <div className="footer-simple__contact">
+          <a href={`mailto:${SALES_EMAIL}`} className="footer-simple__tile">
+            <span className="footer-simple__tile-icon">
+              <MailIcon />
+            </span>
+            <span className="footer-simple__tile-text">
+              <span className="footer-simple__label">Sales</span>
+              <span className="footer-simple__value">{SALES_EMAIL}</span>
+            </span>
+          </a>
+          <a href={`mailto:${SUPPORT_EMAIL}`} className="footer-simple__tile">
+            <span className="footer-simple__tile-icon">
+              <MailIcon />
+            </span>
+            <span className="footer-simple__tile-text">
+              <span className="footer-simple__label">Support</span>
+              <span className="footer-simple__value">{SUPPORT_EMAIL}</span>
+            </span>
+          </a>
+          <a href={`tel:${PHONE_NUMBER.replace(/[^+\d]/g, "")}`} className="footer-simple__tile">
+            <span className="footer-simple__tile-icon">
+              <PhoneIcon />
+            </span>
+            <span className="footer-simple__tile-text">
+              <span className="footer-simple__label">Phone</span>
+              <span className="footer-simple__value">{PHONE_NUMBER}</span>
+            </span>
+          </a>
         </div>
       </div>
     </footer>

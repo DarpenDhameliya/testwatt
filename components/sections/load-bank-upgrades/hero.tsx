@@ -9,8 +9,13 @@ export default function Hero() {
           <HeroEyebrow icon="upgrade">Load Bank Upgrades</HeroEyebrow>
 
           <h1 id="lbu-heading" className="lbt-hero__title">
-            Bring an old load bank{" "}
-            <span className="lbt-hero__title-accent">up to a digital standard.</span>
+            <span className="lbt-hero__title-line lbt-hero__title-line--1">
+              Bring an old load bank
+            </span>
+            <br />
+            <span className="lbt-hero__title-line lbt-hero__title-line--2 lbt-hero__title-accent">
+              up to a digital standard.
+            </span>
           </h1>
 
           <p className="lbt-hero__body">

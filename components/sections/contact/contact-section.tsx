@@ -11,7 +11,7 @@ export default function ContactSection() {
         <div className="contact-layout">
           <aside aria-label="Direct contact information">
             <div className="contact-cards">
-              <div className="contact-cards__label">Direct Contact</div>
+              {/* <div className="contact-cards__label">Direct Contact</div> */}
 
               <a
                 href={`mailto:${SALES_EMAIL}`}
@@ -34,7 +34,7 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div className="contact-card__content">
-                  <span className="contact-card__title">New Enquiries</span>
+                  <span className="contact-card__title">REQUEST A QUOTE</span>
                   <span className="contact-card__email">{SALES_EMAIL}</span>
                 </div>
                 {/* <div className="contact-card__arrow" aria-hidden="true">
@@ -74,7 +74,7 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div className="contact-card__content">
-                  <span className="contact-card__title">Existing Customers</span>
+                  <span className="contact-card__title">TECHNICAL SUPPORT</span>
                   <span className="contact-card__email">{SUPPORT_EMAIL}</span>
                 </div>
                 {/* <div className="contact-card__arrow" aria-hidden="true">

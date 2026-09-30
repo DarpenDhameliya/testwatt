@@ -22,6 +22,7 @@ export type StandardRow = { code: string; title: string; scope: string };
 export type LoadPoint = { time: string; load: number };
 export type ComplianceStandardRow = {
   code: string;
+  citation?: string;
   appliesTo: string;
   requirement: string;
   howWeMeet: string;
@@ -189,7 +190,8 @@ export const ENQUIRY_SERVICES = [
   "Load bank testing",
   "Repairs & servicing",
   "Load bank upgrade",
-  "Training & troubleshooting"
+  "Training & troubleshooting",
+  "Technical Support"
 ];
 
 export const STANDARDS_HOME: StandardRow[] = [
@@ -248,34 +250,38 @@ export const STANDARDS_HOME: StandardRow[] = [
 
 export const LOAD_BANK_STANDARDS: ComplianceStandardRow[] = [
   {
-    code: "NFPA 110 — Monthly Test (8.4.2)",
+    code: "NFPA 110",
+    citation: "Monthly Test (8.4.2)",
     appliesTo: "Emergency and standby power systems",
     requirement:
-      "Diesel sets run at least 30 continuous minutes at no less than 30% of nameplate kW, or at the manufacturer's minimum exhaust temperature",
+      "Diesel sets run at least 30 continuous minutes at no less than 30% of nameplate kW or at the manufacturer's recommended minimum exhaust temperature",
     howWeMeet:
       "We add resistive steps on top of your building load so the generator reaches the 30% threshold for the full 30 minutes",
   },
   {
-    code: "NFPA 110 — Annual Supplemental (8.4.2.3)",
-    appliesTo: "Diesel sets that didn't reach 30% during monthly tests",
+    code: "NFPA 110",
+    citation: "Annual Supplemental (8.4.2.3)",
+    appliesTo: "Diesel sets that did not reach 30% during monthly tests",
     requirement:
       "30 minutes at no less than 50% of nameplate kW, then 60 minutes at no less than 75%, run continuously for 1.5 hours",
     howWeMeet:
-      "We hold each step for its full time, logging readings throughout, and don't count warm-up or cool-down in the test time",
+      "We hold each step for the full time, logging readings throughout, and do not count warm-up or cool-down in the test time",
   },
   {
-    code: "NFPA 110 — 36-Month Test (8.4.9)",
+    code: "NFPA 110",
+    citation: "36-Month Test (8.4.9)",
     appliesTo: "Level 1 systems",
     requirement:
-      "At least 4 continuous hours at no less than 30% of nameplate kW, or the minimum exhaust temperature",
+      "At least 4 continuous hours at no less than 30% of nameplate kW or the minimum exhaust temperature",
     howWeMeet:
-      "We run the full 4 hours on the load bank. When scheduled together, the annual 50% and 75% steps can be built into the same run",
+      "We run the full 4 hours on the load bank. When scheduled together, the annual 50% and 75% steps can be built into the same 4-hour run",
   },
   {
-    code: "NFPA 110 — Installation Acceptance (7.13)",
+    code: "NFPA 110",
+    citation: "Installation Acceptance (7.13)",
     appliesTo: "New or modified systems",
     requirement:
-      "A cold-start test on building load, a cool-down of at least 5 minutes, then a 2-hour full-load test at 100% of nameplate kW less site derating, witnessed by the AHJ",
+      "A cold-start test on building load, a cool-down of at least 5 minutes, then a 2-hour full-load test at 100% of nameplate kW less site derating. The AHJ is notified and witnesses",
     howWeMeet:
       "We supply the load bank capacity to make up the difference between building load and 100%, and prepare the records the AHJ asks for",
   },
@@ -288,7 +294,7 @@ export const LOAD_BANK_STANDARDS: ComplianceStandardRow[] = [
       "We schedule and document to the NFPA 110 profiles and keep the interval dates on the report",
   },
   {
-    code: "The Joint Commission EC.02.05.07 / CMS K-tag K918",
+    code: "The Joint Commission EC.02.05.07 and CMS (K-tag K918)",
     appliesTo: "Accredited and Medicare/Medicaid hospitals",
     requirement:
       "Monthly 30-minute loaded tests at 30% or more, the 1.5-hour annual test when monthly tests fall short, a 4-hour test every 36 months, and a retest after any failed test",
@@ -315,7 +321,7 @@ export const LOAD_BANK_STANDARDS: ComplianceStandardRow[] = [
     appliesTo: "Generator performance and factory or site acceptance",
     requirement:
       "Methods for load tests and limits for voltage and frequency dip, rise and recovery, grouped into classes G1 to G4",
-    howWeMeet: "Used for our block load and transient testing",
+    howWeMeet: "Used for block load and transient testing (sections 8 and 9)",
   },
 ];
 

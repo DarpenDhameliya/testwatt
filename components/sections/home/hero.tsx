@@ -14,11 +14,15 @@ export default function Hero() {
           <HeroEyebrow icon="bolt">Critical Power Testing</HeroEyebrow>
 
           <h1 id="hero-heading" className="hero__title">
-            Full-load proof,
+            <span className="lbt-hero__title-line lbt-hero__title-line--1">
+              Full-load proof,
+            </span>
             <br />
-            <span className="hero__title-muted">
+            <span className="hero__title-muted lbt-hero__title-line lbt-hero__title-line--2">
               <span className="hero__title-accent">100%</span> nameplate capacity,
-              <br />
+            </span>
+            <br />
+            <span className="hero__title-muted lbt-hero__title-line lbt-hero__title-line--3">
               no guesswork.
             </span>
           </h1>

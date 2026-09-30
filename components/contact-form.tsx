@@ -1,12 +1,36 @@
 "use client";
 
-import { useState } from "react";
-import type { FormEvent, ReactNode } from "react";
+import { useRef, useState } from "react";
+import type { ChangeEvent, DragEvent, FormEvent, ReactNode } from "react";
 import { ENQUIRY_SERVICES } from "@/lib/content";
 import { SUPPORT_EMAIL } from "@/lib/site";
-import { Kicker } from "./ui";
+// import { Kicker } from "./ui";
 
-type Errors = Partial<Record<"name" | "company" | "email" | "service" | "phone" | "details", string>>;
+type Errors = Partial<
+  Record<"name" | "company" | "email" | "service" | "phone" | "details" | "attachments", string>
+>;
+
+const MAX_FILE_SIZE = 20 * 1024 * 1024; // 20MB per PDF
+
+function isPdfFile(file: File): boolean {
+  return file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf");
+}
+
+function validateAttachment(file: File | null): string | undefined {
+  if (!file) return undefined;
+  if (!isPdfFile(file)) {
+    return "Only a PDF file can be attached.";
+  }
+  if (file.size > MAX_FILE_SIZE) {
+    return "The PDF must be 20MB or smaller.";
+  }
+  return undefined;
+}
+
+function formatFileSize(bytes: number): string {
+  if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
 
 function FormField({
   label,
@@ -100,6 +124,13 @@ function validate(form: HTMLFormElement): Errors {
     errors.details = "Please provide more details (minimum 10 characters).";
   }
 
+  const attachmentEntry = data.get("attachments");
+  const attachment = attachmentEntry instanceof File && attachmentEntry.size > 0 ? attachmentEntry : null;
+  const attachmentError = validateAttachment(attachment);
+  if (attachmentError) {
+    errors.attachments = attachmentError;
+  }
+
   return errors;
 }
 
@@ -109,12 +140,77 @@ export default function ContactForm() {
   const [submitError, setSubmitError] = useState("");
   const [service, setService] = useState("");
   const [errors, setErrors] = useState<Errors>({});
+  const [attachment, setAttachment] = useState<File | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   function handleFormChange(event: FormEvent<HTMLFormElement>) {
     const target = event.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-    if (target?.name && errors[target.name as keyof Errors]) {
+    // "attachments" re-validates itself live in handleAttachmentChange — clearing
+    // it here too could wipe out a still-applicable error.
+    if (target?.name && target.name !== "attachments" && errors[target.name as keyof Errors]) {
       setErrors((prev) => ({ ...prev, [target.name]: undefined }));
     }
+  }
+
+  // Keeps the real <input type="file"> in sync so FormData(form) picks up
+  // the file added by drag-and-drop, not just one chosen through the dialog.
+  function syncInputFile(file: File | null) {
+    const input = fileInputRef.current;
+    if (!input) return;
+    const transfer = new DataTransfer();
+    if (file) transfer.items.add(file);
+    input.files = transfer.files;
+  }
+
+  function setSingleAttachment(file: File) {
+    setAttachment(file);
+    setErrors((prev) => ({ ...prev, attachments: validateAttachment(file) }));
+    syncInputFile(file);
+  }
+
+  function handleAttachmentChange(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.currentTarget.files?.[0];
+    if (file) setSingleAttachment(file);
+  }
+
+  function removeAttachment() {
+    setAttachment(null);
+    setErrors((prev) => ({ ...prev, attachments: undefined }));
+    syncInputFile(null);
+  }
+
+  function handleDragOver(event: DragEvent<HTMLDivElement>) {
+    event.preventDefault();
+  }
+
+  function handleDragEnter(event: DragEvent<HTMLDivElement>) {
+    event.preventDefault();
+    setIsDragging(true);
+  }
+
+  function handleDragLeave(event: DragEvent<HTMLDivElement>) {
+    event.preventDefault();
+    if (!event.currentTarget.contains(event.relatedTarget as Node)) {
+      setIsDragging(false);
+    }
+  }
+
+  function handleDrop(event: DragEvent<HTMLDivElement>) {
+    event.preventDefault();
+    setIsDragging(false);
+
+    const dropped = Array.from(event.dataTransfer.files || []);
+    const pdf = dropped.find(isPdfFile);
+
+    if (!pdf) {
+      if (dropped.length > 0) {
+        setErrors((prev) => ({ ...prev, attachments: "Only a PDF file can be attached." }));
+      }
+      return;
+    }
+
+    setSingleAttachment(pdf);
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -131,22 +227,13 @@ export default function ContactForm() {
     setSending(true);
     setSubmitError("");
 
+    // FormData (not JSON) so the selected PDF files travel with the request.
     const data = new FormData(form);
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: data.get("name"),
-          company: data.get("company"),
-          email: data.get("email"),
-          phone: data.get("phone"),
-          service: data.get("service"),
-          details: data.get("details"),
-        }),
+        body: data,
       });
 
       const result = await response.json();
@@ -192,8 +279,8 @@ export default function ContactForm() {
   return (
     <div className="contact-form-wrap">
       <div className="contact-form-wrap__header">
-        <Kicker>Enquiry Form</Kicker>
-        <h2 className="contact-form-wrap__title">Send an Enquiry</h2>
+        {/* <Kicker>Enquiry Form</Kicker> */}
+        <h2 className="contact-form-wrap__title">Enquiry Form</h2>
       </div>
 
       <form onSubmit={handleSubmit} onChange={handleFormChange} noValidate>
@@ -245,13 +332,75 @@ export default function ContactForm() {
           <textarea
             id="details"
             name="details"
-            rows={6}
+            rows={3}
             required
             aria-describedby={errors.details ? "details-error" : undefined}
             aria-invalid={errors.details ? "true" : undefined}
-            placeholder="Describe your equipment (make, model, rating), site location, and what you need. The more context you provide, the more specific our proposal can be."
+            placeholder=""
             className={`form-field__textarea${errors.details ? " form-field__input--error" : ""}`}
           />
+        </FormField>
+
+        <FormField label="Upload PDF" id="attachments" error={errors.attachments}>
+          <div
+            className={`form-field__dropzone${isDragging ? " form-field__dropzone--active" : ""}${errors.attachments ? " form-field__dropzone--error" : ""
+              }`}
+            onDragEnter={handleDragEnter}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+            onClick={() => fileInputRef.current?.click()}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                fileInputRef.current?.click();
+              }
+            }}
+          >
+            <input
+              ref={fileInputRef}
+              id="attachments"
+              name="attachments"
+              type="file"
+              accept="application/pdf,.pdf"
+              onChange={handleAttachmentChange}
+              onClick={(event) => event.stopPropagation()}
+              aria-describedby={errors.attachments ? "attachments-error" : "attachments-hint"}
+              aria-invalid={errors.attachments ? "true" : undefined}
+              className="form-field__dropzone-input"
+            />
+            <span className="form-field__dropzone-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <path d="M14 2v6h6" />
+              </svg>
+            </span>
+            <span className="form-field__dropzone-text">
+              <strong>Click to upload</strong> or drag and drop a PDF here
+            </span>
+            <span id="attachments-hint" className="form-field__hint">
+              One PDF file, up to 20MB.
+            </span>
+          </div>
+
+          {attachment && (
+            <ul className="form-field__file-list" aria-label="Selected PDF file">
+              <li className="form-field__file-item">
+                <span className="form-field__file-name">{attachment.name}</span>
+                <span className="form-field__file-size">{formatFileSize(attachment.size)}</span>
+                <button
+                  type="button"
+                  className="form-field__file-remove"
+                  onClick={removeAttachment}
+                  aria-label={`Remove ${attachment.name}`}
+                >
+                  &times;
+                </button>
+              </li>
+            </ul>
+          )}
         </FormField>
 
         {submitError && (
@@ -261,7 +410,7 @@ export default function ContactForm() {
         )}
 
         <button type="submit" disabled={sending} className="btn btn-primary btn-lg btn-full">
-          {sending ? "Sending..." : "Send Enquiry"}
+          {sending ? "Sending..." : "Submit Enquiry"}
         </button>
 
         <p className="form-consent">

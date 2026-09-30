@@ -9,8 +9,13 @@ export default function Hero() {
           <HeroEyebrow icon="training">Training &amp; Troubleshooting</HeroEyebrow>
 
           <h1 id="tt-heading" className="lbt-hero__title">
-            Root-cause diagnosis{" "}
-            <span className="lbt-hero__title-accent">and training that actually sticks.</span>
+            <span className="lbt-hero__title-line lbt-hero__title-line--1">
+              Root-cause diagnosis
+            </span>
+            <br />
+            <span className="lbt-hero__title-line lbt-hero__title-line--2 lbt-hero__title-accent">
+              and training that actually sticks.
+            </span>
           </h1>
 
           <p className="lbt-hero__body">

@@ -9,8 +9,13 @@ export default function Hero() {
           <HeroEyebrow icon="wrench">Repairs &amp; Servicing</HeroEyebrow>
 
           <h1 id="rs-heading" className="lbt-hero__title">
-            Keep your test fleet{" "}
-            <span className="lbt-hero__title-accent">running at 100%.</span>
+            <span className="lbt-hero__title-line lbt-hero__title-line--1">
+              Keep your test fleet
+            </span>
+            <br />
+            <span className="lbt-hero__title-line lbt-hero__title-line--2 lbt-hero__title-accent">
+              running at 100%.
+            </span>
           </h1>
 
           <p className="lbt-hero__body">

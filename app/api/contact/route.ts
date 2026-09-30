@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+const MAX_FILE_SIZE = 20 * 1024 * 1024; // 20MB per PDF
+
+function isPdfFile(file: File): boolean {
+  return file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf");
+}
+
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.RESEND_API_KEY;
@@ -16,8 +22,32 @@ export async function POST(req: Request) {
     }
 
     const resend = new Resend(apiKey);
-    const body = await req.json();
-    const { name, company, email, phone, service, details } = body;
+    const formData = await req.formData();
+    const name = formData.get("name");
+    const company = formData.get("company");
+    const email = formData.get("email");
+    const phone = formData.get("phone");
+    const service = formData.get("service");
+    const details = formData.get("details");
+
+    const attachmentEntry = formData.get("attachments");
+    const attachmentFile =
+      attachmentEntry instanceof File && attachmentEntry.size > 0 ? attachmentEntry : null;
+
+    if (attachmentFile) {
+      if (!isPdfFile(attachmentFile)) {
+        return NextResponse.json(
+          { error: "Only a PDF file can be attached." },
+          { status: 400 }
+        );
+      }
+      if (attachmentFile.size > MAX_FILE_SIZE) {
+        return NextResponse.json(
+          { error: "The PDF must be 20MB or smaller." },
+          { status: 400 }
+        );
+      }
+    }
 
     // Validate required fields
     if (!name || typeof name !== "string" || !name.trim()) {
@@ -152,6 +182,17 @@ export async function POST(req: Request) {
               ${cleanDetails}
             </td>
           </tr>
+          ${attachmentFile
+        ? `<tr>
+            <td style="padding: 12px 14px; font-size: 13px; font-weight: 600; color: #64748b;">
+              Attached File
+            </td>
+            <td style="padding: 12px 14px; font-size: 14px; color: #0f172a;">
+              ${attachmentFile.name} attached below
+            </td>
+          </tr>`
+        : ""
+      }
         </tbody>
       </table>
 
@@ -173,12 +214,22 @@ export async function POST(req: Request) {
 </html>
     `;
 
+    const resendAttachments = attachmentFile
+      ? [
+        {
+          filename: attachmentFile.name || "attachment.pdf",
+          content: Buffer.from(await attachmentFile.arrayBuffer()),
+        },
+      ]
+      : undefined;
+
     const { data, error } = await resend.emails.send({
       from: fromAddress,
       to: [adminEmail],
       replyTo: cleanEmail,
       subject: `New Enquiry: ${cleanService} — ${cleanCompany} (${cleanName})`,
       html: emailHtml,
+      attachments: resendAttachments,
     });
 
     if (error) {

@@ -205,12 +205,12 @@ export default function SiteHeader() {
             ))}
           </nav>
 
-          <div className="site-header__actions">
+          {/* <div className="site-header__actions">
             <Link href="/contact" className="btn btn-primary btn-sm site-header__cta">
               Get a Quote
               <ArrowRight />
             </Link>
-          </div>
+          </div> */}
 
           <button
             className="site-header__hamburger"

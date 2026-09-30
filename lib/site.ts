@@ -11,6 +11,7 @@ export const SITE_NAME = "TestWatt";
 
 export const SALES_EMAIL = "Sales@TestWatt.com";
 export const SUPPORT_EMAIL = "Support@TestWatt.com";
+export const PHONE_NUMBER = "+1 (248) 770-4961";
 
 export const NAV_LINKS: { to: AppRoute; label: string }[] = [
   { to: "/", label: "Home" },
@@ -18,7 +19,7 @@ export const NAV_LINKS: { to: AppRoute; label: string }[] = [
   { to: "/repairs-servicing", label: "Repairs & Servicing" },
   { to: "/load-bank-upgrades", label: "Load Bank Upgrades" },
   { to: "/training-troubleshooting", label: "Training & Troubleshooting" },
-  // { to: "/contact", label: "Contact" },
+  { to: "/contact", label: "Contact" },
 ];
 export const NAV_LINKS_FOOTER: { to: AppRoute; label: string }[] = [
   { to: "/load-bank-testing", label: "Terms & condition" },

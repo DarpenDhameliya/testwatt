@@ -9,8 +9,11 @@ export default function Hero() {
           <HeroEyebrow icon="bolt">Critical Power Testing</HeroEyebrow>
 
           <h1 id="lbt-heading" className="lbt-hero__title">
-            Full-load proof,{" "}
-            <span className="lbt-hero__title-accent">
+            <span className="lbt-hero__title-line lbt-hero__title-line--1">
+              Full-load proof,
+            </span>
+            <br />
+            <span className="lbt-hero__title-line lbt-hero__title-line--2 lbt-hero__title-accent">
               not a best guess.
             </span>
           </h1>

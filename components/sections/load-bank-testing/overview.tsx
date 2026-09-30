@@ -32,15 +32,13 @@ export default function Overview() {
             </p>
             <p className="content-body">
               Resistive loading runs at unity power factor, so it works the engine, fuel
-              system and exhaust at real output. It&apos;s the standard method for NFPA
-              110 supplemental tests, 36-month tests and most routine maintenance testing.
-            </p>
-            <p className="content-body">
-              For compliance testing, a TestWatt technician runs the load bank by hand.
-              Each load step is switched in deliberately, held for the required time and
-              logged, so the record shows exactly what the generator carried and for how
-              long. Manual control also lets us stop or back off load the moment a reading
-              goes out of range.
+              system and exhaust at real output. It is the standard method for NFPA 110
+              supplemental tests, 36-month tests and most routine maintenance testing. When
+              your site needs more than a basic step test, our testing also covers{" "}
+              <strong>regenerative power absorption</strong>,{" "}
+              <strong>automatic load leveling</strong>, <strong>export power control</strong>,{" "}
+              <strong>remote Modbus operation</strong>, <strong>block loading</strong> and{" "}
+              <strong>transient response</strong>.
             </p>
           </div>
           <div>

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import ScrollToTop from "@/components/scroll-to-top";
-// SiteFooter (the fuller four-column footer) is still exported from this file for later use.
-import { SiteFooterSimple } from "@/components/site-footer";
+import AppFooter from "@/components/app-footer";
 import SiteHeader from "@/components/site-header";
 import { SALES_EMAIL, SITE_NAME, SITE_URL, SUPPORT_EMAIL } from "@/lib/site";
 import "./globals.css";
@@ -94,7 +93,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div className="app-shell">
           <SiteHeader />
           <main id="main-content">{children}</main>
-          <SiteFooterSimple />
+          <AppFooter />
         </div>
         <ScrollToTop />
       </body>

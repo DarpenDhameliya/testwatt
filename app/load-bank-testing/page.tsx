@@ -49,7 +49,7 @@ export default function LoadBankTestingPage() {
       <Overview />
       <Standards />
       <Capabilities />
-      <Reporting />
+      {/* <Reporting /> */}
       {/* <LoadBankTestingCta /> */}
     </div>
   );
