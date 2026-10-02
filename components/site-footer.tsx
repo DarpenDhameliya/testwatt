@@ -133,18 +133,18 @@ export default function SiteFooter() {
             <Image
               src="/images/testwatt-logo-trimmed.png"
               alt="TestWatt Logo"
-              width={1032}
-              height={639}
+              width={1232}
+              height={739}
               className="footer-simple__logo-img"
             />
           </Link>
-          <p className="footer-simple__tagline">
+          {/* <p className="footer-simple__tagline">
             Load bank testing &amp; critical power services.
-          </p>
+          </p> */}
         </div>
 
         <div className="footer-simple__contact">
-          <a href={`mailto:${SALES_EMAIL}`} className="footer-simple__tile">
+          {/* <a href={`mailto:${SALES_EMAIL}`} className="footer-simple__tile">
             <span className="footer-simple__tile-icon">
               <MailIcon />
             </span>
@@ -161,7 +161,7 @@ export default function SiteFooter() {
               <span className="footer-simple__label">Support</span>
               <span className="footer-simple__value">{SUPPORT_EMAIL}</span>
             </span>
-          </a>
+          </a> */}
           <a href={`tel:${PHONE_NUMBER.replace(/[^+\d]/g, "")}`} className="footer-simple__tile">
             <span className="footer-simple__tile-icon">
               <PhoneIcon />
@@ -171,6 +171,21 @@ export default function SiteFooter() {
               <span className="footer-simple__value">{PHONE_NUMBER}</span>
             </span>
           </a>
+        </div>
+      </div>
+      <div className="footer-simple__bar">
+        <div className="container footer-simple__bar-inner">
+          <p className="footer-simple__copy">
+            © {new Date().getFullYear()} TestWatt LLC
+          </p>
+
+          <nav aria-label="Footer" className="footer-simple__nav">
+            {NAV_LINKS_FOOTER.map((link) => (
+              <Link key={link.label} href={link.to} className="footer-simple__nav-link">
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

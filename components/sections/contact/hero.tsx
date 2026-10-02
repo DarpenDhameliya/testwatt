@@ -7,25 +7,19 @@ export default function Hero() {
         <div className="hero__content">
           <HeroEyebrow icon="mail">Contact Us</HeroEyebrow>
 
-          <h1 id="contact-heading" className="hero__title contact-title-stack">
+          <h3 id="contact-heading" className="hero__title contact-title-stack">
             <span className="contact-title-line contact-title-line--xl">
-              Need a load bank
+              Need a load bank repaired, serviced, upgraded or tested?
             </span>
-            <span className="contact-title-line contact-title-line--sm hero__title-muted">
-              repaired, serviced, upgraded or tested?
+            <span className="contact-title-line contact-title-line--md">
+              Or training for your team? Let&apos;s talk.
             </span>
-            <span className="contact-title-line contact-title-line--md ">
-              Or training for your team?{" "}  Let&apos;s talk.
-              {/* <span className="hero__title-accent contact-title-inline-accent">
-                Let&apos;s talk.
-              </span> */}
-            </span>
-          </h1>
+          </h3>
 
           <p className="hero__body">
-            Every enquiry is read by an <strong>engineer</strong>. Tell us what
+            Every enquiry is read by an engineer. Tell us what
             equipment you have and what you need and we&apos;ll send you a{" "}
-            <strong>clear, no obligation proposal</strong>.
+            clear, no obligation proposal
           </p>
         </div>
       </div>

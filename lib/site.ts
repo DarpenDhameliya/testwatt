@@ -4,7 +4,10 @@ export type AppRoute =
   | "/repairs-servicing"
   | "/load-bank-upgrades"
   | "/training-troubleshooting"
-  | "/contact";
+  | "/contact"
+  | "/terms"
+  | "/privacy"
+  | "/warranty";
 
 export const SITE_URL = "https://www.testwatt.com";
 export const SITE_NAME = "TestWatt";
@@ -22,8 +25,9 @@ export const NAV_LINKS: { to: AppRoute; label: string }[] = [
   { to: "/contact", label: "Contact" },
 ];
 export const NAV_LINKS_FOOTER: { to: AppRoute; label: string }[] = [
-  { to: "/load-bank-testing", label: "Terms & condition" },
-  { to: "/repairs-servicing", label: "Privecy policy " }
+  { to: "/terms", label: "Terms & Conditions" },
+  { to: "/privacy", label: "Privacy Policy" },
+  { to: "/warranty", label: "Warranty" },
 ];
 
 export const FOOTER_SERVICES = [

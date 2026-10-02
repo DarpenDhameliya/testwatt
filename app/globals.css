@@ -706,11 +706,23 @@ main {
 /* Contact page's footer reuses the compact footer's tile markup, which is
    styled for a dark background — re-tint it for this footer's white one. */
 .site-footer .footer-simple__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px 48px;
   border-top: none;
 }
 
+.site-footer .footer-simple__contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
+}
+
 .site-footer .footer-simple__logo-img {
-  height: 80px;
+  height: 150px;
   padding: 0;
   background: none;
   border-radius: 0;
@@ -721,13 +733,23 @@ main {
 }
 
 .site-footer .footer-simple__tile {
-  background: var(--color-off-white);
-  border-color: var(--color-border);
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 .site-footer .footer-simple__tile:hover {
-  background: var(--color-light-grey);
-  border-color: rgba(225, 29, 68, 0.35);
+  background: none;
+  border-color: transparent;
+}
+
+.site-footer .footer-simple__tile-icon {
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+  color: var(--color-red);
 }
 
 .site-footer .footer-simple__label {
@@ -1189,6 +1211,16 @@ main {
   background: var(--color-navy);
 }
 
+.hero--plain .hero__eyebrow {
+  color: var(--color-white);
+}
+
+.hero--plain .hero__eyebrow-icon {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: var(--color-white);
+}
+
 .hero--plain .hero__title,
 .hero--plain .hero__body {
   text-shadow: none;
@@ -1229,12 +1261,13 @@ main {
 }
 
 .contact-title-line--xl {
-  font-size: clamp(32px, 4.2vw, 50px);
+  font-size: clamp(24px, 2.8vw, 34px);
 }
 
 .contact-title-line--md {
   font-size: clamp(22px, 2.6vw, 30px);
-  font-weight: 600;
+  font-weight: 400;
+  color: #ffffffa6;
   margin-top: 8px;
 }
 
@@ -6193,6 +6226,20 @@ main {
   transition: color 0.2s ease;
 }
 
+.site-footer .footer-simple__bar {
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer .footer-simple__copy {
+  color: var(--color-grey);
+}
+
+.site-footer .footer-simple__nav-link {
+  color: var(--color-navy);
+  border-left-color: var(--color-border);
+}
+
 .footer-simple__nav-link:first-child {
   border-left: none;
   padding-left: 0;
@@ -7027,5 +7074,90 @@ main {
   .compliance-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+}
+
+/* ==========================================================================
+   LEGAL PAGES (Terms, Privacy, Warranty)
+   ========================================================================== */
+
+.legal-hero__updated {
+  font-size: 13px;
+  color: #ffffff80;
+  margin-top: 24px;
+}
+
+.legal-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.legal-section {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.legal-section:first-child {
+  padding-top: 0;
+}
+
+.legal-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.legal-section__heading {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0 0 14px;
+}
+
+.legal-section__num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-red);
+  flex-shrink: 0;
+}
+
+.legal-section__body {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--color-grey);
+  margin: 0 0 12px;
+}
+
+.legal-section__body:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section__list {
+  margin: 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.legal-section__list li {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--color-grey);
+  margin-bottom: 8px;
+}
+
+.legal-section__list li:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section__list li::marker {
+  color: var(--color-red);
+}
+
+@media (max-width: 640px) {
+  .legal-section__heading {
+    font-size: 17px;
   }
 }
