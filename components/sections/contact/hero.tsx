@@ -8,7 +8,7 @@ export default function Hero() {
           <HeroEyebrow icon="mail">Contact Us</HeroEyebrow>
 
           <h3 id="contact-heading" className="hero__title contact-title-stack">
-            <span className="contact-title-line contact-title-line--xl">
+            <span className="contact-title-line contact-title-line--xl contact-title-nowrap">
               Need a load bank repaired, serviced, upgraded or tested?
             </span>
             <span className="contact-title-line contact-title-line--md">

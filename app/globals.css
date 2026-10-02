@@ -478,7 +478,7 @@ main {
 }
 
 .site-header__nav {
-  justify-self: center;
+  justify-self: end;
   align-items: center;
   gap: 20px;
   display: flex;
@@ -1211,6 +1211,10 @@ main {
   background: var(--color-navy);
 }
 
+.hero--plain .hero__content {
+  max-width: 980px;
+}
+
 .hero--plain .hero__eyebrow {
   color: var(--color-white);
 }
@@ -1261,7 +1265,17 @@ main {
 }
 
 .contact-title-line--xl {
-  font-size: clamp(24px, 2.8vw, 34px);
+  font-size: clamp(18px, 2vw, 26px);
+}
+
+.contact-title-nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .contact-title-nowrap {
+    white-space: normal;
+  }
 }
 
 .contact-title-line--md {
