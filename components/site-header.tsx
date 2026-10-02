@@ -104,7 +104,7 @@ function MobileNav({
         ))}
       </nav>
 
-      <div className="mobile-nav__actions">
+      {/* <div className="mobile-nav__actions">
         <Link
           href="/contact"
           onClick={onClose}
@@ -113,7 +113,7 @@ function MobileNav({
           Get a Quote
           <ArrowRight />
         </Link>
-      </div>
+      </div> */}
 
       <div className="mobile-nav__contact">
         <div className="mobile-nav__contact-label">Direct Contact</div>

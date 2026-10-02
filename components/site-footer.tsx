@@ -105,8 +105,7 @@ export function SiteFooterSimple() {
       <div className="footer-simple__bar">
         <div className="container footer-simple__bar-inner">
           <p className="footer-simple__copy">
-            © {new Date().getFullYear()} TestWatt LLC. Load bank testing &amp; critical power
-            services.
+            © {new Date().getFullYear()} TestWatt LLC
           </p>
 
           <nav aria-label="Footer" className="footer-simple__nav">

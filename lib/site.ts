@@ -26,8 +26,8 @@ export const NAV_LINKS: { to: AppRoute; label: string }[] = [
 ];
 export const NAV_LINKS_FOOTER: { to: AppRoute; label: string }[] = [
   { to: "/terms", label: "Terms & Conditions" },
-  { to: "/privacy", label: "Privacy Policy" },
   { to: "/warranty", label: "Warranty" },
+  { to: "/privacy", label: "Privacy Policy" },
 ];
 
 export const FOOTER_SERVICES = [

@@ -11,12 +11,12 @@ export default function Hero() {
             <span className="contact-title-line contact-title-line--xl contact-title-nowrap">
               Need a load bank repaired, serviced, upgraded or tested?
             </span>
-            <span className="contact-title-line contact-title-line--md">
-              Or training for your team? Let&apos;s talk.
+            <span className="contact-title-line contact-title-line--xl contact-title-nowrap">
+              Or training for your team? Let&apos;s talk
             </span>
           </h3>
 
-          <p className="hero__body">
+          <p className="hero__body contact-hero-body">
             Every enquiry is read by an engineer. Tell us what
             equipment you have and what you need and we&apos;ll send you a{" "}
             clear, no obligation proposal
