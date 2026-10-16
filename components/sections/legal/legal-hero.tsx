@@ -1,4 +1,5 @@
 import { Kicker } from "@/components/ui";
+import { renderText } from "./legal-content";
 
 export default function LegalHero({
   kicker,
@@ -8,7 +9,7 @@ export default function LegalHero({
 }: {
   kicker: string;
   title: string;
-  body: string;
+  body: string | string[];
   updated: string;
 }) {
   return (
@@ -19,7 +20,11 @@ export default function LegalHero({
           <h1 id="legal-heading" className="page-hero__title">
             {title}
           </h1>
-          <p className="page-hero__body page-hero__body--narrow">{body}</p>
+          {(Array.isArray(body) ? body : [body]).map((paragraph) => (
+            <p key={paragraph} className="page-hero__body page-hero__body--narrow legal-hero__body">
+              {renderText(paragraph)}
+            </p>
+          ))}
           <p className="legal-hero__updated">Last updated: {updated}</p>
         </div>
       </div>
