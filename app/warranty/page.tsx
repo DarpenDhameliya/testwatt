@@ -31,23 +31,23 @@ const SECTIONS: LegalSection[] = [
       // },
       {
         type: "paragraph",
-        text: "This Policy applies to Products and Services you buy directly from **TestWatt** or from a representative we have authorized in writing:",
+        text: "This Policy applies to Products and Services you purchase directly from TestWatt or from a representative that we have authorized in writing:",
       },
       {
         type: "list",
         items: [
-          "Load Banks Testing, Upgrades, Repairs & Services, Training & Troubleshooting and Parts.",
-          "Load Bank Upgrades, such as Manual to Automatic Conversions, Auto Load Leveling, Modbus and Network Communications, Wi-Fi, Power export control and Regenerative Operation.",
-          "Control Panels, PLCs, HMIs, Heater Elements and other assemblies we build, including Custom engineered and Made to Order equipment.",
+          "Load Bank testing, upgrades, repairs & services, training & troubleshooting, and parts.",
+          "Load Bank Upgrades: Manual-to-automatic conversions, Automatic-to-Manual conversions, Interface conversions, Auto Load Leveling, Modbus and Network Communications, Wi-Fi, Power Export Control, and Regenerative Operation.",
+          "Control Panels, Switches, Automation Hardware, Heater Elements, and all sorts of other assemblies we build (including custom-engineered and made-to-order equipment).",
           "Replacement and Spare Parts.",
-          "Repairs and Servicing, including on equipment made by other manufacturers.",
-          "Field Services, including Load Bank Testing, Commissioning, Troubleshooting, Maintenance and Training.",
-          "PLC and HMI Programs and Communication settings we supply or change.",
+          "Repairs and Servicing (including on equipment made by other manufacturers).",
+          "Field Services (including load bank testing, commissioning, troubleshooting, maintenance and training).",
+          "Software programs and communication settings that we supply or modify.",
         ],
       },
       {
         type: "paragraph",
-        text: "It does not cover equipment we did not supply, repair or service or any part of your site or Power System outside our Scope of work.",
+        text: "It does not cover any equipment, parts or services which we did not supply, repair, or Service and does not cover any part of your site or your Power System outside of our Scope of Work.",
       },
     ],
   },
@@ -56,19 +56,19 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "We warrant that our Products will be free from defects in Materials and Workmanship and will perform as described in their Manuals and agreed Specifications. We warrant that our services will be carried out with reasonable Skill and Care, by trained people, to the scope we agreed with you.",
+        text: "We warrant that our Products will be free from defects in materials and artistry and will perform in accordance with their Manuals and Agreed Specifications. We guarantee that our services will be carried out by trained personnel with reasonable skill and care to the extent of the scope agreed with you.",
       },
       {
         type: "table",
         head: ["What you bought", "What is covered", "Warranty period"],
         rows: [
-          ["New equipment", "The complete unit", "**12 months** from shipment"],
+          ["New equipment", "The complete unit", "**6 months** from shipment"],
+          ["Upgrades and Custom Engineered equipment", "The parts we supplied and the work we did, built to the agreed Specification", "**90 days** from shipment"],
           [
-            "Upgrades and Custom Engineered equipment",
-            "The parts we supplied and the work we did, built to the agreed Specification",
+            "Spare and Replacement parts",
+            "The part",
             "**90 days** from shipment",
           ],
-          ["Spare and Replacement parts", "The part", "**90 days** from shipment"],
           [
             "Repairs",
             "The fault we repaired and the parts we installed",
@@ -80,7 +80,7 @@ const SECTIONS: LegalSection[] = [
             "**90 days** from completion",
           ],
           [
-            "PLC and HMI programs",
+            "Software programs",
             "Performance to the agreed specification",
             "**90 days** from start-up or delivery",
           ],
@@ -88,23 +88,23 @@ const SECTIONS: LegalSection[] = [
       },
       {
         type: "paragraph",
-        text: "The start-up date is the date on our commissioning report. If we did not perform start-up, you will need to show us your own record of it. Otherwise, the period runs from shipment.",
+        text: "The startup date is the date of our commissioning report. If we didn't do the startup, you'll need to provide your own record of it. Otherwise, the period will be from shipment.",
       },
       {
         type: "paragraph",
-        text: "For upgrades, we do not warrant the existing equipment being upgraded and for custom work we do not warrant that a design or rating you specified suits your application. A repair covers the repaired fault only, not the rest of the unit.",
+        text: "For upgrades, we make no warranty as to whether the existing equipment is being upgraded. For custom work, we make no warranty that the design or rating you specified is suitable for your application. A repair only covers the fault that has been repaired.",
       },
       {
         type: "paragraph",
-        text: "A Repair or Replacement under warranty does not start a new warranty period. The repaired or replacement item is covered for whatever time is left on the original one.",
+        text: "A repair or replacement carried out under warranty does not trigger a new warranty period. The repaired or replacement item is covered for the remainder of the original warranty period.",
       },
     ],
   },
   {
     heading: "What we will do",
     paragraphs: [
-      "If we confirm a covered defect, we will repair or replace the item, reperform the service or correct the program, whichever we decide is appropriate. Where none of these is practical, we may refund or credit what you paid for the defective item or service, in accordance with the Quotation or our Terms and Conditions.",
-      "We decide where the work is done: at our facility, at an authorized repair shop or at your site. A replacement may be a different model or brand, as long as it matches the original's ratings and function.",
+      "If we confirm a covered defect, we will repair or replace the item, reperform the service or correct the program (whichever we consider appropriate). If none of the above is practical, we may credit what you paid for the defective item or service in accordance with the Quotation or our Terms and Conditions.",
+      "We decide where the work is carried out (our premises, an authorized repairer, or your site). A replacement can be a different model or brand provided it has the same ratings and performance as the original.",
     ],
   },
   {
@@ -113,87 +113,101 @@ const SECTIONS: LegalSection[] = [
       {
         type: "list",
         items: [
-          `Email **${SUPPORT_EMAIL}** within the warranty period and no later than **30 days** after you notice the problem.`,
-          "Include your Order or Invoice number, the model and Serial number, the start-up date and a description of what happened. Photos, Fault Codes, HMI screenshots, Test data and Maintenance records help us resolve claims faster.",
-          "Stop using the equipment if running it could cause more damage or a safety risk and keep any failed parts.",
-          "Work with our support team on basic remote troubleshooting before we send a technician or approve a return.",
-          "Do not ship anything back without a Return Material Authorization (RMA) number from us. Pack the item properly and insure the shipment, since the risk of loss in transit to us is yours.",
+          `Email **${SUPPORT_EMAIL}** during the warranty period, and no later than **30 days** after you first notice the problem.`,
+          "Include your Order/Invoice number, the model and serial number, the start-up date, and a description of what happened. Photos, fault codes, software screenshots, test data, and maintenance records will help us resolve your claim as quickly as possible.",
+          "Don't run the equipment if it could cause further damage or pose a safety risk and keep any failed parts.",
+          "Work with our support team on basic remote troubleshooting before we send out a technician or approve a return.",
+          "Don't send anything back without an RMA number from us. Pack the item appropriately and ensure the consignment, as the risk of loss in transit to us is yours.",
         ],
       },
       {
         type: "paragraph",
-        text: "We decide whether a claim is covered after reviewing the information and inspecting the item. If we find no defect or the cause is excluded under **Section 8**, we will charge for Inspection, Travel and Freight and quote any repair before doing it.",
+        text: "We will decide whether a claim is covered following a review of the information and inspection of the item. If we find no fault or the cause is excluded under **Section 8**, we will charge for inspection, travel, and freight and will quote any repair before repairing.",
       },
     ],
   },
   {
     heading: "Costs",
     paragraphs: [
-      "For an approved claim, we pay for the Parts and Labor to fix the defect at our facility and for standard ground shipping back to you within the contiguous United States. When we agree that on-site service is needed, we cover our labor during normal business hours.",
-      "You pay for shipping the item to us, Expedited freight, Removal and Reinstallation, Rigging and Cranes, Recommissioning, Site access and Permits, Rental equipment while yours is out of service and any duties or taxes. Travel time and expenses for on-site visits are also yours unless we agree otherwise in writing and after-hours work is billed at premium rates.",
-      "We will do warranty work as quickly as we reasonably can, but turnaround depends on parts and supplier lead times. Any time we give is an estimate and delays do not entitle you to damages or rental costs.",
+      "For an approved claim, we will pay for parts and labor to repair the defect at our facility and for standard ground shipping back to you within the contiguous US. If we agree that on-site service is required, we will cover our labor during normal business hours.",
+      "You pay for the shipping of the item to us (expedited freight), removal and reinstallation, rigging and cranes, recommissioning, site access and permits, rental equipment during the time your equipment is out of service, any duties and taxes, and travel time and expenses for on-site visits (unless otherwise agreed in writing). After-hours work is billed at premium rates.",
+      "We'll do the warranty work as quickly as we can (subject to parts and supplier lead times). Any time given is an estimate. Delays in the work will not entitle you to any damage or rental costs.",
     ],
   },
   {
     heading: "Your responsibilities",
     paragraphs: ["To keep your warranty valid, you need to:"],
     list: [
-      "Have qualified electricians install the equipment according to our Manuals and Drawings, the National Electrical Code and local codes, with correct cable sizing, Protection, Grounding and Phase rotation.",
-      "Have custom engineered Equipment and Control Upgrades started up by TestWatt.",
-      "Operate equipment only within its Nameplate ratings for Voltage, Current, Frequency, Capacity, Duty cycle and Temperature and keep all Safety Devices and Alarms in service.",
-      "Keep the Power Supply within the tolerances in the Manual and protect the equipment from Surges and Power quality problems on your system.",
-      "Make sure Cooling Fans are running before Load is applied, keep air paths clear and stop hot exhaust air from recirculating into the unit or nearby equipment.",
-      "Store and use equipment in conditions suited to its enclosure, away from rain, standing water, corrosive air and conductive dust unless it was built for those conditions.",
-      "Carry out the preventive maintenance in the manual and keep dated records of it.",
-      "Use only parts we supply or approve and not modify or repair the equipment during the warranty period without our written approval.",
-      "Follow lockout, arc flash and other electrical safety practices when working on the equipment.",
+      "Have qualified electricians install the equipment in accordance with our Manuals and Drawings, the National Electrical Code and local codes, with correct cable sizing, protection, grounding and phase rotation.",
+      "Have the custom-engineered equipment and Control upgrades switched on by TestWatt.",
+      "Operate equipment only within its nameplate ratings for Voltage, Current, Frequency, Capacity, Duty Cycle, and Temperature, and maintain all Safety Devices and Alarm Information.",
+      "Keep the power supply within the tolerances as specified in the manual and protect the equipment from surges and power quality problems on your system.",
+      "Make sure Cooling Fans are running before applying load, keep air paths clear, and stop hot exhaust air from recirculating into the unit or nearby equipment.",
+      "Store and use equipment in conditions suited to its enclosure, away from rain, standing water, corrosive air, and conductive dust unless it was built for those conditions.",
+      "Carry out the preventive maintenance described in the manual and keep records up to date.",
+      "Use only parts we supply or approve and do not modify or repair the equipment during the warranty period without our written approval.",
+      "Follow lockout, arc flash, and other electrical safety practices when working on the equipment.",
     ],
   },
   {
     heading: "Load bank testing services",
     paragraphs: [
-      "A Load Test runs your generator or power system at or near full output. That stress can expose, and sometimes trigger, failures in parts that were already worn or poorly maintained, such as Fuses, Resistor elements, Breakers and Switches. We are not responsible for failures of your equipment during or after a test unless our negligence caused them.",
-      "Before we test, you are responsible for making sure the equipment is maintained and fit to run at the agreed load and for telling us about any known Faults or Alarms. You also arrange building load transfers and any outage notices.",
-      "Our report records how your equipment performed on the day of the test. It does not guarantee future performance or that your system will carry load in a real outage. We can test to procedures based on NFPA 110 and NFPA 99, but whether your facility complies is decided by you and the authority having jurisdiction.",
+      "A Load Test is where you run your generator or power system at or near full output. That stress can bring to light and in some cases actually cause failures in components which were already worn or poorly maintained (fuses, resistor elements, breakers and switches etc.). We are not liable for any failure of your equipment during or after a test save in the case where our own negligence has caused the failure.",
+      "Before we carry out any testing you are responsible for ensuring that the equipment is maintained and fit to run at the agreed load and for letting us know of any known faults or alarms. You are also responsible for arranging any building load transfers and any outage notices.",
+      "Our report records how your equipment performed on the day of the test. It makes no warranty as to future performance or that your system will be able to carry the load in a real outage. We can test to procedures based on standards, but again, you and the agencies determine whether your facility complies.",
     ],
   },
   {
     heading: "What is not covered",
-    paragraphs: ["The warranty does not cover damage or failures caused by:"],
-    list: [
-      "Installation, Wiring or start-up that did not follow our Documentation.",
-      "Overloading, Overheating, Blocked Airflow or Running Load without the Fans On.",
-      "Short Circuits, Surges, Lightning, Phase Imbalance, Wrong Voltage or Frequency or other electrical problems that start outside our equipment.",
-      "Generators, Switchgear, Cables, Circuit Breakers or other Equipment we did not supply.",
-      "Missed Maintenance, Misuse, Accidents or Poor Handling, Transport or Storage.",
-      "Unauthorized Repairs or Modifications or Parts we did not supply or approve.",
-      "Corrosion, Moisture, Dust, Chemicals, Pests, Fire, Flood, Storms and other events outside our control.",
-      "It also does not cover normal wear and tear, consumable items such as Fuses, Lamps, Filters, Batteries, Power Cables and Connectors, Cosmetic Damage or Recalibration of Power Meters.",
-      "The warranty ends for an affected item if its serial number or nameplate is removed, Safety Devices or Interlocks are bypassed, our programs or settings are changed without our approval or an installed system is moved without our inspection. It is also suspended while any invoice for that item is unpaid.",
+    blocks: [
+      {
+        type: "paragraph",
+        text: "The warranty does not cover damage or failures caused by:",
+      },
+      {
+        type: "list",
+        items: [
+          "Installation, wiring or startup which did not conform to our documentation.",
+          "Overloading, overheating, blocked airflow or running load without the fans on.",
+          "Short circuits, surges, lightning, phase imbalance, wrong voltage, wrong frequency or any other electrical problems which originate outside of our equipment.",
+          "Generators, switchgear, cables, circuit breakers or any other equipment which we did not supply.",
+          "Missed maintenance, misuse, accidents or poor handling, transport or storage.",
+          "Unauthorized repairs or modifications or parts which we did not supply or approve.",
+          "Corrosion, Moisture, Dust, Chemicals, Pests, Fire, Flood, Storms and other events beyond our control.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "It also excludes normal wear and tears, consumables (fuses, lamps, filters, batteries, power cables and connectors), cosmetic damage and recalibration of power meters.",
+      },
+      {
+        type: "paragraph",
+        text: "The warranty on an affected item terminates if the serial number or nameplate is removed, safety devices or interlocks are circumvented, our programs or settings are altered without our permission, or the installed system is relocated without our inspection. We will also suspend it if any invoice for that item remains unpaid.",
+      },
     ],
   },
   {
     heading: "Third party parts and software",
     paragraphs: [
-      "Our equipment includes components from Third Party Manufacturers, such as PLCs, HMIs, Power Meters, Contactors, Circuit Breakers, Resistor Elements, Blower Motors and more. During the warranty period we handle claims on these for you, but our obligation for the component itself is limited to what its manufacturer provides to us. Where a manufacturer offers a longer warranty, we will pass it on where we can. If a part has been discontinued, we may fit an equivalent substitute and we cannot promise that parts will remain available for any set time.",
-      "PLC and HMI programs are licensed to you for use with the Load Bank they came with and we keep ownership of them. We do not promise that Software or Communications will run without Interruption or Error. We set up Modbus, Wi-Fi and Remote Monitoring features to the agreed Specification, but your Network, Internet service, cybersecurity and other connected systems are your responsibility. Remote Monitoring and Control features do not replace local protection devices or trained operators.",
-      "Warranty support by Phone and Email is free during normal business hours. Other Engineering, Training or After Warranty support is charged at our Standard rates.",
+      "Our kit consists of components from Third Party Manufacturers (Automation, Power Meters, Contactors, Circuit Breakers, Resistor Elements, Blower Motors etc.). During the warranty period we will deal with claims on these items but our obligation is limited to what the manufacturer will provide for us. Where the manufacturer has a longer warranty we will pass that on where we can. If a part is out of production we may fit an equivalent and cannot guarantee that parts will be available for any particular period of time.",
+      "Automation software is licensed to you for use with the equipment it came with (the Load Bank) and we retain ownership of the software. We don't guarantee that the software or communications will run without interruption or error. We have implemented Modbus, Wi-Fi and Remote Monitoring to the agreed specification but your network, your internet service, your cybersecurity and all other connected systems are your own responsibility. The Remote Monitoring and Control features do not in any way replace local protection devices or trained operators.",
+      "Warranty support by phone and email is free during normal business hours. All other Engineering, Training or After Warranty support is at our standard rates.",
     ],
   },
   {
-    heading: "Limits on our liability",
+    heading: "Limits to our liability",
     paragraphs: [
-      "TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE WARRANTIES IN THIS POLICY ARE THE ONLY WARRANTIES TESTWATT GIVES. WE DISCLAIM ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. Where the law does not allow an implied warranty to be excluded, it is limited to the Warranty period in Section 2.",
-      "The Remedies in **Sections 3 and 7** are your only remedies for a Warranty Claim. To the maximum extent permitted by law, we are not liable for Indirect, Incidental, Special or Consequential Damages, including Lost Revenue or Production, Downtime, Testing Delays, Rental Equipment, Fuel, Lost Data or Failed Inspections, however the claim arises. Our total liability for any claim will not exceed the price you paid for the specific product or service involved, **Subject to the final Quote and Specific customer requirements.**",
-      "Nothing in this policy limits liability that the law does not allow us to limit, such as for personal injury caused by our negligence. Any legal claim under this Warranty must be brought within one year of when it arises, where the law allows.",
+      "To the maximum extent permitted by applicable law, the only warranties that TestWatt gives are those set out in this policy. All other warranties, both express and implied, are expressly disclaimed. Where the law does not permit an implied warranty to be excluded, such warranty is limited to the warranty period set out in **Section 2**.",
+      "The only remedies you have in relation to a Warranty Claim are those set out in **Sections 3 and 7**. To the maximum extent permitted by law we are not liable for any indirect, incidental, special or consequential damages (including lost revenue or production, downtime, testing delays, rental equipment, fuel, lost data or failed inspections), however the claim arises. Our total liability in respect of any claim will not exceed the price you paid for the relevant product or service in question (subject to the final quote and specific customer requirements).",
+      "Nothing in this policy limits any liability which the law would not permit us to limit (e.g. liability for personal injury arising out of our negligence). Any claim under this warranty must be brought within one year of when it arises (where the law permits).",
     ],
   },
   {
     heading: "Other terms and contact",
     paragraphs: [
-      "This Warranty applies only to the original buyer and cannot be transferred without our written consent. If you rent or lease our equipment to others, the warranty stays with you and damage caused by your renters is not covered.",
-      "For equipment shipped outside the United States, warranty work is done at our U.S. facility and you pay international freight both ways, plus duties and taxes. You are responsible for meeting local codes and export rules.",
-      "If we change this policy, your order is governed by the version posted on our website on the date we accepted it. If any part is found unenforceable, the rest still applies. Only a signed written agreement from a TestWatt officer can change these terms.",
+      "This warranty is only for the original purchaser and cannot be passed on to anyone else without our express written consent. If you rent or lease our equipment to anyone else, then the warranty remains with you, and damage caused by your renters is not covered.",
+      "For equipment shipped outside the US, we do all the warranty work at our U.S. facility, and you pay international freight both ways plus duties and taxes. You are responsible for compliance with local codes and export rules.",
+      "If we alter this policy then your order is governed by the version of the policy that was on our website on the date we accepted your order. If any part of this is found to be unenforceable then the remainder of the policy will still be in force. Only a written agreement signed by a TestWatt officer will change these terms.",
       `**Warranty claims and support:** ${SUPPORT_EMAIL}`,
       "**Extended coverage and sales:** Sales@TestWatt.com",
     ],
@@ -212,10 +226,10 @@ export default function WarrantyPage() {
         kicker="Legal"
         title="Warranty"
         body={[
-          "This page explains what **TestWatt's Warranty** covers, how long it lasts, what you need to do to keep it valid and where our responsibility ends.",
-          "If your Quotation, Order acknowledgment or a Signed Service agreement gives different “**Warranty Terms**”, those terms apply to that order.",
+          "This page sets out what **TestWatt's warranty** covers, the warranty duration, what you need to do to maintain it, and where our responsibility ends.",
+          "If your Quotation, Order Acknowledgment, or Signed Service Agreement contains different “**Warranty Terms**,” then those terms will apply to that order.",
         ]}
-        updated="October 15, 2026"
+        updated="October 18, 2026"
       />
       <LegalContent sections={SECTIONS} />
     </div>

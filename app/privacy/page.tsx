@@ -23,11 +23,11 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "This policy explains how TestWatt collects, uses, shares and protects personal information. It covers our website at **www.Testwatt.com** and our dealings with customers, suppliers, contractors, business partners and job applicants.",
+        text: "This policy sets out how TestWatt collects, uses, discloses and protects personal information. It applies to our website at **www.Testwatt.com** and to our interactions with customers, suppliers, contractors, business partners and job applicants.",
       },
       {
         type: "paragraph",
-        text: "We provide load bank testing and load bank repair, servicing, spare parts and upgrades. Most of our customers are businesses, so most of the information we handle is business contact information for the people who work there. Technical information about your equipment or facility that doesn't identify a person isn't covered by this policy. Our Terms and Conditions and any agreement we have with you cover its confidentiality.",
+        text: "We do load bank testing, load bank repair, servicing, spares and upgrades. The majority of our customers are businesses and as such the majority of the information we come across is business contact details for the people working at that business. Technical information relating to your equipment or facility which doesn't identify an individual is not covered by this policy. Our Terms and Conditions and any agreement we have with you will cover the confidentiality of that information.",
       },
     ],
   },
@@ -36,40 +36,40 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "We collect only the information we need for the work you ask us to do and for running our business.",
+        text: "We only collect the information necessary to carry out the work you have asked us to do and to run our business.",
       },
       { type: "subheading", text: "Information you give us" },
       {
         type: "paragraph",
-        text: "This usually comes from emails, phone calls, the Website inquiry form, quotations, orders and service requests.",
+        text: "This is generally via email, phone call, the website enquiry form, quotations, orders and service requests.",
       },
       { type: "paragraph", text: "It can include:" },
       {
         type: "list",
         items: [
-          "Your name, Company, Job title, Email address, Phone number and Mailing, Billing and Shipping addresses.",
-          "What you ask us for and details about your equipment such as Make, Model, Serial Number, Ratings, Service history and Faults.",
-          "Order, Invoice and payment records (we don't take payments through the Website, and if you pay by card, our payment processor handles the card details).",
-          "For on-site work, the site address, Access and Safety requirements, Site contacts, Test witnesses, Signatures on service tickets, Test reports and Photos of equipment.",
-          "Network details or Access credentials, if you ask us to support connected equipment remotely.",
-          "Warranty, Repair and Return details, such as Proof of purchase and Photos of the problem.",
-          "For suppliers and Contractors, Contract, Invoice, Insurance and Tax information such as a Form W-9.",
-          "For job applicants, your resume, Work history, Certifications and References.",
+          "Your name, Company, Job title, Email address, Phone number and Mailing/Billing/Shipping addresses.",
+          "What you ask us for and details of your equipment (make, model, serial number, product documentation & files, product pictures, ratings, service history and faults).",
+          "Order, invoice and payment records (we don't take any payments via the website and if you pay by card then the card details are handled by our payment processor).",
+          "For on-site work: the site address, access and safety requirements, site contacts, test witnesses, signatures on service tickets, test reports, and photos of equipment.",
+          "Network details or access credentials (if we're to provide remote support for connected equipment).",
+          "Warranty, Repair and Return details (Proof of purchase, photos of the problem etc.)",
+          "For suppliers and contractors: contract, Invoice, Insurance, and Tax information (e.g., a Form W-9).",
+          "For job applicants: Your Resume, Work History, Certifications and References.",
         ],
       },
       { type: "subheading", text: "Information from other sources" },
       {
         type: "paragraph",
-        text: "A colleague may give us your details as a site or billing contact. Manufacturers, Distributors and Partners may refer you to us. Carriers and Payment processors confirm Deliveries and Payments. We may also find business contact details on company websites and in professional directories.",
+        text: "A colleague may supply you with their details as a site/billing contact. The manufacturer, distributor or partner may refer you to us. The carrier and the payment processor will confirm the delivery and payment respectively. We may also pick up the business contact details from a company's website or from a professional directory.",
       },
       { type: "subheading", text: "Information collected automatically" },
       {
         type: "paragraph",
-        text: "The Website doesn't use Cookies, Analytics or Advertising trackers. Our hosting provider does keep standard server logs, which record your IP address, Browser and Device type, the pages you view, the page you came from and the Time of your visit. **Section 5** explains this further.",
+        text: "The site doesn't use cookies, analytics or advertising trackers of any kind. Our hosting provider will maintain standard server logs which will record your IP address, browser and device type, the pages you viewed, the page you came from and the time of your visit. **Section 5** covers this in more detail.",
       },
       {
         type: "paragraph",
-        text: "Please don't send us sensitive Information, such as Social Security numbers or Health information, unless we ask for it for a specific Legal or Tax reason.",
+        text: "Please don't send us any sensitive information such as your SSN or health information unless we specifically ask for it for a legal or tax purpose.",
       },
     ],
   },
@@ -80,25 +80,25 @@ const SECTIONS: LegalSection[] = [
       {
         type: "list",
         items: [
-          "Answer inquiries and Prepare quotations.",
-          "Schedule and Perform Testing, Field service, Repairs, Upgrades and Training and Prepare test reports and Service records.",
-          "Process orders, Ship parts and Return repaired equipment.",
-          "Provide technical support and Handle warranty, Repair and Return claims.",
-          "Invoice, Collect payment and keep Accounting records.",
-          "Manage our relationships with customers, Suppliers and Partners and Consider job applicants.",
-          "Keep the Website, our Systems and Work sites Safe and Secure and Prevent fraud.",
-          "Improve our Services and the Website.",
-          "Comply with the law and establish or defend legal claims.",
-          "Send occasional marketing emails, which you can stop at any time (**see Section 8**).",
+          "Answer enquiries and prepare quotations.",
+          "Schedule and perform testing, field service, repairs, upgrades and training. Prepare test reports and service records.",
+          "Process orders, ship the parts and return the repaired equipment.",
+          "Provide technical support and handle warranty, repair and return claims.",
+          "Invoice, collect the payment and maintain the accounting records.",
+          "Manage relationships with customers, suppliers, and partners, and consider job applicants.",
+          "Keep the website, our systems and work sites safe and secure and prevent fraud.",
+          "Improve our services and the website.",
+          "Comply with the law and establish or defend claims.",
+          "Send out occasional marketing emails (you can of course stop at any time, **see Section 8**).",
         ],
       },
       {
         type: "paragraph",
-        text: "We may also use Test and Service data in De-identified, Combined form. For example to track Common components Failure.",
+        text: "We can also use Test and Service data in de-identified, combined form. For example, tracking common component failure.",
       },
       {
         type: "paragraph",
-        text: "If you are in the European Economic Area or the United Kingdom, our legal bases are: Performing a Contract with you or your Organization. Our legitimate interest in running our business and staying in touch with business contacts, Complying with legal obligations and your Consent, where the law requires it.",
+        text: "If you're in the European Economic Area or the UK our legal basis is the performance of a contract with you or your organization, our legitimate interest in running our business and staying in touch with business contacts, compliance with our legal obligations and your consent where required by law.",
       },
     ],
   },
@@ -107,25 +107,25 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "We don't sell personal information and we don't share it for targeted advertising. We share it only when we need to, with:",
+        text: "We don't sell personal information or share it for targeted advertising. We share it only when necessary, with:",
       },
       {
         type: "list",
         items: [
-          "Service providers that host our Website and Email, Store our files, Run our accounting software or Support our IT.",
-          "Shipping carriers and Payment processors.",
-          "Equipment manufacturers and parts suppliers, when we order Parts or Process a warranty claim.",
-          "Subcontractors and Partners who help us carry out a job.",
-          "Our Customer and anyone the customer asks us to send Test Reports to, such as the facility Owner, Consulting Engineer, Insurer or Inspector.",
+          "Service providers that host our website and email, store our files, run our accounting software and support our IT.",
+          "Shipping carriers and payment processors.",
+          "Equipment manufacturers and parts suppliers, when we order parts or process a warranty claim.",
+          "Subcontractors and Partners who help us do the job.",
+          "Our customer and anyone that the customer asks us to send the test reports to (i.e. the facility owner, consulting engineer, insurer or inspector).",
           "Our Lawyers, Accountants and Insurers.",
-          "Courts, Regulators or Law Enforcement, when the law requires it or to protect people's Rights and Safety.",
-          "A Buyer or Successor if our Business is Sold, Merged or Reorganized.",
+          "Courts, Regulators or Law Enforcement (when the law requires it or to protect people's rights and safety).",
+          "A Buyer or Successor if our business is sold, merged or reorganized.",
           "Anyone else, with your consent.",
         ],
       },
       {
         type: "paragraph",
-        text: "We expect everyone we share information with to Protect it and Use it only for the Purpose we gave it to them.",
+        text: "We expect everybody we share information with to protect it and to use it only for the purpose we've given it to them.",
       },
     ],
   },
@@ -134,23 +134,23 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "The Website is a simple information site. You don't create an account on it and you can't pay online.",
+        text: "The site is purely an information site. You don't need to sign up and there's no facility for online payment.",
       },
       {
         type: "paragraph",
-        text: "The inquiry form on the Contact page doesn't send anything to our servers. It opens your own email program with a message addressed to **Sales@TestWatt.com** or **Support@TestWatt.com**. Nothing reaches us until you send that email.",
+        text: "The inquiry form on the Contact page does nothing at all. It simply opens your email client with an email addressed to **Sales@TestWatt.com** or **Support@TestWatt.com**. Nothing gets sent to us until you actually send that email.",
       },
       {
         type: "paragraph",
-        text: "The Website doesn't set cookies or use Analytics, Advertising or Social media tracking. It does load fonts from Google Fonts, so your browser sends your IP address and browser details to Google when a page opens. The [Google Privacy Policy](https://policies.google.com/privacy) covers how Google uses that data.",
+        text: "The site doesn't set any cookies and doesn't use any analytics, advertising or social media tracking. It does however load fonts from Google Fonts so when a page loads your IP address and browser details will be sent to Google. The [Google Privacy Policy](https://policies.google.com/privacy) governs how Google uses that data.",
       },
       {
         type: "paragraph",
-        text: "Because we don't track visitors or sell data, Do Not Track and Global Privacy Control signals don't change how the Website works. If we add cookies or analytics, we will update this policy first and ask for your consent where the law requires it.",
+        text: "As we don't track visitors or sell any data then DNT and GPC signals have no effect on the operation of the Website. If we do add cookies or analytics we will update this policy and will seek your consent where required by law.",
       },
       {
         type: "paragraph",
-        text: "The Website links to other sites, such as standards Organizations and Manufacturers. Their privacy practices are their own.",
+        text: "The site links to other sites (e.g. standards organizations and manufacturers). The privacy practices of those sites are their own.",
       },
     ],
   },
@@ -159,20 +159,20 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "We use reasonable Administrative, Technical and Physical safeguards to protect personal information. We limit access to people who need it for their Work, Protect our email and File accounts with access controls, run the Website over HTTPS and keep paper records secure.",
+        text: "We use appropriate administrative, technical and physical measures to protect personal information. Access is restricted to those who need it for their work, our email and file accounts are protected with access controls, the website is served over HTTPS and paper records are kept secure.",
       },
       {
         type: "paragraph",
-        text: "No system is completely secure, and we can't guarantee the security of information sent to us by email or over the internet. Please don't email passwords, Network credentials or Tax ID numbers. Ask us for a safer way to send them. If a security breach affects your information, we will notify you as the law requires.",
+        text: "No system is 100% secure and we can't guarantee the security of information you send us via email or over the internet. Don't email us passwords, network credentials or tax ID numbers. Ask us for a safer way to send those. If there is a security breach which affects your information we will notify you in accordance with the law.",
       },
     ],
   },
   {
-    heading: "How long we keep it",
+    heading: "How long do we keep it",
     blocks: [
       {
         type: "paragraph",
-        text: "We keep personal information only as long as we need it for the reasons in this policy or as long as the law requires.",
+        text: "We will only hold your personal information for as long as is necessary for the purposes set out in this policy or as required by law.",
       },
       { type: "paragraph", text: "As a general guide:" },
       {
@@ -191,7 +191,7 @@ const SECTIONS: LegalSection[] = [
       },
       {
         type: "paragraph",
-        text: "We may keep information longer if we need it for a legal claim or investigation. When we no longer need it, we delete it or remove anything that identifies you.",
+        text: "We may retain the information for longer if it is required for a legal claim or investigation. When it is no longer required we will delete it or remove anything which identifies you.",
       },
     ],
   },
@@ -200,7 +200,7 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "We may send business contacts occasional emails about our services. To stop them, use the unsubscribe link in the email or write to **Sales@TestWatt.com** with \"**Unsubscribe**\" in the subject line. We'll stop within 10 business days. You'll still receive messages about your Orders, Scheduled work, Reports and Invoices.",
+        text: "We may send business contacts from time-to-time emails about our services. To opt out simply use the unsubscribe link in the email or write to **Sales@TestWatt.com** with \"**Unsubscribe**\" in the subject line. We'll stop within 10 business days. You will still receive messages relating to your orders, scheduled work, reports and invoices.",
       },
     ],
   },
@@ -209,15 +209,15 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "Wherever you live, you can ask us to give you a copy of your Personal Information, correct it, delete it or stop sending you marketing. Depending on where you live, you may also have the right to receive your data in a Portable format, to object to or limit certain uses and to appeal if we turn down your request.",
+        text: "Anywhere you are you can ask us to provide you with a copy of your personal data, to correct it, to delete it or to stop us sending you marketing. Depending on your location you may also have the right to have your data provided to you in a portable format, the right to object to or restrict certain uses and the right to appeal if we refuse your request.",
       },
       {
         type: "paragraph",
-        text: "To make a request Email: **Support@TestWatt.com** with \"**Privacy request**\" in the subject line. We'll confirm your identity first, usually by checking your details against our records or replying to the email address we have on file. Someone else can make a request for you with your signed permission. We aim to reply within 45 days.",
+        text: "To make a request you email **Support@TestWatt.com** with 'Privacy request' in the subject line. We'll verify your identity first (typically by checking your details against our records or by replying to the email address we have on file). Someone else can make the request on your behalf with your signed consent. We aim to get back to you within 45 days.",
       },
       {
         type: "paragraph",
-        text: "Some requests have limits. For example: We must keep Tax Records and we can't erase records of work we actually performed for a customer. If we can't do what you ask, we'll explain why. If your state gives you the right to appeal, reply to our decision with \"**Appeal**\" in the subject line. We won't treat you differently for using any of these rights.",
+        text: "Some requests are subject to limits. We're required to retain tax records and we can't delete records of work we've actually done for a customer. If we're unable to do what you're asking we'll let you know why. If your state allows you to appeal we can of course reply to our decision with \"**Appeal**\" in the subject line. We won't treat you any differently for exercising any of these rights.",
       },
     ],
   },
@@ -226,17 +226,17 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "California and several other states, including Colorado, Connecticut, New Jersey, Texas and Virginia, have Consumer Privacy Laws. These laws apply only to businesses above certain size thresholds and many of them exclude people acting in a business role. We honor the rights in **Section 9** whether or not a particular law applies to us.",
+        text: "California and a number of other states (Colorado, Connecticut, New Jersey, Texas and Virginia) have consumer privacy laws. Those laws only apply to businesses above certain size thresholds and many of them expressly exclude people acting in a business capacity. We will of course respect the rights in **Section 9** whether or not a particular law applies to us.",
       },
       { type: "subheading", text: "California residents" },
       {
         type: "paragraph",
-        text: "In the past 12 months we have collected identifiers (such as Name, Email address and IP address), Customer and Commercial records (such as Orders, Invoices and Signatures), website log data, Photos taken during service work and Professional information (such as Job Title). We collected this information from the sources and for the purposes in **Sections 2** and **3** and disclosed it only to the recipients in **Section 4**. We have not sold personal information or shared it for targeted advertising, including that of anyone **under 16**. We use sensitive information such as a supplier's tax ID, only for the purpose it was given. We don't share personal information with third parties for their own direct marketing.",
+        text: "Over the last 12 months, we have collected identifiers (name, email address, IP address, etc.), customer and commercial records (orders, invoices, signatures, etc.), website log data, photos taken during the course of the work, and professional information (job title, etc.). We collected this information from the sources and for the purposes set out in sections 2 and 3, and we have disclosed it only to the recipients set out in **Section 4**. We have not sold any personal information, and we have not shared it with any third party for targeted advertising (including that of any person **under 16**). We use sensitive information such as a supplier's tax ID solely for the purpose for which it was provided. We do not share personal information with any third party for their own direct marketing.",
       },
       { type: "subheading", text: "Outside the United States" },
       {
         type: "paragraph",
-        text: "We are based in the United States and store information here. Information you send us from another country is transferred to the United States, where privacy laws may differ from yours. People in the European Economic Area, the United Kingdom or Switzerland may also object to processing based on our legitimate interests and complain to their local data protection authority. In Canada, you can contact the Office of the Privacy Commissioner of Canada.",
+        text: "We're based in the US and we store our information there. Any information you send us from another country will be transferred to the US where privacy laws may be different to those in your country. Individuals in the EEA, the UK or Switzerland may have the right to object to our processing on the grounds of our legitimate interests and may raise a complaint with their local data protection authority. In Canada you can contact the Office of the Privacy Commissioner of Canada.",
       },
     ],
   },
@@ -245,7 +245,7 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "Our Website and services are meant for Businesses and Adults. We don't knowingly collect information from anyone **under 16**. If you think a child has sent us Information, Contact Us and we'll delete it.",
+        text: "Our website and services are for businesses and adults. We don't knowingly collect information from anyone **under 16**. If you suspect a child has sent us information please get in touch and we'll delete it.",
       },
     ],
   },
@@ -254,7 +254,7 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "We may update this policy when our practices or the law change. We'll post the new version on this page and change the \"**Last updated**\" date. For significant changes, we'll also give notice on the Website or by Email.",
+        text: "We may amend this policy at any time should our practices or the law change. The amended version will be posted on this page and the 'Last updated' date will be changed accordingly. Where there is a significant change we will also provide notice on the Website or by email.",
       },
     ],
   },
@@ -263,7 +263,7 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: `For Questions about this Policy or your Information, write to Email **${SUPPORT_EMAIL}** with "**Privacy request**" in the subject line.`,
+        text: `For any questions regarding this policy or your information please write to **${SUPPORT_EMAIL}** with "**Privacy request**" in the subject line.`,
       },
     ],
   },
@@ -280,8 +280,8 @@ export default function PrivacyPage() {
       <LegalHero
         kicker="Legal"
         title="Privacy Policy"
-        body="How we collect, use and protect your information when you visit our site or use our services."
-        updated="October 13, 2026"
+        body=""
+        updated="October 18, 2026"
       />
       <LegalContent sections={SECTIONS} />
     </div>

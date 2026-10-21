@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import ScrollToTop from "@/components/scroll-to-top";
 import AppFooter from "@/components/app-footer";
 import SiteHeader from "@/components/site-header";
 import { SALES_EMAIL, SITE_NAME, SITE_URL, SUPPORT_EMAIL } from "@/lib/site";
 import "./globals.css";
 
-const outfit = Outfit({
+const outfit = localFont({
+  src: "./fonts/outfit.woff2",
   variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: "500 800",
   display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const jakarta = localFont({
+  src: [
+    { path: "./fonts/jakarta.woff2", weight: "400 700", style: "normal" },
+    { path: "./fonts/jakarta-italic.woff2", weight: "400 700", style: "italic" },
+  ],
   variable: "--font-jakarta",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
