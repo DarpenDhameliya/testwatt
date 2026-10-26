@@ -90,7 +90,7 @@ export function SectionHeading({
 }: {
   kicker?: string;
   heading: ReactNode;
-  body?: string;
+  body?: string | string[];
   light?: boolean;
   maxWidth?: number;
   className?: string;
@@ -105,14 +105,16 @@ export function SectionHeading({
       >
         {heading}
       </h2>
-      {body && (
-        <p
-          className={`section-heading__body${light ? " section-heading__body--light" : ""}`}
-          style={style}
-        >
-          {body}
-        </p>
-      )}
+      {body &&
+        (Array.isArray(body) ? body : [body]).map((paragraph) => (
+          <p
+            key={paragraph}
+            className={`section-heading__body${light ? " section-heading__body--light" : ""}`}
+            style={style}
+          >
+            {paragraph}
+          </p>
+        ))}
     </div>
   );
 }

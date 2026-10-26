@@ -9,6 +9,36 @@ interface ServiceItem {
   icon: (className?: string) => React.ReactNode;
 }
 
+const VISIT_ROWS: [string, string][] = [
+  [
+    "Enclosure and frame",
+    "Rust and damage, doors, hinges and seals, signs of water getting in, lifting points, casters and trailer running gear",
+  ],
+  [
+    "Air path",
+    "Intake and exhaust screens clear, fan blades and motor bearings, correct fan rotation",
+  ],
+  [
+    "Load elements",
+    "Sagging, broken or discolored resistor elements, cracked insulators, resistance of each element and each load step",
+  ],
+  [
+    "Connections and wiring",
+    "Loose terminals and hardware, oxidation and corrosion, condition of wire insulation, insulation resistance test",
+  ],
+  [
+    "Switching and protection",
+    "Contactors checked for pitting and free movement, fuses and breakers, emergency stop, over-temperature and fan-failure shutdowns working and not bypassed",
+  ],
+  [
+    "Controls and metering",
+    "Panel lamps and switches, digital controller and software, remote or PC control link, metering accuracy",
+  ],
+  ["Cleaning", "Dust and debris blown out with clean, dry compressed air"],
+  ["Load test", "Each step and full rated load, with readings recorded"],
+  ["Report", "Findings, photos, readings and any recommended work"],
+];
+
 const SERVICE_ITEMS: ServiceItem[] = [
   {
     number: "01",
@@ -209,15 +239,33 @@ const SERVICE_ITEMS: ServiceItem[] = [
     body: (
       <>
         <p>
-          Field service suits permanently installed load banks, trailer and container
-          units, and any job where downtime has to be short. A technician comes to
-          your site with the test equipment needed to carry out the repair or service.
+          Field service to troubleshoot the permanently installed load banks, trailer and container
+          units and any job where downtime has to be minimal. A technician comes to your site with
+          the test equipment and common parts.
         </p>
         <p>
-          Shop repair suits portable and compact units. You ship or drop off the unit,
-          we repair it on the bench, and it goes through a test before it comes back
-          to you.
+          Shop repair of the portable and compact units. You ship or drop them off, we repair them
+          on the bench, and they go through a full load test before we return them to you.
         </p>
+        <h4 className="why-card__subheading">What a service visit covers</h4>
+        <div className="why-card__table-wrap troubleshooting-table-wrap">
+          <table className="why-card__table troubleshooting-table">
+            <thead>
+              <tr>
+                <th scope="col">Area</th>
+                <th scope="col">What we check</th>
+              </tr>
+            </thead>
+            <tbody>
+              {VISIT_ROWS.map(([area, check]) => (
+                <tr key={area}>
+                  <td>{area}</td>
+                  <td>{check}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </>
     ),
     icon: (className) => (
@@ -235,6 +283,78 @@ const SERVICE_ITEMS: ServiceItem[] = [
         <path d="M15 10h4l3 3v4h-7z" />
         <circle cx="5.5" cy="18.5" r="1.8" />
         <circle cx="17.5" cy="18.5" r="1.8" />
+      </svg>
+    ),
+  },
+  {
+    number: "08",
+    badge: "Service Capability",
+    title: "Load banks we work on",
+    body: (
+      <>
+        <p>
+          Resistive, resistive-reactive and DC load banks in portable, stationary, trailer mounted
+          and containerized formats.
+        </p>
+        <h4 className="why-card__subheading">How it works</h4>
+        <ol>
+          <li>
+            Send us the make, model, serial number, rating of the unit and let us know what it&apos;s
+            doing or what service you require.
+          </li>
+          <li>
+            We&apos;ll confirm whether field service or shop repair is the right option and issue you
+            with a quote.
+          </li>
+          <li>We do the work and only replace what needs replacing.</li>
+          <li>We test the unit at full rated load before sign-off.</li>
+          <li>You get a service report for your records.</li>
+        </ol>
+      </>
+    ),
+    icon: (className) => (
+      <svg
+        className={className}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="3" y="5" width="18" height="12" rx="2" />
+        <path d="M7 9h10M7 13h6" />
+        <path d="M8 21h8" />
+      </svg>
+    ),
+  },
+  {
+    number: "09",
+    badge: "Service Capability",
+    title: "Service plans",
+    body: (
+      <>
+        <p>
+          A service plan sees your load banks on a fixed maintenance schedule with priority
+          booking. Each visit is logged so you have a service history ready to go should an
+          auditor or insurer come along and ask to see it.
+        </p>
+      </>
+    ),
+    icon: (className) => (
+      <svg
+        className={className}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="3" y="4" width="18" height="18" rx="2" />
+        <path d="M16 2v4M8 2v4M3 10h18" />
       </svg>
     ),
   },
@@ -256,8 +376,16 @@ export default function Capabilities() {
               Repairs, maintenance, calibration and parts
             </h2>
             <p className="why-grid__body">
-              Repairs, preventive maintenance, calibration and spare parts for AC, DC
-              and resistive-reactive load banks. On your site or in our shop.
+              Repairs, preventive maintenance and spare parts for AC/DC and resistive-reactive load banks, onsite or in our shop.
+            </p>
+            <p className="why-grid__body">
+              A load bank can well sit for weeks and then be required to carry full rated load on the day you're testing a
+              generator or commissioning a UPS. Most of the problems that occur are down to heat and switching. The
+              resistor elements get very hot, the fans will pull a large volume of air through the enclosure and the
+              contactors will make and break heavy current every time you step the load. Over time the elements will
+              sag and burn open, the ceramic insulators will crack, the connections will loosen and corrode and the
+              meters will drift out of tolerance. TestWatt do load bank repairs and maintenance so that they're fit to run
+              when you need them and will give you readings which you can put in your test report.
             </p>
           </div>
 

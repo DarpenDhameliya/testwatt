@@ -6,12 +6,31 @@ export default function LegalHero({
   title,
   body,
   updated,
+  banner,
 }: {
   kicker: string;
   title: string;
   body: string | string[];
   updated: string;
+  banner?: boolean;
 }) {
+  if (banner) {
+    return (
+      <>
+        <section className="legal-banner" aria-labelledby="legal-heading">
+          <h1 id="legal-heading" className="legal-banner__title">
+            {title}
+          </h1>
+        </section>
+        <div className="legal-updated">
+          <div className="container">
+            <p className="legal-updated__text">Last updated {updated}</p>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <section className="page-hero page-hero--compact" aria-labelledby="legal-heading">
       <div className="container">

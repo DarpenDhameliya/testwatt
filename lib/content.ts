@@ -377,76 +377,95 @@ export const RESPONSE_TIMES = [
 export type TrainingCourse = {
   title: string;
   description: string;
-  modules: string[];
-  audience: string;
+  modules?: string[];
+  table?: { head: [string, string]; rows: [string, string][] };
+  audience?: string;
 };
 
 export const TRAINING_COURSES: TrainingCourse[] = [
   {
     title: "Operational training",
     description:
-      "This is for the people who connect and run load tests. By the end, operators should be able to set up a test, apply load safely, watch the right readings, and shut the unit down properly.",
+      "This training is for the people who actually connect and run the load tests. By the end of it operators should be able to set up a test, apply the load safely, monitor the correct readings and shut the unit down correctly.",
     modules: [
-      "Electrical safety, PPE and safe work practices under NFPA 70E",
-      "How your load bank works: resistive and reactive loads, kW, kVA and power factor",
-      "Reading generator and UPS nameplate ratings to choose the right test load",
-      "Cable sizing, connections and checking phase rotation before load goes on",
-      "Starting the cooling fans and confirming airflow before any load is applied",
-      "Manual step loading and running automatic test profiles from the controller or software",
-      "Watching voltage, frequency, current and kW during the test, and knowing when to stop",
-      "Recording results for tests required under NFPA 110 and by your local authority having jurisdiction",
-      "Removing load, running the cool-down, and disconnecting safely",
+      "Electrical safety, PPE and safe work practices as per **NFPA 70E**.",
+      "How your load bank works: resistive and reactive loads, kW, kVA and power factor.",
+      "Reading the generator nameplate ratings to select the appropriate test load.",
+      "Cable sizing, connections and checking phase rotation prior to load going on.",
+      "Start the cooling fans and check airflow prior to applying any load.",
+      "Manual step loading and running of the automatic test profiles from the controller or software.",
+      "Monitor the voltage, frequency, current and kW during the test and know when to stop.",
+      "Recording results of tests required as per **NFPA 110** and as required by your local authority having jurisdiction.",
+      "Remove the load, run the cool down and disconnect safely.",
     ],
-    audience: "Technicians, facility and data center operators, and rental fleet staff.",
+    audience: "technicians, facility & data center operators and rental fleet staff.",
   },
   {
     title: "Maintenance training",
     description:
-      "A load bank that sits unused for months can fail on the day you need it. This course teaches your maintenance staff the routine checks that keep a unit ready, and how to spot wear before it becomes a failure.",
+      "A load bank that's been sitting around for months can fail on the very day you need it. This training will help your maintenance staff with the routine checks that keep a unit ready and how to identify wear before it becomes a failure.",
     modules: [
-      "Visual inspection of elements, wiring, contactors, fuses and terminals",
-      "Finding loose or overheated connections and re-torquing to specification",
-      "Resistance checks on load elements and insulation resistance testing",
-      "Cleaning air intakes, exhausts and element chambers",
-      "Blower motor checks: fan rotation and motor current",
-      "Function tests for airflow switches, over-temperature sensors and emergency stops",
-      "Checking metering accuracy and when to recalibrate",
-      "Inspecting power cables, connectors and control leads",
-      "Setting maintenance intervals and keeping service records",
+      "Visual inspection of the elements, wiring, contactors, fuses and terminals.",
+      "Finding any loose or overheated connections and retorquing to specification.",
+      "Resistance checks on load elements and resistance testing, Ceramic.",
+      "Cleaning of air intakes and exhausts.",
+      "Blower motor checks: bearings, fan rotation, motor current and drive.",
+      "Function tests for the airflow switches, the over temperature sensors and the emergency stops.",
+      "Checking metering accuracy and when to recalibrate.",
+      "Inspecting the power cables, connectors and control leads.",
+      "Setting the maintenance intervals and maintaining the service records.",
     ],
     audience:
-      "In-house maintenance teams and electrical technicians responsible for owned equipment.",
+      "in house maintenance teams and electrical technicians looking after the company's own equipment.",
   },
   {
     title: "Troubleshooting training",
     description:
-      "Technicians learn a step-by-step way to find faults, using the schematics and meters they already have, and then practice on real fault scenarios.",
+      "Technicians learn a step by step fault finding method using the schematics and meters they already have, then practice on real fault scenarios.",
     modules: [
-      "Reading load bank schematics and following the control logic",
-      "Separating control circuit faults from power circuit faults",
-      "Lockout/tagout for both main power and control power, which can stay live after the main supply is isolated",
-      "Diagnosing load that won't apply or reads low, failed load steps and phase imbalance",
-      "Diagnosing over-temperature trips, airflow faults and blower failures",
-      "Controller error messages, communication faults and metering problems",
-      "Deciding when a part can be repaired and when it must be replaced",
+      "Read the load bank schematics and follow the control logic.",
+      "Separating control circuit faults from power circuit faults.",
+      "Lockout/tagout on both the main power and the control power (which can remain alive after the main supply has been isolated).",
+      "Safely using multimeters, clamp meters and insulation testers on load bank circuits.",
+      "Diagnosing loads that won't apply or read low, failed load steps and phase imbalance.",
+      "Diagnosing over temperature trips, airflow faults and blower faults.",
+      "Controller error messages, comm faults and metering problems.",
+      "Deciding when a component can be repaired and when it has to be replaced.",
     ],
-    audience: "Experienced technicians and service engineers who handle faults in the field.",
+    audience: "experienced field technicians and service engineers dealing with field faults.",
   },
   {
     title: "On-site start-up training",
     description:
-      "When a new or refurbished load bank arrives, we commission it at your site and train your team. Your staff see the unit set up correctly the first time and learn the procedure while the technician is still there.",
+      "When a new or refurbished load bank arrives, we commission it on site and train your team the same day. Your team sees it properly set up the first time and learns the procedure while the technician is still there.",
     modules: [
-      "Receiving inspection and checking for shipping damage",
-      "Positioning the unit with safe clearance around the hot air exhaust",
-      "Connecting the supply under test and the external blower and control supply",
-      "Verifying phase rotation and fan direction at first power-up",
-      "Testing each load step and confirming safety interlocks trip correctly",
-      "Setting up the handheld controller, remote panel or PC software",
-      "Linking multiple load banks for larger tests, where your system supports it",
-      "Handover of operating notes and a record of the commissioning tests",
+      "Inspection and checking for transport damage.",
+      "Position the unit with safe clearance around the hot air exhaust.",
+      "Connect the supply under test to the control supply.",
+      "Verify phase rotation and fan direction on first power up.",
+      "Test each load step and verify that the safety interlocks trip as required.",
+      "Setting up the remote controller, the panel or the PC software.",
+      "Linking up multiple load banks for larger tests (where your system allows it).",
+      "Handover of the operating notes and a record of the commissioning tests.",
     ],
-    audience:
-      "New equipment owners, and sites commissioning generators, UPS systems or switchgear.",
+    audience: "New equipment owners and sites commissioning generators and switchgear.",
+  },
+  {
+    title: "Troubleshooting support",
+    description:
+      "If your load bank trips won't hold load or gives you readings you don't trust, our engineers can help. We'll start by discussing the symptoms with you and in many cases, we can identify faults over the phone or via a video call. If we can't identify it remotely, we'll come to site, diagnose the fault and sort it out. You'll always get a written report after each call-out detailing what failed, why it failed and anything else we found that required attention.",
+    table: {
+      head: ["Symptom", "What we check"],
+      rows: [
+        ["Load bank won't apply full load or kW reads low", "Failed elements, blown fuses, contactors, loose internal wiring, controller settings"],
+        ["Readings unstable or don't match the generator's meters", "Current transformers, voltage sensing, meter calibration"],
+        ["Over temperature trip or unit shuts down mid test", "Blocked intake or exhaust, blower motor, fan rotation, temperature sensors"],
+        ["Fan won't start or airflow fault on startup", "Fan supply, motor overloads, airflow switch, phase rotation"],
+        ["A load step won't switch in or out", "Contactor coil, control voltage, interlocks, controller outputs"],
+        ["Phase imbalance under load", "Open elements on one phase, connection faults, fuses"],
+        ["Handheld, remote or software can't control the unit", "Communication cables, network settings, Modbus configuration, firmware"],
+        ["Burning smell, discoloration or arcing", "Overheated terminals, damaged insulation, failed elements"],
+      ],
+    },
   },
 ];

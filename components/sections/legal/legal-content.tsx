@@ -82,7 +82,7 @@ function renderBlock(block: LegalBlock, index: number) {
 
 export default function LegalContent({ sections }: { sections: LegalSection[] }) {
   return (
-    <section className="section section--white">
+    <section className="section section--grey">
       <div className="container">
         <div className="legal-content">
           {sections.map((section, index) => (

@@ -230,6 +230,7 @@ export default function WarrantyPage() {
           "If your Quotation, Order Acknowledgment, or Signed Service Agreement contains different “**Warranty Terms**,” then those terms will apply to that order.",
         ]}
         updated="October 18, 2026"
+        banner
       />
       <LegalContent sections={SECTIONS} />
     </div>

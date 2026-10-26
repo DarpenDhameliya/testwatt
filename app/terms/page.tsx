@@ -189,6 +189,7 @@ export default function TermsPage() {
         title="Terms & Conditions"
         body=""
         updated="October 18, 2026"
+        banner
       />
       <LegalContent sections={SECTIONS} />
     </div>

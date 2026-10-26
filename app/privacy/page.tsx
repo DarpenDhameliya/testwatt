@@ -282,6 +282,7 @@ export default function PrivacyPage() {
         title="Privacy Policy"
         body=""
         updated="October 18, 2026"
+        banner
       />
       <LegalContent sections={SECTIONS} />
     </div>

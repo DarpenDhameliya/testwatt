@@ -5793,18 +5793,20 @@ main {
   position: static;
 }
 
-/* Upgrade capabilities cards carry full detailed content (paragraphs + tables),
-   so they need to drop the sticky two-column layout earlier than the standard
-   why-grid--equal breakpoint. */
-@media (max-width: 1500px) {
-  #upgrade-capabilities .why-grid--equal {
-    grid-template-columns: 1fr;
-    gap: 40px 0;
-  }
+/* Load Bank Upgrades capabilities: always single column, intro on top and the
+   cards stacked below it, with no sticky left/right split at any screen width. */
+#upgrade-capabilities .why-grid--equal {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 40px 0;
+}
 
-  #upgrade-capabilities .why-grid__sticky {
-    position: static;
-  }
+#upgrade-capabilities .why-grid--equal > *,
+#upgrade-capabilities .why-card {
+  min-width: 0;
+}
+
+#upgrade-capabilities .why-grid__sticky {
+  position: static;
 }
 
 /* ==========================================================================
@@ -7331,4 +7333,185 @@ main {
 .legal-hero__body strong {
   color: #ffffff;
   font-weight: 700;
+}
+
+.legal-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 447px;
+  padding: 80px 24px;
+  background: var(--color-navy);
+}
+
+.legal-banner__title {
+  margin: 0;
+  color: var(--color-white);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+}
+
+@media (max-width: 768px) {
+  .legal-banner {
+    min-height: 280px;
+    padding: 56px 16px;
+  }
+}
+
+.legal-updated {
+  background: var(--color-light-grey);
+  padding: 40px 0 0;
+}
+
+.legal-updated__text {
+  margin: 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-navy);
+  font-size: var(--text-md);
+  font-weight: 700;
+}
+
+.why-grid__list {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  list-style: disc;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--color-grey);
+}
+
+.why-grid__list li + li {
+  margin-top: 8px;
+}
+
+.why-grid__list li::marker {
+  color: var(--color-red, var(--color-grey));
+}
+
+.troubleshooting-table-wrap {
+  background: var(--color-white);
+}
+
+.troubleshooting-table {
+  min-width: 560px;
+  font-size: 15px;
+}
+
+.troubleshooting-table thead th {
+  font-size: 12px;
+  padding: 14px 20px;
+}
+
+.troubleshooting-table tbody td {
+  padding: 14px 20px;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.troubleshooting-table tbody td:first-child {
+  width: 40%;
+  white-space: normal;
+}
+
+.course-card--full {
+  grid-column: 1 / -1;
+}
+
+/* Let the course card shrink to the screen so the table scrolls inside its own
+   wrapper instead of stretching the page. */
+.course-card {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .troubleshooting-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .troubleshooting-table {
+    min-width: 520px;
+    font-size: 13px;
+  }
+
+  .troubleshooting-table thead th {
+    font-size: 11px;
+    padding: 10px 14px;
+  }
+
+  .troubleshooting-table tbody td {
+    padding: 10px 14px;
+    line-height: 1.5;
+  }
+
+  .troubleshooting-table tbody td:first-child {
+    width: 45%;
+  }
+}
+
+/* Repairs & Servicing capabilities: always single column, intro on top and the
+   cards stacked below it, with no sticky left/right split at any screen width. */
+#repair-capabilities .why-grid--equal {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 40px 0;
+}
+
+#repair-capabilities .why-grid--equal > *,
+#repair-capabilities .why-card {
+  min-width: 0;
+}
+
+#repair-capabilities .why-grid__sticky {
+  position: static;
+}
+
+/* Repairs & Servicing intro: styled like the SectionHeading used on the other
+   service pages (full width, title then body paragraphs). */
+#repair-capabilities .why-grid__title {
+  font-size: var(--text-xl);
+  margin: 0;
+}
+
+#repair-capabilities .why-grid__sticky .why-grid__body {
+  font-size: var(--text-base);
+  line-height: 1.75;
+  margin: 16px 0 0;
+}
+
+#repair-capabilities .why-grid__sticky .why-grid__body + .why-grid__body {
+  margin-top: 14px;
+}
+
+.why-card__body .why-card__subheading {
+  font-size: var(--text-md);
+  color: var(--color-navy);
+  font-weight: 700;
+  margin: 24px 0 12px;
+}
+
+.why-card__body p + .troubleshooting-table-wrap {
+  margin-top: 14px;
+}
+
+.why-card__body ol {
+  margin: 0;
+  padding-left: 22px;
+  list-style: decimal;
+}
+
+.why-card__body ol li::marker {
+  color: var(--color-red);
+  font-weight: 700;
+}
+
+.why-card__body ol li {
+  margin-bottom: 8px;
+}
+
+.why-card__body ol li:last-child {
+  margin-bottom: 0;
 }
