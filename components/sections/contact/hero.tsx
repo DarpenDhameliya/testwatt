@@ -1,11 +1,9 @@
-import HeroEyebrow from "@/components/hero-eyebrow";
-
 export default function Hero() {
   return (
     <section className="hero hero--compact hero--plain" aria-labelledby="contact-heading">
       <div className="hero__inner container">
         <div className="hero__content">
-          <HeroEyebrow icon="mail">Contact Us</HeroEyebrow>
+          <p className="hero__eyebrow">Contact Us</p>
 
           <h3 id="contact-heading" className="hero__title contact-title-stack">
             <span className="contact-title-line contact-title-line--xl contact-title-nowrap">

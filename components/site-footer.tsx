@@ -121,8 +121,8 @@ export function SiteFooterSimple() {
   );
 }
 
-/** Fuller 4-column footer, used only on the /contact page — see AppFooter. */
-export default function SiteFooter() {
+/** Fuller footer used on every page except the landing page — see AppFooter. `phoneOnly` hides the Sales and Support tiles. */
+export default function SiteFooter({ phoneOnly = false }: { phoneOnly?: boolean }) {
   return (
     <footer className="site-footer">
       {/* Brand + contact tiles, same look as the compact footer's top row */}
@@ -143,24 +143,28 @@ export default function SiteFooter() {
         </div>
 
         <div className="footer-simple__contact">
-          {/* <a href={`mailto:${SALES_EMAIL}`} className="footer-simple__tile">
-            <span className="footer-simple__tile-icon">
-              <MailIcon />
-            </span>
-            <span className="footer-simple__tile-text">
-              <span className="footer-simple__label">Sales</span>
-              <span className="footer-simple__value">{SALES_EMAIL}</span>
-            </span>
-          </a>
-          <a href={`mailto:${SUPPORT_EMAIL}`} className="footer-simple__tile">
-            <span className="footer-simple__tile-icon">
-              <MailIcon />
-            </span>
-            <span className="footer-simple__tile-text">
-              <span className="footer-simple__label">Support</span>
-              <span className="footer-simple__value">{SUPPORT_EMAIL}</span>
-            </span>
-          </a> */}
+          {!phoneOnly && (
+            <>
+              <a href={`mailto:${SALES_EMAIL}`} className="footer-simple__tile">
+                <span className="footer-simple__tile-icon">
+                  <MailIcon />
+                </span>
+                <span className="footer-simple__tile-text">
+                  <span className="footer-simple__label">Sales</span>
+                  <span className="footer-simple__value">{SALES_EMAIL}</span>
+                </span>
+              </a>
+              <a href={`mailto:${SUPPORT_EMAIL}`} className="footer-simple__tile">
+                <span className="footer-simple__tile-icon">
+                  <MailIcon />
+                </span>
+                <span className="footer-simple__tile-text">
+                  <span className="footer-simple__label">Support</span>
+                  <span className="footer-simple__value">{SUPPORT_EMAIL}</span>
+                </span>
+              </a>
+            </>
+          )}
           <a href={`tel:${PHONE_NUMBER.replace(/[^+\d]/g, "")}`} className="footer-simple__tile">
             <span className="footer-simple__tile-icon">
               <PhoneIcon />

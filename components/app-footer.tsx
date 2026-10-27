@@ -3,15 +3,16 @@
 import { usePathname } from "next/navigation";
 import SiteFooter, { SiteFooterSimple } from "./site-footer";
 
-const FULL_FOOTER_PATHS = ["/contact", "/terms", "/warranty", "/privacy"];
+/** Pages whose footer shows only the phone tile, without the Sales and Support tiles. */
+const PHONE_ONLY_PATHS = ["/contact", "/warranty", "/privacy", "/terms"];
 
-/** Renders the fuller SiteFooter on /contact, /terms, /warranty and /privacy, and the compact one everywhere else. */
+/** Renders the compact footer on the landing page, and the fuller SiteFooter everywhere else. */
 export default function AppFooter() {
   const pathname = usePathname();
 
-  if (FULL_FOOTER_PATHS.some((path) => pathname.startsWith(path))) {
-    return <SiteFooter />;
+  if (pathname === "/") {
+    return <SiteFooterSimple />;
   }
 
-  return <SiteFooterSimple />;
+  return <SiteFooter phoneOnly={PHONE_ONLY_PATHS.some((path) => pathname.startsWith(path))} />;
 }

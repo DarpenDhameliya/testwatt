@@ -1,29 +1,15 @@
-import HeroEyebrow from "@/components/hero-eyebrow";
 import { Button } from "@/components/ui";
 
 export default function Hero() {
   return (
-    <section className="lbt-hero" aria-labelledby="rs-heading">
+    <section className="lbt-hero lbt-hero--full" aria-labelledby="rs-heading">
       <div className="container lbt-hero__container">
         <div className="lbt-hero__content">
-          <HeroEyebrow icon="wrench">Repairs &amp; Servicing</HeroEyebrow>
+          <p className="hero__eyebrow">Repairs &amp; Servicing</p>
 
           <h1 id="rs-heading" className="lbt-hero__title">
-            <span className="lbt-hero__title-line lbt-hero__title-line--1">
-              Keep your test fleet
-            </span>
-            <br />
-            <span className="lbt-hero__title-line lbt-hero__title-line--2 lbt-hero__title-accent">
-              running at 100%.
-            </span>
+            Repairs, preventive maintenance and spare parts for AC/DC and resistive-reactive load banks, onsite or in our shop
           </h1>
-
-          <p className="lbt-hero__body">
-            We look after your load banks with routine maintenance, quick call-outs,
-            control system upgrades and repairs using traceable replacement parts.
-            The aim is simple: your equipment works on the day you need to test.
-          </p>
-
           {/* <div className="lbt-hero__actions">
             <Button to="/contact" variant="primary" size="lg">
               Book a Service Visit

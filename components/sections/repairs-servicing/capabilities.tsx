@@ -2,11 +2,9 @@ import type { ReactNode } from "react";
 import { Kicker } from "@/components/ui";
 
 interface ServiceItem {
-  number: string;
-  badge: string;
   title: string;
   body: ReactNode;
-  icon: (className?: string) => React.ReactNode;
+  fullWidth?: boolean;
 }
 
 const VISIT_ROWS: [string, string][] = [
@@ -41,211 +39,87 @@ const VISIT_ROWS: [string, string][] = [
 
 const SERVICE_ITEMS: ServiceItem[] = [
   {
-    number: "01",
-    badge: "Service Capability",
-    title: "Troubleshooting and repair",
+    title: "Troubleshooting and Repairs",
     body: (
       <>
         <p>
-          We trace faults to the component: open or shorted resistor elements, failed
-          fans and motors, pitted or welded contactors, blown fuses, faulty
-          over-temperature and airflow switches, damaged wiring, and controllers or
-          meters that no longer respond. We isolate the fault before replacing parts,
-          so you pay for what failed and nothing else. If a unit has serious damage,
-          you get a written assessment and a quote before work starts, along with our
-          view on whether a repair or a rebuild is the better use of your money.
+          We&apos;ll trace the fault to the component (open or short resistor elements, failed fans and motors,
+          pitted/welded contactors, blown fuses, faulty over temperature and airflow switches, damaged wiring,
+          controllers or meters that won&apos;t respond etc.). We&apos;ll isolate the fault prior to part replacement so you only
+          pay for what has failed. If a unit is severely damaged we&apos;ll provide you with a written assessment and a
+          quote prior to work commencing and our view as to whether a repair or a rebuild is the better option.
         </p>
       </>
     ),
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-        <path d="M8 16l-4 4" />
-      </svg>
-    ),
   },
   {
-    number: "02",
-    badge: "Service Capability",
     title: "Preventive maintenance",
     body: (
       <>
         <p>
-          A scheduled service catches the problems that would otherwise end a load
-          test halfway through. We inspect, clean and test the unit, then run it under
-          load to confirm every step comes in as it should. How often a unit needs
-          service depends on how hard it works. A rental fleet load bank that goes out
-          every week needs more attention than a permanently installed unit exercised
-          once a month. We can set up annual or twice-yearly visits and keep a service
-          history for each unit.
+          A scheduled service will catch problems that would otherwise cause a load test to be aborted midway
+          through. We inspect, clean and test the unit then run it underload to confirm all the steps come in as they
+          should. How often a unit needs service depends on how hard it is working. A weekly rental fleet load
+          bank will require far more attention than a permanently installed unit, which may only be exercised once
+          a month. We can arrange annual or twice annual visits and maintain a service history for each unit.
         </p>
       </>
     ),
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <rect x="3" y="4" width="18" height="18" rx="2" />
-        <path d="M16 2v4M8 2v4M3 10h18" />
-        <path d="m9 16 2 2 4-4" />
-      </svg>
-    ),
   },
   {
-    number: "03",
-    badge: "Service Capability",
-    title: "Calibration and metering checks",
+    title: "Start up and commissioning",
     body: (
       <>
         <p>
-          If your load bank reports kW, voltage, current and frequency for compliance
-          testing, those numbers have to be right. We compare the unit&apos;s metering
-          and load steps against calibrated reference instruments and adjust or
-          replace anything out of tolerance. You receive a certificate listing the
-          as-found and as-left readings and the reference equipment used.
+          Before a new or relocated permanent load bank runs for the first time, we check the power and control
+          wiring, grounding, clearances, cooling air and exhaust direction and communication with the remote
+          controls. We then bring it up in steps and verify it at full rated load. Load banks produce a lot of hot air,
+          so we check where the exhaust goes and whether the room has sufficient makeup air.
+
         </p>
       </>
     ),
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3 3" />
-      </svg>
-    ),
   },
   {
-    number: "04",
-    badge: "Service Capability",
-    title: "Start-up and commissioning",
-    body: (
-      <>
-        <p>
-          Before a new or relocated permanent load bank runs for the first time, we
-          check power and control wiring, grounding, clearances, cooling air and
-          exhaust direction, and communication with remote controls. We then bring the
-          unit up in steps and verify it at full rated load. Load banks discharge a
-          lot of hot air, so we check where the exhaust goes and whether the room has
-          enough make-up air.
-        </p>
-      </>
-    ),
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
-  },
-  {
-    number: "05",
-    badge: "Service Capability",
     title: "Refurbishment and rebuilds",
     body: (
       <>
         <p>
-          A rebuild replaces the elements, insulators, contactors, fans, wiring and
-          controls that need it and returns the unit to its rated capacity, usually
-          for much less than a new unit of the same size. On units where the original
-          parts are no longer made, we source equivalents or redesign the affected
-          circuit.
+          Many of the older load banks will have a sound frame and enclosure with worn internals. A rebuild will
+          replace the elements, insulators, contactors, fans, wiring and controls as required and get the unit back to
+          its rated capacity, generally at a fraction of the cost of a new unit of the same size. On units where the
+          original parts are no longer available we will source equivalents or redesign the relevant circuit.
+
         </p>
       </>
     ),
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M3 12a9 9 0 1 0 3-6.7" />
-        <path d="M3 3v5h5" />
-      </svg>
-    ),
   },
   {
-    number: "06",
-    badge: "Service Capability",
     title: "Spare parts",
     body: (
       <>
         <p>
-          We supply the parts that fail most often: resistor elements, ceramic
-          insulators, contactors, fuses, fan motors and blades, temperature switches,
-          relays, indicator lamps, cables and connectors. We can also build a spares
-          kit matched to your fleet, so one failed part doesn&apos;t take a unit out of
-          service while you wait on shipping.
+          We supply the bits that break most frequently: resistor elements, ceramic insulators, contactors, fuses, fan
+          motors and blades, temperature switches, relays, indicator lamps, cables and connectors. We can also put
+          together a spares kit to match your fleet so one failing item doesn&apos;t put a unit out of action while you wait
+          for it to arrive
         </p>
       </>
     ),
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M21 8 12 3 3 8l9 5 9-5z" />
-        <path d="M3 8v8l9 5 9-5V8" />
-        <path d="M12 13v8" />
-      </svg>
-    ),
   },
   {
-    number: "07",
-    badge: "Service Capability",
     title: "Field service or shop repair",
+    fullWidth: true,
     body: (
       <>
         <p>
-          Field service to troubleshoot the permanently installed load banks, trailer and container
-          units and any job where downtime has to be minimal. A technician comes to your site with
-          the test equipment and common parts.
+          Field service to troubleshoot the permanently installed load banks, trailer and container units and any job
+          where downtime has to be minimal. A technician comes to your site with the test equipment and common
+          parts.
         </p>
         <p>
-          Shop repair of the portable and compact units. You ship or drop them off, we repair them
-          on the bench, and they go through a full load test before we return them to you.
+          Shop repair of the portable and compact units. You ship or drop them off, we repair them on the bench,
+          and they go through a full load test before we return them to you.
         </p>
         <h4 className="why-card__subheading">What a service visit covers</h4>
         <div className="why-card__table-wrap troubleshooting-table-wrap">
@@ -268,27 +142,8 @@ const SERVICE_ITEMS: ServiceItem[] = [
         </div>
       </>
     ),
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <rect x="1" y="7" width="14" height="10" rx="1" />
-        <path d="M15 10h4l3 3v4h-7z" />
-        <circle cx="5.5" cy="18.5" r="1.8" />
-        <circle cx="17.5" cy="18.5" r="1.8" />
-      </svg>
-    ),
   },
   {
-    number: "08",
-    badge: "Service Capability",
     title: "Load banks we work on",
     body: (
       <>
@@ -312,50 +167,16 @@ const SERVICE_ITEMS: ServiceItem[] = [
         </ol>
       </>
     ),
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <rect x="3" y="5" width="18" height="12" rx="2" />
-        <path d="M7 9h10M7 13h6" />
-        <path d="M8 21h8" />
-      </svg>
-    ),
   },
   {
-    number: "09",
-    badge: "Service Capability",
     title: "Service plans",
     body: (
       <>
         <p>
-          A service plan sees your load banks on a fixed maintenance schedule with priority
-          booking. Each visit is logged so you have a service history ready to go should an
-          auditor or insurer come along and ask to see it.
+          A service plan sees your load banks on a fixed maintenance schedule with priority booking. Each visit is
+          logged so you have a service history ready to go should an auditor or insurer come along and ask to see it.
         </p>
       </>
-    ),
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <rect x="3" y="4" width="18" height="18" rx="2" />
-        <path d="M16 2v4M8 2v4M3 10h18" />
-      </svg>
     ),
   },
 ];
@@ -364,50 +185,76 @@ export default function Capabilities() {
   return (
     <section
       id="repair-capabilities"
-      className="section section--white why-section-wrap"
+      className="section section--grey why-section-wrap"
       aria-labelledby="repair-capabilities-heading"
     >
       <div className="container">
         <div className="why-grid--equal">
           {/* Left Sticky Column */}
           <div className="why-grid__sticky">
-            <Kicker>What We Cover</Kicker>
+            {/* <Kicker>What We Cover</Kicker>
             <h2 id="repair-capabilities-heading" className="why-grid__title">
               Repairs, maintenance, calibration and parts
             </h2>
             <p className="why-grid__body">
               Repairs, preventive maintenance and spare parts for AC/DC and resistive-reactive load banks, onsite or in our shop.
-            </p>
+            </p> */}
             <p className="why-grid__body">
-              A load bank can well sit for weeks and then be required to carry full rated load on the day you're testing a
+              A load bank can well sit for weeks and then be required to carry full rated load on the day you&apos;re testing a
               generator or commissioning a UPS. Most of the problems that occur are down to heat and switching. The
               resistor elements get very hot, the fans will pull a large volume of air through the enclosure and the
               contactors will make and break heavy current every time you step the load. Over time the elements will
               sag and burn open, the ceramic insulators will crack, the connections will loosen and corrode and the
-              meters will drift out of tolerance. TestWatt do load bank repairs and maintenance so that they're fit to run
+              meters will drift out of tolerance. TestWatt do load bank repairs and maintenance so that they&apos;re fit to run
               when you need them and will give you readings which you can put in your test report.
             </p>
           </div>
 
-          {/* Right Scrolling Cards Column */}
-          <div className="why-cards-grid--stacked">
+          {/* Static demo card in the previous card design, for client comparison only. */}
+          <article className="why-card why-card--detailed">
+            <div className="why-card__top why-card__top--inline">
+              <div className="why-card__icon-wrap">
+                <svg
+                  className="why-card__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                  <path d="M8 16l-4 4" />
+                </svg>
+              </div>
+              <h3 className="why-card__title">Troubleshooting and repair</h3>
+            </div>
+
+            <div className="why-card__body">
+              <p>
+                We&apos;ll trace the fault to the component (open or short resistor elements, failed
+                fans and motors, pitted/welded contactors, blown fuses, faulty over temperature and
+                airflow switches, damaged wiring, controllers or meters that won&apos;t respond
+                etc.). We&apos;ll isolate the fault prior to part replacement so you only pay for
+                what has failed. If a unit is severely damaged we&apos;ll provide you with a written
+                assessment and a quote prior to work commencing and our view as to whether a repair
+                or a rebuild is the better option.
+              </p>
+            </div>
+          </article>
+
+          <div className="courses-grid">
             {SERVICE_ITEMS.map((item) => (
-              <article key={item.number} className="why-card why-card--detailed">
-                <div className="why-card__top">
-                  <div className="why-card__icon-wrap">
-                    {item.icon("why-card__icon")}
-                  </div>
-                  <div className="why-card__meta">
-                    <span className="why-card__badge">{item.badge}</span>
-                    <span className="why-card__num">{item.number}</span>
-                  </div>
+              <article
+                key={item.title}
+                className={`course-card${item.fullWidth ? " course-card--full" : ""}`}
+              >
+                <div className="course-card__header">
+                  <h3 className="course-card__title">{item.title}</h3>
                 </div>
 
-                <div className="why-card__heading-group">
-                  <h3 className="why-card__title">{item.title}</h3>
-                </div>
-
-                <div className="why-card__body">{item.body}</div>
+                <div className="course-card__body why-card__body">{item.body}</div>
               </article>
             ))}
           </div>

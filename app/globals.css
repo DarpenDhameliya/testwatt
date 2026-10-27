@@ -744,7 +744,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
 }
 
 .site-footer .footer-simple__logo-img {
@@ -759,23 +759,34 @@ main {
 }
 
 .site-footer .footer-simple__tile {
-  background: none;
-  border: none;
-  padding: 0;
-  border-radius: 0;
+  background: var(--color-light-grey);
+  border: 1px solid var(--color-border);
+  padding: 14px 20px;
+  border-radius: 12px;
+  gap: 14px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .site-footer .footer-simple__tile:hover {
-  background: none;
-  border-color: transparent;
+  background: var(--color-light-grey);
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 20px -6px rgba(10, 25, 47, 0.12);
+  transform: translateY(-2px);
 }
 
 .site-footer .footer-simple__tile-icon {
-  width: auto;
-  height: auto;
-  background: none;
-  border: none;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   color: var(--color-red);
+}
+
+.site-footer .footer-simple__value {
+  white-space: nowrap;
 }
 
 .site-footer .footer-simple__label {
@@ -1242,7 +1253,7 @@ main {
 }
 
 .hero--plain .hero__eyebrow {
-  color: var(--color-white);
+  color: #ff5c7c;
 }
 
 .hero--plain .hero__eyebrow-icon {
@@ -6855,7 +6866,7 @@ main {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #94a3b8;
+  color: var(--color-red);
   margin-bottom: 10px;
 }
 
@@ -7339,7 +7350,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 447px;
+  min-height: var(--page-hero-min-height);
   padding: 80px 24px;
   background: var(--color-navy);
 }
@@ -7356,7 +7367,7 @@ main {
 
 @media (max-width: 768px) {
   .legal-banner {
-    min-height: 280px;
+    min-height: var(--page-hero-min-height);
     padding: 56px 16px;
   }
 }
@@ -7514,4 +7525,145 @@ main {
 
 .why-card__body ol li:last-child {
   margin-bottom: 0;
+}
+
+.why-card__top--inline {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.why-card__top--inline .why-card__title {
+  margin: 0;
+}
+
+/* Repairs & Servicing cards: darker shadow on hover only. */
+#repair-capabilities .course-card:hover {
+  box-shadow: 0 14px 28px -6px rgba(10, 25, 47, 0.16);
+}
+
+/* Repairs & Servicing: one card per row, stacked top to bottom. */
+#repair-capabilities .courses-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Repairs & Servicing hero: content uses the full container width. */
+.lbt-hero--full .lbt-hero__content {
+  max-width: none;
+}
+
+/* Repairs & Servicing hero: title size matches the Contact hero. */
+.lbt-hero--full .lbt-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.4vw, 36px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
+
+/* Service visit and troubleshooting tables: lighter header text, and a header
+   background 5% lighter than the navy. */
+.troubleshooting-table thead th {
+  color: var(--color-white);
+  background: color-mix(in srgb, var(--color-navy) 95%, white);
+}
+
+/* Load Bank Upgrades capabilities: same pattern as Repairs & Servicing. Intro
+   text on top, then simple cards one per row, with a darker shadow on hover. */
+#upgrade-capabilities .why-grid__title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+#upgrade-capabilities .why-grid__sticky .why-grid__body {
+  font-size: var(--text-base);
+  line-height: 1.75;
+  margin: 0;
+}
+
+#upgrade-capabilities .why-grid__sticky .why-grid__body + .why-grid__body {
+  margin-top: 14px;
+}
+
+#upgrade-capabilities .courses-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+#upgrade-capabilities .course-card:hover {
+  box-shadow: 0 14px 28px -6px rgba(10, 25, 47, 0.16);
+}
+
+#upgrade-capabilities .upgrade-why .why-grid__body {
+  max-width: 100%;
+  font-size: var(--text-base);
+  line-height: 1.75;
+  margin: 0;
+}
+
+#upgrade-capabilities .upgrade-why .why-grid__body + .why-grid__body {
+  margin-top: 14px;
+}
+
+#upgrade-capabilities .upgrade-why .why-grid__list {
+  margin-top: 12px;
+  font-size: var(--text-base);
+}
+
+/* Training & Troubleshooting courses: same pattern as Repairs & Servicing.
+   Intro text on top, then simple cards one per row, darker shadow on hover. */
+.courses-intro {
+  margin-bottom: 40px;
+}
+
+.courses-intro p {
+  font-size: var(--text-base);
+  color: var(--color-grey);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.courses-intro p + p {
+  margin-top: 14px;
+}
+
+#training-courses .courses-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+#training-courses .course-card:hover {
+  box-shadow: 0 14px 28px -6px rgba(10, 25, 47, 0.16);
+}
+
+.course-card__audience strong {
+  color: var(--color-red);
+}
+
+/* Page heroes (every page except the landing page) share one minimum height. */
+:root {
+  --page-hero-min-height: 360px;
+}
+
+.lbt-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: var(--page-hero-min-height);
+}
+
+.lbt-hero > .lbt-hero__container {
+  width: 100%;
+}
+
+.hero--compact .hero__inner {
+  min-height: var(--page-hero-min-height);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-hero-min-height: 280px;
+  }
 }

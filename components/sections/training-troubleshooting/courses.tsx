@@ -1,24 +1,20 @@
 import Link from "next/link";
-import { SectionHeading } from "@/components/ui";
 import { renderText } from "@/components/sections/legal/legal-content";
 import { TRAINING_COURSES } from "@/lib/content";
 import { SALES_EMAIL, SUPPORT_EMAIL } from "@/lib/site";
 
 export default function Courses() {
   return (
-    <section id="training-courses" className="section section--white" aria-labelledby="courses-heading">
+    <section id="training-courses" className="section section--grey" aria-label="Training courses">
       <div className="container">
-        <SectionHeading
-          kicker="Training & Troubleshooting"
-          heading={
-            <span id="courses-heading">Training built around the equipment you run</span>
-          }
-          body={[
-            "Test Watt trains the people who operate and maintain your load banks and we do the troubleshooting of units that aren't performing to specification. Wherever possible we train at your site on your own equipment, so your team get to learn the controls, the connections and the procedures that they'll be using during actual testing.",
-            "We give each training around the equipment you have, your team's experience and the tests that your site has to carry out",
-          ]}
-          className="section-heading--mb"
-        />
+        <div className="courses-intro">
+          <p>
+            Test Watt trains the people who operate and maintain your load banks and we do the troubleshooting of units that aren&apos;t performing to specification. Wherever possible we train at your site on your own equipment, so your team get to learn the controls, the connections and the procedures that they&apos;ll be using during actual testing.
+          </p>
+          <p>
+            We give each training around the equipment you have, your team&apos;s experience and the tests that your site has to carry out
+          </p>
+        </div>
 
         <div className="courses-grid">
           {TRAINING_COURSES.map((course) => (

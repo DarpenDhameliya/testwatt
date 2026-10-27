@@ -1,29 +1,15 @@
-import HeroEyebrow from "@/components/hero-eyebrow";
 import { Button } from "@/components/ui";
 
 export default function Hero() {
   return (
-    <section className="lbt-hero" aria-labelledby="tt-heading">
+    <section className="lbt-hero lbt-hero--full" aria-labelledby="tt-heading">
       <div className="container lbt-hero__container">
         <div className="lbt-hero__content">
-          <HeroEyebrow icon="training">Training &amp; Troubleshooting</HeroEyebrow>
+          <p className="hero__eyebrow">Training &amp; Troubleshooting</p>
 
           <h1 id="tt-heading" className="lbt-hero__title">
-            <span className="lbt-hero__title-line lbt-hero__title-line--1">
-              Root-cause diagnosis
-            </span>
-            <br />
-            <span className="lbt-hero__title-line lbt-hero__title-line--2 lbt-hero__title-accent">
-              and training that actually sticks.
-            </span>
+            Your team, trained on your own load banks.
           </h1>
-
-          <p className="lbt-hero__body">
-            We find the cause of recurring electrical faults, governor hunting and
-            breaker trips that have no obvious reason, using proper engineering
-            diagnostics. We also give your own team practical, accredited training
-            that follows NFPA 110 and NETA standards.
-          </p>
 
           {/* <div className="lbt-hero__actions">
             <Button to="/contact" variant="primary" size="lg">
