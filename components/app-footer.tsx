@@ -10,6 +10,11 @@ const PHONE_ONLY_PATHS = ["/contact", "/warranty", "/privacy", "/terms"];
 export default function AppFooter() {
   const pathname = usePathname();
 
+  // The footer preview page renders its own footers side by side.
+  if (pathname === "/footer-preview") {
+    return null;
+  }
+
   if (pathname === "/") {
     return <SiteFooterSimple />;
   }

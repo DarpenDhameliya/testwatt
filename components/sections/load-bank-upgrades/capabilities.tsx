@@ -16,9 +16,7 @@ const UPGRADE_ITEMS: UpgradeItem[] = [
         <p>
           We go from manual to automatic by fitting a programmable controller and digital metering. Once converted the load bank can then run on its own according to a predefined test profile, stepping the load up and down at set intervals and recording voltage, current, kW and frequency for the entire run. A manual mode is retained so that the operator can take control if they wish.
         </p>
-        <p>
-          <strong>Typical scope:</strong>
-        </p>
+        <h4 className="why-card__subheading">Typical scope</h4>
         <ul>
           <li>PLC or microprocessor based controller with a touchscreen.</li>
           <li>Digital 3 phase metering with test data saved to USB.</li>
@@ -51,9 +49,7 @@ const UPGRADE_ITEMS: UpgradeItem[] = [
         <p>
           Auto Load Level control deals with this by using the load bank as an auxiliary load. The current transformers on the building feed tell the controller how much load the building is taking. If the building load is low, the controller will add load bank steps to maintain the generator at a healthy minimum. As building load increases, the controller removes steps so the building is always prioritized. A signal from the transfer switch or generator controller normally initiates the prior start on system. It will only operate when the load generator is actually carrying the building load.
         </p>
-        <p>
-          <strong>Typical scope:</strong>
-        </p>
+        <h4 className="why-card__subheading">Typical scope</h4>
         <ul>
           <li>Current transformer installation on the facility load side.</li>
           <li>Load level controller with adjustable minimum load set points and time delays.</li>
@@ -123,9 +119,7 @@ const UPGRADE_ITEMS: UpgradeItem[] = [
           There is no such thing as a &apos;one size fits all&apos; test. A hospital following NFPA 110 and NFPA 99 will have very different requirements from a data center commissioning a new hall or a manufacturer testing gensets at the very end of the line. Each will have different load profiles, durations and records.
         </p>
         <p>We program your controller around the tests that you actually run.</p>
-        <p>
-          <strong>That can include:</strong>
-        </p>
+        <h4 className="why-card__subheading">That can include</h4>
         <ul>
           <li>Step load sequences matched your NFPA 110 test plan.</li>
           <li>Block load and transient response tests.</li>
@@ -174,9 +168,7 @@ export default function Capabilities() {
             <p className="why-grid__body">
               Replacing a load bank is effectively new equipment, new installation work and often new cabling and new pads. In many instances the better value is to keep the bits that still work and simply replace the bits that are holding you back.
             </p>
-            <p className="why-grid__body">
-              <strong>An upgrade can:</strong>
-            </p>
+            <h4 className="why-card__subheading">An upgrade can</h4>
             <ul className="why-grid__list">
               <li>Cut the time a technician spends standing at the panel during a test.</li>
               <li>Give you accurate logged test data rather than handwritten readings.</li>

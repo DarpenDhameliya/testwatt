@@ -6,7 +6,9 @@ export default function Hero() {
           <p className="hero__eyebrow">Load bank upgrades</p>
 
           <h1 id="lbu-heading" className="lbt-hero__title">
-            Get more out of The Load Bank you already have.
+            <span className="lbt-hero__title-line lbt-hero__title-line--1">
+              Get more out of The Load Bank you already have.
+            </span>
           </h1>
         </div>
       </div>

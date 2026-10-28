@@ -1,29 +1,17 @@
-import HeroEyebrow from "@/components/hero-eyebrow";
 import { Button } from "@/components/ui";
 
 export default function Hero() {
   return (
-    <section className="lbt-hero" aria-labelledby="lbt-heading">
+    <section className="lbt-hero lbt-hero--full" aria-labelledby="lbt-heading">
       <div className="container lbt-hero__container">
         <div className="lbt-hero__content">
-          <HeroEyebrow icon="bolt">Critical Power Testing</HeroEyebrow>
+          <p className="hero__eyebrow">Load Bank Testing</p>
 
           <h1 id="lbt-heading" className="lbt-hero__title">
             <span className="lbt-hero__title-line lbt-hero__title-line--1">
-              Full-load proof,
-            </span>
-            <br />
-            <span className="lbt-hero__title-line lbt-hero__title-line--2 lbt-hero__title-accent">
-              not a best guess.
+              Find out what your generator can carry before an outage comes and put it to the test.
             </span>
           </h1>
-
-          <p className="lbt-hero__body">
-            We load test standby generators, UPS systems and switchgear on your site,
-            right up to their full nameplate rating. Depending on the equipment, we
-            use resistive, reactive or hybrid load. When we finish, you get a
-            certified report that's ready to show an auditor.
-          </p>
 
           {/* <div className="lbt-hero__actions">
             <Button to="/contact" variant="primary" size="lg">

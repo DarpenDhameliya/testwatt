@@ -211,7 +211,7 @@ export default function Capabilities() {
           </div>
 
           {/* Static demo card in the previous card design, for client comparison only. */}
-          <article className="why-card why-card--detailed">
+          {/* <article className="why-card why-card--detailed">
             <div className="why-card__top why-card__top--inline">
               <div className="why-card__icon-wrap">
                 <svg
@@ -242,7 +242,7 @@ export default function Capabilities() {
                 or a rebuild is the better option.
               </p>
             </div>
-          </article>
+          </article> */}
 
           <div className="courses-grid">
             {SERVICE_ITEMS.map((item) => (

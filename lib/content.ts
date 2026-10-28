@@ -251,25 +251,25 @@ export const STANDARDS_HOME: StandardRow[] = [
 export const LOAD_BANK_STANDARDS: ComplianceStandardRow[] = [
   {
     code: "NFPA 110",
-    citation: "Monthly Test (8.4.2)",
+    citation: "monthly test (8.4.2)",
     appliesTo: "Emergency and standby power systems",
     requirement:
-      "Diesel sets run at least 30 continuous minutes at no less than 30% of nameplate kW or at the manufacturer's recommended minimum exhaust temperature",
+      "Diesel sets run at least 30 continuous minutes, at no less than 30% of nameplate kW or at the manufacturer's recommended minimum exhaust temperature",
     howWeMeet:
       "We add resistive steps on top of your building load so the generator reaches the 30% threshold for the full 30 minutes",
   },
   {
     code: "NFPA 110",
-    citation: "Annual Supplemental (8.4.2.3)",
+    citation: "annual supplemental test (8.4.2.3)",
     appliesTo: "Diesel sets that did not reach 30% during monthly tests",
     requirement:
       "30 minutes at no less than 50% of nameplate kW, then 60 minutes at no less than 75%, run continuously for 1.5 hours",
     howWeMeet:
-      "We hold each step for the full time, logging readings throughout, and do not count warm-up or cool-down in the test time",
+      "We hold each step for the full time, logging readings throughout, and do not count warm up or cool down in the test time",
   },
   {
     code: "NFPA 110",
-    citation: "36-Month Test (8.4.9)",
+    citation: "36 months test (8.4.9)",
     appliesTo: "Level 1 systems",
     requirement:
       "At least 4 continuous hours at no less than 30% of nameplate kW or the minimum exhaust temperature",
@@ -278,10 +278,10 @@ export const LOAD_BANK_STANDARDS: ComplianceStandardRow[] = [
   },
   {
     code: "NFPA 110",
-    citation: "Installation Acceptance (7.13)",
+    citation: "installation acceptance (7.13)",
     appliesTo: "New or modified systems",
     requirement:
-      "A cold-start test on building load, a cool-down of at least 5 minutes, then a 2-hour full-load test at 100% of nameplate kW less site derating. The AHJ is notified and witnesses",
+      "A cold-start test on building load, a cool down of at least 5 minutes, then a 2 hour full load test at 100% of nameplate kW less site derating. The AHJ is notified and witnesses",
     howWeMeet:
       "We supply the load bank capacity to make up the difference between building load and 100%, and prepare the records the AHJ asks for",
   },
@@ -297,7 +297,7 @@ export const LOAD_BANK_STANDARDS: ComplianceStandardRow[] = [
     code: "The Joint Commission EC.02.05.07 and CMS (K-tag K918)",
     appliesTo: "Accredited and Medicare/Medicaid hospitals",
     requirement:
-      "Monthly 30-minute loaded tests at 30% or more, the 1.5-hour annual test when monthly tests fall short, a 4-hour test every 36 months, and a retest after any failed test",
+      "Monthly 30 minute loaded tests at 30% or more, the 1.5 hour annual test when monthly tests fall short, a 4 hour test every 36 months, and a retest after any failed test",
     howWeMeet:
       "Our report layout follows what surveyors ask to see: dates, run times, load levels and readings, with failures and retests recorded",
   },
@@ -305,7 +305,7 @@ export const LOAD_BANK_STANDARDS: ComplianceStandardRow[] = [
     code: "NFPA 111",
     appliesTo: "Stored emergency power (UPS and battery systems)",
     requirement:
-      "Level 1 systems get an annual full-load test for 60% of the full duration of their class",
+      "Level 1 systems get an annual full load test for 60% of the full duration of their class",
     howWeMeet:
       "We connect an AC or DC resistive load bank to the UPS or battery output and time the run against the class duration",
   },
@@ -314,14 +314,16 @@ export const LOAD_BANK_STANDARDS: ComplianceStandardRow[] = [
     appliesTo: "Emergency systems",
     requirement:
       "The AHJ conducts or witnesses a test of the complete system at installation, followed by periodic testing",
-    howWeMeet: "Our acceptance and periodic test records are written for AHJ review",
+    howWeMeet:
+      "Our acceptance and periodic test records are written for AHJ review",
   },
   {
     code: "ISO 8528-5 and 8528-6",
     appliesTo: "Generator performance and factory or site acceptance",
     requirement:
       "Methods for load tests and limits for voltage and frequency dip, rise and recovery, grouped into classes G1 to G4",
-    howWeMeet: "Used for block load and transient testing (sections 8 and 9)",
+    howWeMeet:
+      "Used for block load and transient testing (sections 8 and 9)",
   },
 ];
 

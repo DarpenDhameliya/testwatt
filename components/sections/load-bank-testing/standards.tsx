@@ -1,5 +1,6 @@
 import { Kicker, SectionHeading } from "@/components/ui";
 import { LOAD_BANK_STANDARDS, LOAD_BANK_TEST_PROFILES } from "@/lib/content";
+import AnimatedSteps from "./animated-steps";
 
 export default function Standards() {
   return (
@@ -8,7 +9,7 @@ export default function Standards() {
         <SectionHeading
           // kicker="Standards & Compliance"
           heading={<span id="standards-heading">Manual operation for meeting testing standards</span>}
-          body="For compliance testing, a TestWatt technician runs the load bank by hand. Each load step is switched in deliberately, held for the required time and logged, so the record shows exactly what the generator carried and for how long. Manual control also lets us stop or back off load the moment a reading goes out of range."
+          body="For the compliance testing, we run the load bank by hand. We switch in each load step manually, hold it for the required time and log it so the record shows precisely what load the genset was carrying and for how long. Manual control also lets us stop or back off load immediately if a reading goes out of range."
           className="section-heading--mb"
         />
 
@@ -66,11 +67,7 @@ export default function Standards() {
         {/* Typical Test Profiles */}
         <div className="advantages-section">
           <p className="content-body">
-            The edition that applies to your site is the one your AHJ or accrediting body has
-            adopted. CMS and The Joint Commission, for
-            example, still enforce older editions of NFPA 110 and NFPA 99. Some engineers'
-            specifications also call for a longer stepped test such as 25%, 50%, 75% and
-            100%. Tell us which document you are tested against and we will run to it.
+            The edition that applies to your site is the one that your AHJ or accrediting body has adopted. CMS and The Joint Commission, for instance: still mandate the older editions of NFPA 110 and NFPA 99. Some engineers specs will actually call for a longer stepped test (e.g., 25%, 50%, 75%, and 100%). Let us know which document you are testing to, and we&apos;ll run to that.
           </p>
           <p className="content-body content-body--label">
             Typical compliance test profiles
@@ -111,7 +108,102 @@ export default function Standards() {
             </table>
           </div>
         </div>
+
+        {/* How we run a compliance test */}
+        <div className="advantages-section">
+          <p className="content-body content-body--label">
+            How we run a compliance test:
+          </p>
+          <AnimatedSteps steps={COMPLIANCE_TEST_STEPS} />
+        </div>
+
+        {/* Parameters monitored during the test */}
+        <div className="advantages-section">
+          <p className="content-body content-body--label">
+            Parameters monitored during the test
+          </p>
+          <p className="content-body">
+            We take the electrical values off the load bank meter and the engine values off the gen controller, logging both at each interval so that we can match any problems to the load step at which they appeared.
+          </p>
+          {MONITORED_PARAMETER_GROUPS.map((group) => (
+            <div key={group.title} className="standards-params">
+              <p className="content-body content-body--label">{group.title}</p>
+              <div className="standards-table-wrap">
+                <table className="standards-table">
+                  <thead>
+                    <tr>
+                      <th scope="col" className="standards-table__th">
+                        Parameter
+                      </th>
+                      <th scope="col" className="standards-table__th standards-table__th--last">
+                        Why we record it
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {group.rows.map((row, index) => (
+                      <tr
+                        key={row.parameter}
+                        className={
+                          index % 2 === 0
+                            ? "standards-table__row"
+                            : "standards-table__row standards-table__row--alt"
+                        }
+                      >
+                        <td className="standards-table__code standards-table__code--wrap">
+                          {row.parameter}
+                        </td>
+                        <td className="standards-table__td standards-table__td--last">
+                          {row.reason}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+
+const COMPLIANCE_TEST_STEPS = [
+  "Review the generator nameplate, the ATS layout and your last set of test records to establish which standard and edition applies.",
+  "Before starting, check fluid levels, belts, hoses, battery condition and the area around the load bank's exhaust air.",
+  "Connect the load bank with appropriately sized cabling, verify phase rotation and voltage and wire the load dump so that the load bank will dump if there is a real outage during the test.",
+  "Start the generator, bring it to operating temperature, then apply load in steps.",
+  "Hold each step for the full required time. We record kW, voltage and current per phase, frequency, oil pressure, coolant temperature and exhaust temperature at regular intervals (typically every 15 minutes).",
+  "Remove the load and let the engine cool down unloaded. Cool down is not counted as part of the test time.",
+  "Issue a signed report with the test profile, all readings, any faults found and all the recommended repairs.",
+];
+
+const MONITORED_PARAMETER_GROUPS = [
+  {
+    title: "Electrical (generator output)",
+    rows: [
+      { parameter: "Voltage, line to line and line to neutral", reason: "Confirms the voltage regulator holds nominal voltage as load increases" },
+      { parameter: "Voltage imbalance between phases", reason: "Points to alternator or connection problems" },
+      { parameter: "Load current per phase", reason: "Shows each phase is carrying its share of the load" },
+      { parameter: "Neutral current", reason: "Flags unbalanced loading on four-wire systems" },
+      { parameter: "Frequency (Hz)", reason: "Shows governor stability under steady load" },
+      { parameter: "Real power (kW)", reason: "Proves the generator is carrying the required percentage of nameplate" },
+      { parameter: "Apparent power (kVA) and reactive power (kVAR)", reason: "Compared against the alternator rating" },
+      { parameter: "Power factor", reason: "Confirms the test load (close to 1.0 on a resistive bank)" },
+      { parameter: "Energy delivered (kWh)", reason: "Total output over the test, useful for fuel rate checks" },
+      { parameter: "Voltage and frequency dip, overshoot and recovery time", reason: "Captured during block load and transient tests" },
+    ],
+  },
+  {
+    title: "Load bank and site conditions",
+    rows: [
+      { parameter: "Load steps applied and time at each step", reason: "Proves the test profile was followed" },
+      { parameter: "Cooling airflow status", reason: "The load bank must shed load if cooling air is lost" },
+      { parameter: "Load bank discharge air temperature", reason: "Confirms hot air is not recirculating into the generator intake" },
+      { parameter: "Over-temperature and fault alarms", reason: "Any trip is logged with the time and load level" },
+      { parameter: "Ambient temperature and humidity", reason: "Needed to apply site derating and explain high coolant or exhaust readings" },
+      { parameter: "Start time, end time and engine run hours", reason: "Required by NFPA 110 and surveyors for the test record" },
+    ],
+  },
+];

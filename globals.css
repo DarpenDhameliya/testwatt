@@ -36,7 +36,7 @@
   --text-xl: clamp(28px, 3vw, 44px);
   --text-2xl: clamp(36px, 4.5vw, 60px);
   --text-hero: clamp(40px, 5vw, 68px);
-  --space-2xl: 96px;
+  --space-2xl: 72px;
   --container-max: 1440px;
   --container-pad: 80px;
   --container-pad-md: 40px;

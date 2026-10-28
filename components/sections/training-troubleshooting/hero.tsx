@@ -8,7 +8,9 @@ export default function Hero() {
           <p className="hero__eyebrow">Training &amp; Troubleshooting</p>
 
           <h1 id="tt-heading" className="lbt-hero__title">
-            Your team, trained on your own load banks.
+            <span className="lbt-hero__title-line lbt-hero__title-line--1">
+              Your team, trained on your own load banks.
+            </span>
           </h1>
 
           {/* <div className="lbt-hero__actions">

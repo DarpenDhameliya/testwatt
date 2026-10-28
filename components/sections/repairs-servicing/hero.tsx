@@ -8,7 +8,9 @@ export default function Hero() {
           <p className="hero__eyebrow">Repairs &amp; Servicing</p>
 
           <h1 id="rs-heading" className="lbt-hero__title">
-            Repairs, preventive maintenance and spare parts for AC/DC and resistive-reactive load banks, onsite or in our shop
+            <span className="lbt-hero__title-line lbt-hero__title-line--1">
+              Repairs, preventive maintenance and spare parts for AC/DC and resistive-reactive load banks, onsite or in our shop
+            </span>
           </h1>
           {/* <div className="lbt-hero__actions">
             <Button to="/contact" variant="primary" size="lg">

@@ -8,6 +8,7 @@ interface CapabilityItem {
   title: string;
   body: ReactNode;
   icon: (className?: string) => React.ReactNode;
+  fullWidth?: boolean;
 }
 
 const CAPABILITY_ITEMS: CapabilityItem[] = [
@@ -18,34 +19,23 @@ const CAPABILITY_ITEMS: CapabilityItem[] = [
     body: (
       <>
         <p>
-          Elevators, cranes, hoists and other drive-controlled motors give energy back
-          when they brake or lower a heavy load. On utility power the grid absorbs it.
-          On generator power there is nowhere for it to go, so it flows back into the
-          alternator and tries to drive the engine. The result can be engine overspeed,
-          a reverse power trip or an unplanned shutdown in the middle of an outage.
+          Elevators, cranes, hoists and all the other drive controlled motors give back energy when they brake or are lowering a heavy load. On utility power the grid takes it up. On generator power there&apos;s no place for it to go so it flows back into the alternator and tries to drive the engine. That can result in overspeed, a reverse power trip or an unplanned shutdown in the middle of an outage.
         </p>
         <p>
-          A load bank with regenerative power absorption control prevents this. It
-          senses the direction and size of power flow at the generator. When reverse
-          power appears, it switches in load steps automatically so the regenerated
-          energy is burned off as heat in the resistors instead of reaching the engine.
-          When the regeneration stops, the steps drop out again.
+          A load bank with regenerative power absorption control will do this. It will sense the direction and magnitude of power flow at the generator. If reverse power appears, it will automatically switch in load in steps so the regenerative power is dissipated as heat in the resistors rather than fed back to the engine. When the regeneration ceases, the steps will then drop out again.
         </p>
-        <p>During testing we check that the regen function will work when it is needed:</p>
+        <p>During testing, we check that the regen function will work when it is needed:</p>
         <ul>
           <li>
-            Current transformer placement and polarity, since a CT installed backwards
-            reads regeneration as normal load
+            Current transformer placement and polarity, since a CT installed backward reads regeneration as normal load.
           </li>
-          <li>The reverse power pickup setting and the time delay before each step is applied</li>
-          <li>Step response under a simulated reverse power signal</li>
-          <li>Coordination with the generator&apos;s own reverse power relay, so the load bank acts first</li>
-          <li>Load bank capacity against the largest regenerative load on site, usually the elevator group</li>
+          <li>The reverse power pickup setting and the time delay before each step is applied.</li>
+          <li>Step response under a simulated reverse power signal.</li>
+          <li>Coordination with the generator&apos;s own reverse power relay, so the load bank acts first.</li>
+          <li>Load bank capacity against the largest regenerative load on site, usually the elevator group.</li>
         </ul>
         <p>
-          If your site has regenerative drives on emergency power and no absorption on
-          the generator side, we can size and retrofit a regen control package on an
-          existing load bank.
+          If your site has regenerative drives on emergency power and no absorption on the generator side we can size and retrofit a regen control package onto an existing load bank.
         </p>
       </>
     ),
@@ -73,34 +63,21 @@ const CAPABILITY_ITEMS: CapabilityItem[] = [
     body: (
       <>
         <p>
-          Many generators are sized far larger than the load they actually serve. A
-          1,000 kW set feeding a 150 kW building runs at 15% during every monthly
-          exercise and every outage, which is where wet stacking starts.
+          Many gensets are sized far above the load they serve. A 1000kW set feeding a 150kW building will run at 15% during every monthly exercise and every outage, which is where wet stacking begins.
         </p>
         <p>
-          Auto load leveling fixes this without anyone standing at the panel. A current
-          transformer measures the building load, and the controller adds or removes
-          load bank steps to hold the generator at a set minimum, commonly 30% to 50%
-          of its rating. As building load rises, the load bank backs off. As it falls,
-          the load bank picks up the difference.
+          Auto load leveling handles this without anyone needing to be at the panel. A current transformer measures the building load, and the controller then adds or removes load bank steps to keep the generator at a set minimum (typically 30% to 50% of its rating). As the building load increases, the load bank steps back off. As the building load decreases, the load bank steps in to make up the difference.
         </p>
         <p>What we set up and verify:</p>
         <ul>
-          <li>
-            The minimum load setpoint, chosen from the engine manufacturer&apos;s
-            recommendation and your NFPA 110 target
-          </li>
-          <li>Step add and step remove delays, so the load bank does not hunt when building load swings</li>
-          <li>Correct CT location on the building side of the load bank connection</li>
-          <li>
-            The load dump or load reduction behavior during a real outage, set to match
-            how your engineer wants the system to act
-          </li>
-          <li>Alarms for over-temperature and loss of cooling air, with contacts back to your BMS</li>
+          <li>The minimum load setpoint, chosen from the engine manufacturer&apos;s recommendation and your NFPA 110 target.</li>
+          <li>Step add and step remove delays, so the load bank does not hunt when building load swings.</li>
+          <li>Correct CT location on the building side of the load bank connection.</li>
+          <li>The load dump or load reduction behavior during a real outage (set to match how your engineer wants the system to behave).</li>
+          <li>Alarms for over temperature and loss of cooling air, with contacts back to your BMS.</li>
         </ul>
         <p>
-          With leveling in place, your monthly test can reach the 30% threshold on its
-          own, which may remove the need for a separate annual supplemental test.
+          With leveling in place, your monthly test can reach the 30% threshold on its own, which could remove the need for a separate annual supplemental test.
         </p>
       </>
     ),
@@ -128,31 +105,20 @@ const CAPABILITY_ITEMS: CapabilityItem[] = [
     body: (
       <>
         <p>
-          Sites that run generators in parallel with the utility, for peak shaving,
-          closed-transition transfer, cogeneration or alongside solar, usually have an
-          interconnection agreement that limits how much power may flow back to the
-          grid. Some agreements allow no export at all. If on-site generation outruns
-          building demand, the protective relay trips or the site breaks its agreement
-          with the utility.
+          Sites running generators in parallel with the utility (for peak shaving, closed transition transfer, cogeneration or in conjunction with solar) will normally have an interconnection agreement that caps the amount of power that can be exported back to the grid. Some agreements will in fact permit zero export. If on site generation exceeds building demand, the protective relay will trip or the site will breach its agreement with the utility.
         </p>
         <p>
-          Export power control uses the load bank as a controllable sink. A meter at
-          the point of interconnection tells the controller how much power is leaving
-          the site. When export approaches the allowed limit, the load bank switches in
-          steps to absorb the surplus. When building demand recovers, the steps drop
-          out.
+          Export power control uses the load bank as a controllable sink. A meter at the point of interconnection tells the controller how much power is leaving the site. As exports approach the limit, the load bank steps in to take the excess. As demand on the site recovers, the steps out.
         </p>
         <p>
-          The same function helps during testing. With export control active, a
-          paralleled generator can be run at full output for a load test while the
-          utility connection stays inside its limit.
+          The same function is of course useful during testing. With export control in operation, you can run a parallel generator at full output for a load test and the utility connection will remain within its limits.
         </p>
         <p>Our work on export control includes:</p>
         <ul>
-          <li>Confirming the export limit and relay settings from your interconnection documents</li>
-          <li>Checking the metering point, CT ratios and power direction</li>
-          <li>Setting the pickup level and response delays so the load bank acts before the utility relay does</li>
-          <li>A witnessed functional test with the generator paralleled, recorded in the report</li>
+          <li>Confirming the export limit and relay settings from your interconnection documents.</li>
+          <li>Checking the metering point, CT ratios and power direction.</li>
+          <li>Setting the pickup level and response delays so the load bank acts before the utility relay does.</li>
+          <li>A witnessed functional test with the generator paralleled, recorded in the report.</li>
         </ul>
       </>
     ),
@@ -180,33 +146,22 @@ const CAPABILITY_ITEMS: CapabilityItem[] = [
     body: (
       <>
         <p>
-          Modern load bank controllers can be run and monitored over Modbus, the open
-          protocol most building management, SCADA and PLC systems already speak.
-          Modbus RTU runs over an RS-485 serial link, and Modbus TCP runs over your
-          Ethernet network.
+          Modern load bank controllers can be run and monitored via Modbus (the open protocol that virtually all building management, SCADA and PLC systems already use). Modbus RTU runs over an RS-485 serial link and Modbus TCP runs over your Ethernet network.
         </p>
         <p>Through Modbus, your system can read:</p>
         <ul>
-          <li>kW, kVA, voltage and current per phase, frequency and power factor</li>
-          <li>Which load steps are on</li>
-          <li>Alarms such as over-temperature, loss of cooling airflow and blower motor overload</li>
+          <li>kW, kVA, voltage and current per phase, frequency and power factor.</li>
+          <li>Which load steps are on.</li>
+          <li>Alarms such as over-temperature, loss of cooling airflow and blower motor overload.</li>
         </ul>
         <p>
-          And, where permitted, it can write commands such as load on and off, a kW
-          setpoint for the load controller and a reject-all-load command.
+          where allowed, it can write commands such as load on and off, a kW setpoint for the load controller and a reject all load command.
         </p>
         <p>
-          This lets a facility team start and log a monthly test from the control room,
-          pull test data straight into its maintenance records and see load bank alarms
-          on the same screen as the generator. For multi-site owners it means one
-          engineer can supervise tests at several buildings.
+          This enables a facility team to initiate and log a monthly test from the control room, pull the test data directly into their maintenance records and view the load bank alarms on the same screen as the generator. For multi site owners, it means one engineer can look after tests across multiple sites.
         </p>
         <p>
-          We map the load bank&apos;s register list into your BMS, SCADA or PLC, test
-          each read and write point end to end, and document the register map. Remote
-          writes should sit behind the load bank&apos;s own safety interlocks, and we
-          confirm those interlocks still trip load locally no matter what the remote
-          system commands.
+          We map the load bank&apos;s register list into your BMS, SCADA or PLC, test each read and write point end to end and document the register map. Remote writes should be behind the load bank&apos;s own safety interlocks and we will verify those interlocks still trip load locally irrespective of what the remote system is commanding.
         </p>
       </>
     ),
@@ -234,29 +189,16 @@ const CAPABILITY_ITEMS: CapabilityItem[] = [
     body: (
       <>
         <p>
-          When the utility fails and the transfer switch closes, your generator does
-          not get its load gently. It gets the whole emergency load in one hit. A block
-          load test reproduces that moment on purpose, by switching a large block of
-          load onto the running generator in a single step.
+          When the utility goes down and the transfer switch operates, the generator doesn&apos;t take on its load gently. It gets the entire emergency load in one go. A block load test replicates that moment by switching a large block of load onto the running generator in one step.
         </p>
         <p>
-          We record how far voltage and frequency dip, how long they take to recover,
-          and whether the engine bogs down, smokes heavily or trips. NFPA 110
-          acceptance testing includes this kind of pickup from a cold start, and a
-          Level 1, Type 10 system has to restore power within 10 seconds of the outage.
+          We record the depth of the voltage and frequency dip, the recovery time and whether the engine bores down, smoke excessively or trips. That&apos;s exactly what NFPA 110 acceptance testing does (cold start testing in particular) and a Level 1, Type 10 system must restore power within 10 seconds of the outage.
         </p>
         <p>
-          Block size matters. Modern low-emission engines often cannot accept 100% of
-          rated load in one step, and ISO 8528-5 itself tests load acceptance in
-          defined steps rather than one jump from zero to full load. We set the block
-          from the engine manufacturer&apos;s published load acceptance data and the
-          largest step your facility actually applies, then confirm the result against
-          your specification.
+          Block size is important. Modern low emission engines often can&apos;t take 100% of their rated load in a single step and ISO 8528-5 tests load acceptance in steps rather than a single jump from zero to full load. We take the block from the engine manufacturer&apos;s published load acceptance data and the largest step your facility applies, then confirm the result against your specification.
         </p>
         <p>
-          Block load testing is useful after governor or voltage regulator changes,
-          after adding large motor or UPS loads to the emergency system, and whenever
-          the generator has struggled to pick up load during a real outage.
+          Block load testing is useful after a governor or voltage regulator change, after adding a large motor or UPS load to the emergency system, and any time the generator has had to struggle to take up load during a real outage.
         </p>
       </>
     ),
@@ -281,21 +223,17 @@ const CAPABILITY_ITEMS: CapabilityItem[] = [
     number: "06",
     badge: "Advanced Capability",
     title: "Transient load operation",
+    fullWidth: true,
     body: (
       <>
         <p>
-          Transient testing looks at the first few seconds after load changes, which is
-          where sensitive equipment gets hurt. We apply and remove load steps,
-          including full load rejection, and capture the voltage and frequency response
-          with a recording instrument fast enough to show the true dip and overshoot.
-          The steady-state reading on a panel meter misses this entirely.
+          Transient testing looks at what happens in the first few seconds after a load change (when sensitive equipment can be damaged). We apply and remove load steps (including full load rejection) and use a recording instrument which is fast enough to record the actual dip and overshoot in both voltage and frequency. The steady state reading on a panel meter misses that completely.
         </p>
         <p>
-          Results are compared against the performance class your generator was
-          specified to, from ISO 8528-5:
+          Results are compared against the performance class your generator was specified to, from ISO 8528-5:
         </p>
-        <div className="why-card__table-wrap">
-          <table className="why-card__table">
+        <div className="why-card__table-wrap troubleshooting-table-wrap">
+          <table className="why-card__table troubleshooting-table">
             <thead>
               <tr>
                 <th scope="col">Limit (ISO 8528-5)</th>
@@ -317,15 +255,10 @@ const CAPABILITY_ITEMS: CapabilityItem[] = [
           </table>
         </div>
         <p>
-          G1 suits simple loads such as lighting and heating. G2 is typical for general
-          commercial buildings. G3 is usually specified where the generator feeds UPS
-          systems, data processing or telecom equipment.
+          G1 is for simple loads (lighting and heating, etc.). G2 is the normal choice for general commercial buildings. Specify G3 if the generator would feed UPSs, data processing, and telecom equipment.
         </p>
         <p>
-          A transient test tells you more than pass or fail. A slow recovery or deep
-          dip points us toward governor gain, voltage regulator settings,
-          under-frequency roll-off or a turbocharger that is slow to respond. We note
-          these findings in the report so they can be corrected before the next outage.
+          A transient test tells you far more than pass or fail. A slow recovery or a deep dip will point to governor gain, voltage regulator settings, under frequency roll off or a turbo that&apos;s just slow to respond. We&apos;ll note those in the report so they can be rectified prior to the next outage.
         </p>
       </>
     ),
@@ -375,24 +308,17 @@ export default function Capabilities() {
           </div>
 
           {/* Right Scrolling Cards Column */}
-          <div className="why-cards-grid--stacked">
+          <div className="courses-grid courses-grid--single courses-grid--tinted">
             {CAPABILITY_ITEMS.map((item) => (
-              <article key={item.number} className="why-card why-card--detailed">
-                <div className="why-card__top">
-                  <div className="why-card__icon-wrap">
-                    {item.icon("why-card__icon")}
-                  </div>
-                  <div className="why-card__meta">
-                    <span className="why-card__badge">{item.badge}</span>
-                    <span className="why-card__num">{item.number}</span>
-                  </div>
+              <article
+                key={item.title}
+                className={`course-card${item.fullWidth ? " course-card--full" : ""}`}
+              >
+                <div className="course-card__header">
+                  <h3 className="course-card__title">{item.title}</h3>
                 </div>
 
-                <div className="why-card__heading-group">
-                  <h3 className="why-card__title">{item.title}</h3>
-                </div>
-
-                <div className="why-card__body">{item.body}</div>
+                <div className="course-card__body why-card__body">{item.body}</div>
               </article>
             ))}
           </div>
