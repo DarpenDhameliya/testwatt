@@ -88,7 +88,7 @@ export default function LegalContent({ sections }: { sections: LegalSection[] })
           {sections.map((section, index) => (
             <article key={section.heading} className="legal-section">
               <h2 className="legal-section__heading">
-                <span className="legal-section__num">{String(index + 1).padStart(2, "0")}</span>
+                <span className="legal-section__num">{index + 1}.</span>
                 {section.heading}
               </h2>
               {section.blocks?.map(renderBlock)}

@@ -18,8 +18,8 @@
   --color-grey: #475569;
   --color-border: #e2e8f0;
   --color-placeholder: #94a3b8;
-  --font-display: var(--font-outfit), "Outfit", sans-serif;
-  --font-body: var(--font-jakarta), "Plus Jakarta Sans", sans-serif;
+  --font-display: var(--font-poppins), "Poppins", sans-serif;
+  --font-body: var(--font-poppins), "Poppins", sans-serif;
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 18px;
@@ -70,6 +70,7 @@ html {
 
 body {
   font-family: var(--font-body);
+  font-weight: 300;
   color: var(--color-dark);
   background: var(--color-white);
   -webkit-font-smoothing: antialiased;
@@ -7384,11 +7385,6 @@ main {
   margin: 0;
 }
 
-.compliance-card__row--meet .compliance-card__text {
-  color: var(--color-navy);
-  font-weight: 500;
-}
-
 @media (max-width: 1100px) {
   .compliance-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -7423,7 +7419,6 @@ main {
 
 .legal-section {
   padding: 28px 0;
-  border-bottom: 1px solid var(--color-border);
 }
 
 .legal-section:first-child {
@@ -7446,10 +7441,6 @@ main {
 }
 
 .legal-section__num {
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-red);
   flex-shrink: 0;
 }
 
@@ -7595,11 +7586,13 @@ main {
 
 .legal-updated__text {
   margin: 0;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--color-border);
   color: var(--color-navy);
   font-size: var(--text-md);
   font-weight: 700;
+}
+
+.legal-updated + .section {
+  padding-top: 24px;
 }
 
 .why-grid__list {
@@ -8041,7 +8034,7 @@ main {
 /* Option C: light grey band, logo left and contacts stacked on the right with a
    red vertical rule between them; navy legal strip below (shared with B). */
 .footer-alt--split {
-  background: var(--color-light-grey);
+  background: var(--color-white);
   border-top: 1px solid var(--color-border);
 }
 
@@ -8057,6 +8050,7 @@ main {
 /* Same logo size as the current footer (option A). */
 .footer-alt--split .footer-alt__logo {
   height: 150px;
+  mix-blend-mode: multiply;
 }
 
 .footer-alt--split .footer-alt__col {
@@ -8101,7 +8095,7 @@ main {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-red);
-  background: var(--color-light-grey);
+  background: var(--color-white);
 }
 
 /* Load Bank Testing overview: intro on top, reason cards in two columns, closing note below. */
@@ -8203,3 +8197,10 @@ main {
 #repair-capabilities .why-grid__sticky .why-grid__body:first-child {
   margin-top: 0;
 }
+
+/* Hero background options, previewed at /hero-preview. */
+.hero-preview--a .lbt-hero { background: #0a192f; }
+.hero-preview--e .lbt-hero { background: #0c203c; }
+.hero-preview--b .lbt-hero { background: #0f2748; }
+.hero-preview--c .lbt-hero { background: #16355f; }
+.hero-preview--d .lbt-hero { background: #1f4577; }

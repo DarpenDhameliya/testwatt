@@ -1,24 +1,16 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Poppins } from "next/font/google";
 import ScrollToTop from "@/components/scroll-to-top";
 import AppFooter from "@/components/app-footer";
 import SiteHeader from "@/components/site-header";
 import { SALES_EMAIL, SITE_NAME, SITE_URL, SUPPORT_EMAIL } from "@/lib/site";
 import "./globals.css";
 
-const outfit = localFont({
-  src: "./fonts/outfit.woff2",
-  variable: "--font-outfit",
-  weight: "500 800",
-  display: "swap",
-});
-
-const jakarta = localFont({
-  src: [
-    { path: "./fonts/jakarta.woff2", weight: "400 700", style: "normal" },
-    { path: "./fonts/jakarta-italic.woff2", weight: "400 700", style: "italic" },
-  ],
-  variable: "--font-jakarta",
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -82,7 +74,7 @@ const ORGANIZATION_SCHEMA = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${outfit.variable} ${jakarta.variable}`}>
+    <html lang="en" className={poppins.variable}>
       <body>
         <script
           type="application/ld+json"
