@@ -1,20 +1,50 @@
-import { SectionHeading, ServiceCard } from "@/components/ui";
+import Link from "next/link";
+import { SectionHeading } from "@/components/ui";
 import { SERVICES } from "@/lib/content";
 
 export default function Services() {
   return (
-    <section className="section section--white" aria-labelledby="services-heading">
+    <section className="section section--grey" aria-labelledby="services-heading">
       <div className="container">
         <SectionHeading
-          kicker="What We Do"
           heading={
-            <span id="services-heading">Services for critical power infrastructure</span>
+            <span id="services-heading">Testing and support for your power systems</span>
           }
+          body="Two service lines, one team. We test the equipment that keeps your facility running and look after the load banks used to test it."
           className="section-heading--mb"
         />
-        <div className="services-grid">
+        <div className="courses-grid">
           {SERVICES.map((service) => (
-            <ServiceCard key={service.number} service={service} />
+            <article key={service.number} className="course-card">
+              <div className="course-card__header">
+                <h3 className="course-card__title">{service.title}</h3>
+              </div>
+              <div className="course-card__body why-card__body">
+                <p>{service.description}</p>
+                <ul>
+                  {service.highlights.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="course-card__footer">
+                <Link href={service.link} className="service-card__link">
+                  <span>{service.linkLabel}</span>
+                  <svg
+                      className="service-card__link-arrow"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M3 8h10M9 4l4 4-4 4" />
+                    </svg>
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
       </div>

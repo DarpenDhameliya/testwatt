@@ -1,10 +1,6 @@
-import { Kicker } from "@/components/ui";
-
 interface WhyItem {
   number: string;
-  badge: string;
   title: string;
-  tagline: string;
   body: string;
   icon: (className?: string) => React.ReactNode;
 }
@@ -12,34 +8,8 @@ interface WhyItem {
 const WHY_ITEMS: WhyItem[] = [
   {
     number: "01",
-    badge: "Capacity Proof",
-    title: "Confirms Real Capacity",
-    tagline: "Stop guessing from the nameplate",
-    body: "The nameplate is just what the manufacturer says the unit can do. Running it at 100% load for a sustained period is the only way to be sure it will cope when it matters.",
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M12 2v3M4.93 4.93l2.12 2.12M2 12h3M19.07 4.93l-2.12 2.12M22 12h-3" />
-        <path d="M12 9a7 7 0 0 0-7 7h14a7 7 0 0 0-7-7z" />
-        <path d="M12 12l2.5-2.5" />
-        <circle cx="12" cy="16" r="1.5" fill="currentColor" />
-      </svg>
-    ),
-  },
-  {
-    number: "02",
-    badge: "Asset Longevity",
-    title: "Stops Wet-Stacking",
-    tagline: "Burns off what idling leaves behind",
-    body: "A diesel generator that runs at low load collects unburnt fuel in the exhaust. A full-load test burns it off before it can damage the engine.",
+    title: "We know load banks inside and out",
+    body: "We repair and upgrade the load banks and we use them. That means far fewer surprises on test day and if anything does go wrong during the test, we can often fix it on site.",
     icon: (className) => (
       <svg
         className={className}
@@ -57,55 +27,9 @@ const WHY_ITEMS: WhyItem[] = [
     ),
   },
   {
-    number: "03",
-    badge: "Fault Detection",
-    title: "Finds What Idle Hides",
-    tagline: "Catches faults before they cause an outage",
-    body: "Voltage sag, unstable frequency, governor hunting and cooling problems only appear once the unit is carrying load. We pick them up while the test is running.",
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M2 12h4l2.5-7 4 14 3-9 2.5 4h4" />
-        <circle cx="12.5" cy="19" r="1.5" fill="currentColor" />
-      </svg>
-    ),
-  },
-  {
-    number: "04",
-    badge: "Compliance",
-    title: "Meets Compliance Requirements",
-    tagline: "Paperwork auditors actually accept",
-    body: "NFPA 110, NETA, the Uptime Institute and most OEM warranties call for regular load testing. Our reports give you the evidence auditors ask to see.",
-    icon: (className) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="M9 12l2 2 4-4" />
-      </svg>
-    ),
-  },
-  {
-    number: "05",
-    badge: "Zero Downtime",
-    title: "No Utility Involved",
-    tagline: "Your supply stays untouched",
-    body: "We bring our own load banks with us, so we don't draw on your supply. There's no load shedding to plan and nothing depends on building power.",
+    number: "02",
+    title: "Tests built around the standard you answer to",
+    body: "We'll design each test to the relevant requirement (NFPA 110 for emergency/standby power, NFPA 99 for healthcare, etc.) and document it so that it's inspection ready.",
     icon: (className) => (
       <svg
         className={className}
@@ -125,11 +49,49 @@ const WHY_ITEMS: WhyItem[] = [
     ),
   },
   {
-    number: "06",
-    badge: "Warranty Safeguard",
-    title: "Protects the Warranty",
-    tagline: "Keeps the OEM paperwork covered",
-    body: "Many manufacturer warranties require documented testing at regular intervals. Our calibrated equipment and formal reports meet that condition.",
+    number: "03",
+    title: "Reports you can use",
+    body: "Every test ends with a report that includes the load steps, the readings and any problems encountered. That report will go to an inspector or be filed for your records.",
+    icon: (className) => (
+      <svg
+        className={className}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+  },
+  {
+    number: "04",
+    title: "More life from the equipment you own",
+    body: "An upgrade can often be cheaper than a new unit. An older unit can frequently be brought up to specification with automatic control, load leveling and Modbus capability.",
+    icon: (className) => (
+      <svg
+        className={className}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M2 12h4l2.5-7 4 14 3-9 2.5 4h4" />
+        <circle cx="12.5" cy="19" r="1.5" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    number: "05",
+    title: "Straight answers from the right person",
+    body: "Send sales queries to Sales@TestWatt.com and technical issues to Support@TestWatt.com. So, you're speaking to someone who can actually help.",
     icon: (className) => (
       <svg
         className={className}
@@ -153,44 +115,29 @@ export default function WhyTestWatt() {
   return (
     <section className="section section--grey why-section-wrap" aria-labelledby="why-heading">
       <div className="container">
-        <div className="why-grid">
+        <div className="why-grid--equal">
           {/* Left Sticky Column */}
           <div className="why-grid__sticky">
-            <Kicker>Why TestWatt</Kicker>
             <h2 id="why-heading" className="why-grid__title">
-              The case for independent load testing
+              Why customers call Test Watt
             </h2>
-            <p className="why-grid__body">
-              A manufacturer's rating and a commissioning sign-off don't prove much on
-              their own. The only way to know your critical power equipment will work
-              when you need it is to load it to 100% of nameplate, under controlled
-              and documented conditions, and see how it behaves.
-            </p>
           </div>
 
-          {/* Right Cards Grid (Styled like Service Cards) */}
-          <div className="why-cards-grid">
-            {WHY_ITEMS.map((item) => (
-              <article key={item.number} className="why-card">
-                {/* Card Top: Icon & Meta */}
-                <div className="why-card__top">
-                  <div className="why-card__icon-wrap">
-                    {item.icon("why-card__icon")}
-                  </div>
-                  <div className="why-card__meta">
-                    <span className="why-card__badge">{item.badge}</span>
-                    <span className="why-card__num">{item.number}</span>
-                  </div>
+          <div className="courses-grid courses-grid--single">
+            {WHY_ITEMS.map((item, index) => (
+              <article key={item.number} className="course-card">
+                <div className="course-card__header">
+                  <h3 className="course-card__title">
+                    Reason {index + 1}: {item.title}
+                  </h3>
                 </div>
-
-                {/* Heading Group */}
-                <div className="why-card__heading-group">
-                  <h3 className="why-card__title">{item.title}</h3>
-                  <p className="why-card__tagline">{item.tagline}</p>
+                <div className="course-card__body why-card__body">
+                  <p>
+                    {item.body.split(/([\w.]+@[\w.]+\.com)/).map((part, i) =>
+                      i % 2 === 1 ? <strong key={i}>{part}</strong> : part,
+                    )}
+                  </p>
                 </div>
-
-                {/* Description Body */}
-                <p className="why-card__body">{item.body}</p>
               </article>
             ))}
           </div>

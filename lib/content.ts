@@ -14,6 +14,7 @@ export type Service = {
   metric: { value: string; label: string };
   link: AppRoute;
   featured?: boolean;
+  linkLabel: string;
 };
 
 export type FeatureItemData = { title: string; body: string };
@@ -38,90 +39,99 @@ export type IsoLimitRow = {
 export const SERVICES: Service[] = [
   {
     number: "01",
-    title: "Load Bank Testing",
-    tagline: "Full Nameplate Load, Proven On Site",
-    badge: "Core Service",
+    title: "Load bank testing",
+    tagline: "",
+    badge: "",
     category: "testing",
     description:
-      "We put generators, UPS systems and switchgear under real resistive, reactive or hybrid load at their full nameplate rating, not half capacity. If the plate says 100%, we run it at 100% and check that it holds.",
+      "We connect a resistive load bank to your generator and step it through the load profile that your site requires. Then we provide a written report that shows the voltage, frequency and current held up at each step.",
     highlights: [
-      "Resistive, reactive & hybrid power factor testing",
-      "Step loading at 25%, 50%, 75%, 100% capacity",
-      "Reports built to NFPA 110, ISO 8528 & NETA",
+      "Annual and periodic testing in accordance with NFPA 110 and NFPA 99.",
+      "Step load, block load and transient load testing.",
+      "Burn the unburned fuel and carbon (wet stacking) from lightly loaded diesel units.",
+      "Clear test reports for inspectors, auditors and insurers.",
     ],
-    targetEquipment: [
-      "Standby Generators",
-      "UPS Systems",
-      "Switchgear",
-      "ATS Panels",
-    ],
-    metric: { value: "100%", label: "Nameplate Load Proof" },
+    targetEquipment: [],
+    metric: { value: "", label: "" },
     link: "/load-bank-testing",
-    featured: true,
+    linkLabel: "Learn about load bank testing",
   },
   {
     number: "02",
-    title: "Repairs & Servicing",
-    tagline: "Scheduled Care, Fast Call-Outs",
-    badge: "Field Engineering",
+    title: "Repairs and servicing",
+    tagline: "",
+    badge: "",
     category: "servicing",
     description:
-      "Planned maintenance and emergency call-outs for load banks and the equipment around them. Our engineers work on this gear every week, so they know how it behaves in practice as well as on paper.",
+      "If a load bank trips, runs hot or fails to read, then we locate the fault and rectify it. Planned maintenance identifies worn contactors, failed fans and loose connections before they take a unit out of service.",
     highlights: [
-      "Sensor & instrument calibration",
-      "Thermal checks on resistor elements",
-      "Preventive servicing that protects your warranty",
+      "Fault diagnosis and repair of resistive load banks.",
+      "Scheduled maintenance and inspection.",
+      "Replacing the heater elements, fans, contactors, etc.",
     ],
-    targetEquipment: [
-      "Portable Units",
-      "Permanent Installations",
-      "Auxiliary Blowers",
-    ],
-    metric: { value: "24/7", label: "Engineering Dispatch" },
+    targetEquipment: [],
+    metric: { value: "", label: "" },
     link: "/repairs-servicing",
+    linkLabel: "Learn about repairs and servicing",
   },
   {
     number: "03",
-    title: "Load Bank Upgrades",
-    tagline: "New Controls On Equipment You Already Own",
-    badge: "Asset Life Extension",
-    category: "modernisation",
+    title: "Training and troubleshooting",
+    tagline: "",
+    badge: "",
+    category: "servicing",
     description:
-      "Most load banks don't need replacing. They need better controls. We add digital metering, remote monitoring and extra capacity to units already in your fleet.",
+      "We'll show you how to run a load bank safely and read the results. We'll also be there if a unit or a test doesn't behave as it should.",
     highlights: [
-      "PLC retrofits with automated step sequencing",
-      "SCADA, Modbus & cloud data logging",
-      "Capacity and power-factor upgrades",
+      "Hands on operator training on your own equipment.",
+      "Safe hook up, load stepping and shutdown procedures.",
+      "Read the test data and pick up early warning signs.",
+      "Help with trips, overheating and faulty readings.",
     ],
-    targetEquipment: [
-      "Legacy Load Banks",
-      "Control Consoles",
-      "Data Loggers",
-    ],
-    metric: { value: "-60%", label: "Capex Savings vs New" },
-    link: "/load-bank-upgrades",
+    targetEquipment: [],
+    metric: { value: "", label: "" },
+    link: "/training-troubleshooting",
+    linkLabel: "Learn more about training and troubleshooting",
   },
   {
     number: "04",
-    title: "Training & Troubleshooting",
-    tagline: "Train Your Team, Or Send Us The Fault",
-    badge: "Specialist Advisory",
-    category: "servicing",
+    title: "Upgrades",
+    tagline: "",
+    badge: "",
+    category: "modernisation",
     description:
-      "We train in-house teams, and we get called in when nobody else can pin down a fault: nuisance trips, drift and intermittent failures on generators, UPS systems and switchgear.",
+      "Older load banks can often do more with new controls. We'll upgrade the existing units to make them easier and safer to operate and ready to interface with your other systems.",
     highlights: [
-      "Operator safety & test procedure training",
-      "AVR drift, governor hunting & fault isolation",
-      "Written diagnosis and corrective plan",
+      "Manual to automatic control conversion.",
+      "Automatic load leveling.",
+      "Modbus comms and remote monitoring.",
+      "Regenerative power and power export control.",
+      "Wi-Fi and network connectivity.",
+      "Custom test sequences for your site.",
     ],
-    targetEquipment: [
-      "Facility Engineers",
-      "Operations Teams",
-      "Maintenance Techs",
-    ],
-    metric: { value: "Certified", label: "Audit Aligned" },
-    link: "/training-troubleshooting",
+    targetEquipment: [],
+    metric: { value: "", label: "" },
+    link: "/load-bank-upgrades",
+    linkLabel: "See upgrade options",
   },
+];
+
+export const APPLICATIONS = [
+  "Standby and emergency generator testing.",
+  "Commissioning of the new generator installations.",
+  "Testing after any repairs or controller changes.",
+  "Wet stacking prevention for lightly loaded diesel generators.",
+  "Step load, block load and transient load testing.",
+  "Load bank checks before rental or job site use.",
+];
+
+export const INDUSTRIES = [
+  { name: "Hospitals and healthcare", why: "Emergency power must meet NFPA 99 and NFPA 110 for accreditation and CMS surveys" },
+  { name: "Data centers", why: "Uptime commitments depend on generators and UPS carrying full IT load" },
+  { name: "Water and wastewater", why: "Pumps and treatment must keep running through an outage" },
+  { name: "Commercial and government buildings", why: "Life safety systems, elevators and fire pumps rely on backup power" },
+  { name: "Manufacturing and industrial sites", why: "An outage can stop production and damage equipment mid process" },
+  { name: "Telecom", why: "Network sites need power through long utility outages" },
 ];
 
 export const CAPABILITIES = [

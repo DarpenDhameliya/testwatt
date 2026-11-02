@@ -11,28 +11,29 @@ export default function Hero() {
 
       <div className="hero__inner container">
         <div className="hero__content">
-          <HeroEyebrow icon="bolt">Critical Power Testing</HeroEyebrow>
+          <HeroEyebrow>Load bank testing and service</HeroEyebrow>
 
           <h1 id="hero-heading" className="hero__title">
             <span className="lbt-hero__title-line lbt-hero__title-line--1">
-              Full-load proof,
+              Know your backup power
             </span>
             <br />
             <span className="hero__title-muted lbt-hero__title-line lbt-hero__title-line--2">
-              <span className="hero__title-accent">100%</span> nameplate capacity,
-            </span>
-            <br />
-            <span className="hero__title-muted lbt-hero__title-line lbt-hero__title-line--3">
-              no guesswork.
+              will carry the load!
             </span>
           </h1>
 
           <p className="hero__body">
-            Running a generator with no load doesn&apos;t show whether it can carry your
-            building. We bring mobile{" "}
-            <strong>resistive, reactive and hybrid</strong> load banks to your site and take generators, UPS units and switchgear up to{" "}
-            <strong>full nameplate capacity</strong>. You finish with reports that meet{" "}
-            <strong>NFPA and ISO</strong> requirements.
+            TestWatt tests your standby generators and power systems under real electrical
+            load and keeps your load bank equipment in good order.
+          </p>
+          <p className="hero__body">
+            A genset can easily pass its weekly startup test and yet be absolutely useless
+            when it comes to actually powering your building. That&apos;s where load bank
+            testing comes in. We put a known load on the genset so you can see how it
+            actually performs before an outage occurs. We do the tests to the standards that
+            your inspectors and insurers require. We also repair, service and upgrade the
+            load banks that you own.
           </p>
         </div>
       </div>

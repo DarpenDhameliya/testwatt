@@ -233,8 +233,7 @@ export function ServiceCard({ service }: { service: Service }) {
           {service.badge && (
             <span className="service-card__badge">{service.badge}</span>
           )}
-          <span className="service-card__num">{service.number}</span>
-        </div>
+                  </div>
       </div>
 
       {/* Title & Tagline */}
@@ -251,8 +250,7 @@ export function ServiceCard({ service }: { service: Service }) {
       {/* Key Highlights Checklist */}
       {service.highlights && service.highlights.length > 0 && (
         <div className="service-card__highlights">
-          <span className="service-card__section-label">Key Capabilities</span>
-          <ul className="service-card__list">
+                    <ul className="service-card__list">
             {service.highlights.map((item) => (
               <li key={item} className="service-card__list-item">
                 <svg
@@ -277,8 +275,7 @@ export function ServiceCard({ service }: { service: Service }) {
       {/* Target Equipment */}
       {service.targetEquipment && service.targetEquipment.length > 0 && (
         <div className="service-card__equipment">
-          <span className="service-card__section-label">Target Equipment</span>
-          <div className="service-card__tags">
+                    <div className="service-card__tags">
             {service.targetEquipment.map((eq) => (
               <span key={eq} className="service-card__tag">
                 {eq}
@@ -290,14 +287,14 @@ export function ServiceCard({ service }: { service: Service }) {
 
       {/* Footer: Metric & Action */}
       <div className="service-card__footer">
-        {service.metric && (
+        {service.metric?.value && (
           <div className="service-card__metric">
             <span className="service-card__metric-val">{service.metric.value}</span>
             <span className="service-card__metric-lbl">{service.metric.label}</span>
           </div>
         )}
         <Link href={service.link} className="service-card__link">
-          <span>Explore Service</span>
+          <span>{service.linkLabel}</span>
           <svg
             className="service-card__link-arrow"
             viewBox="0 0 16 16"

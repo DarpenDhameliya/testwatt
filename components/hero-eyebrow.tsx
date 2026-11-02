@@ -32,11 +32,12 @@ export default function HeroEyebrow({
   icon,
   children,
 }: {
-  icon: EyebrowIcon;
+  icon?: EyebrowIcon;
   children: ReactNode;
 }) {
   return (
     <div className="hero__eyebrow">
+      {icon && (
       <span className="hero__eyebrow-icon" aria-hidden="true">
         <svg
           viewBox="0 0 24 24"
@@ -49,6 +50,7 @@ export default function HeroEyebrow({
           {ICON_PATHS[icon]}
         </svg>
       </span>
+      )}
       {children}
     </div>
   );
