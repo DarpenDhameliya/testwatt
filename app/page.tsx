@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import CapabilityStrip from "@/components/sections/home/capability-strip";
 // import HomeCta from "@/components/sections/home/cta"; // CTA now lives in the footer
-import Applications from "@/components/sections/home/applications";
+import Applications, { ApplicationsNew } from "@/components/sections/home/applications";
 import Hero from "@/components/sections/home/hero";
-import Services from "@/components/sections/home/services";
+import Services, { ServicesWide } from "@/components/sections/home/services";
 import Standards from "@/components/sections/home/standards";
 import TestingProcess from "@/components/sections/home/testing-process";
 import WhyTestWatt from "@/components/sections/home/why-test-watt";
@@ -58,7 +58,9 @@ export default function HomePage() {
       <Hero />
       {/* <CapabilityStrip /> */}
       <Services />
+      <ServicesWide />
       <Applications />
+      <ApplicationsNew />
       <WhyTestWatt />
       {/* <TestingProcess /> */}
       {/* <Standards /> */}

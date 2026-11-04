@@ -113,7 +113,7 @@ const WHY_ITEMS: WhyItem[] = [
 
 export default function WhyTestWatt() {
   return (
-    <section className="section section--grey why-section-wrap" aria-labelledby="why-heading">
+    <section id="why-testwatt" className="section section--grey why-section-wrap" aria-labelledby="why-heading">
       <div className="container">
         <div className="why-grid--equal">
           {/* Left Sticky Column */}
@@ -123,24 +123,25 @@ export default function WhyTestWatt() {
             </h2>
           </div>
 
-          <div className="courses-grid courses-grid--single">
-            {WHY_ITEMS.map((item, index) => (
-              <article key={item.number} className="course-card">
-                <div className="course-card__header">
-                  <h3 className="course-card__title">
-                    Reason {index + 1}: {item.title}
-                  </h3>
+          <ol className="why-list">
+            {WHY_ITEMS.map((item) => (
+              <li key={item.number} className="why-list__item">
+                <span className="why-list__number" aria-hidden="true">
+                  {item.number}
+                </span>
+                <div className="why-list__content">
+                  <h3 className="course-card__title">{item.title}</h3>
+                  <div className="why-card__body">
+                    <p>
+                      {item.body.split(/([\w.]+@[\w.]+\.com)/).map((part, i) =>
+                        i % 2 === 1 ? <strong key={i}>{part}</strong> : part,
+                      )}
+                    </p>
+                  </div>
                 </div>
-                <div className="course-card__body why-card__body">
-                  <p>
-                    {item.body.split(/([\w.]+@[\w.]+\.com)/).map((part, i) =>
-                      i % 2 === 1 ? <strong key={i}>{part}</strong> : part,
-                    )}
-                  </p>
-                </div>
-              </article>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </div>
     </section>

@@ -7039,6 +7039,13 @@ main {
   grid-template-columns: 1fr;
 }
 
+/* Home services: four boxes in one row on very wide screens, otherwise two. */
+@media (min-width: 1501px) {
+  .courses-grid--services {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 /* Light grey cards for use on white sections */
 .courses-grid--tinted .course-card {
   background: var(--color-light-grey);
@@ -8204,3 +8211,226 @@ main {
 .hero-preview--b .lbt-hero { background: #0f2748; }
 .hero-preview--c .lbt-hero { background: #16355f; }
 .hero-preview--d .lbt-hero { background: #1f4577; }
+
+/* Home "Applications and industries": pills + three-column card grid. */
+.apps {
+  background: var(--color-white);
+}
+
+.apps__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.apps__pill {
+  padding: 12px 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: var(--color-white);
+  color: var(--color-navy-font);
+}
+
+.apps__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.apps__card {
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #f5f7fb;
+}
+
+.apps__card-title {
+  margin: 0 0 8px;
+  color: var(--color-navy-font);
+}
+
+.apps__card-text {
+  margin: 0;
+  line-height: 1.6;
+  color: #475569;
+}
+
+@media (max-width: 1000px) {
+  .apps__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .apps__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Home "Why customers call Test Watt": plain numbered list, no card boxes. */
+.why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.why-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.why-list__number {
+  flex: none;
+  min-width: 2ch;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-red-font);
+}
+
+.why-list__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.why-list__content .course-card__title {
+  margin: 0 0 8px;
+}
+
+/* Home "Applications" new design (ApplicationsNew), shown beside the original. */
+.apps2 {
+  background: var(--color-white);
+}
+
+.apps2__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.apps2__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 20px 11px 14px;
+  border: 1px solid #dbe3ee;
+  border-radius: 999px;
+  background: var(--color-white);
+  box-shadow: 0 2px 6px -2px rgba(10, 25, 47, 0.1);
+  color: var(--color-navy-font);
+}
+
+.apps2__pill::before {
+  content: "";
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-red)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8.5l2.8 2.8L12 5.5'/%3E%3C/svg%3E")
+    center / 12px no-repeat;
+}
+
+.apps2__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.apps2__card {
+  position: relative;
+  padding: 28px 24px 24px;
+  border: 1px solid #e2e8f0;
+  border-top: 3px solid var(--color-red);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%);
+  box-shadow: 0 4px 14px -6px rgba(10, 25, 47, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.apps2__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px -10px rgba(10, 25, 47, 0.22);
+}
+
+.apps2__num {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-weight: 700;
+  color: rgba(10, 25, 47, 0.08);
+  font-size: 34px;
+  line-height: 1;
+}
+
+.apps2__card-title {
+  margin: 0 0 8px;
+  padding-right: 48px;
+  color: var(--color-navy-font);
+}
+
+.apps2__card-text {
+  margin: 0;
+  line-height: 1.6;
+  color: #475569;
+}
+
+@media (max-width: 1000px) {
+  .apps2__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .apps2__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .apps2__card {
+    transition: none;
+  }
+  .apps2__card:hover {
+    transform: none;
+  }
+}
+
+/* Home "Why customers call Test Watt": single column, title on top and the list below. */
+#why-testwatt .why-grid--equal {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px 0;
+}
+
+#why-testwatt .why-grid--equal>* {
+  min-width: 0;
+}
+
+#why-testwatt .why-grid__sticky {
+  position: static;
+}
+
+#why-testwatt .why-grid__title {
+  margin: 0;
+}
+
+/* Home hero: body text uses the full container width, like the other hero sections. */
+.lbt-hero--full .lbt-hero__body {
+  max-width: none;
+}
+
+/* /home-copy: Oswald headings and Work Sans body text. */
+.font-alt {
+  --font-display: var(--font-oswald), "Oswald", sans-serif;
+  --font-body: var(--font-work-sans), "Work Sans", sans-serif;
+  font-family: var(--font-body);
+}
