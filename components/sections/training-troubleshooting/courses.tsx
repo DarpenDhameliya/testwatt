@@ -9,7 +9,7 @@ export default function Courses() {
       <div className="container">
         <div className="courses-intro">
           <p>
-            Test Watt trains the people who operate and maintain your load banks and we do the troubleshooting of units that aren&apos;t performing to specification. Wherever possible we train at your site on your own equipment, so your team get to learn the controls, the connections and the procedures that they&apos;ll be using during actual testing.
+            TestWatt trains the people who operate and maintain your load banks and we do the troubleshooting of units that aren&apos;t performing to specification. Wherever possible we train at your site on your own equipment, so your team get to learn the controls, the connections and the procedures that they&apos;ll be using during actual testing.
           </p>
           <p>
             We give each training around the equipment you have, your team&apos;s experience and the tests that your site has to carry out
@@ -24,7 +24,12 @@ export default function Courses() {
             >
               <div className="course-card__header">
                 <h3 className="course-card__title">{course.title}</h3>
-                <p className="course-card__desc">{course.description}</p>
+                <p
+                  className={`course-card__desc${course.modules || course.table || course.audience ? "" : " course-card__desc--no-divider"
+                    }`}
+                >
+                  {course.description}
+                </p>
               </div>
 
               <div className="course-card__body">

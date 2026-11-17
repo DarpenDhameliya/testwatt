@@ -400,7 +400,7 @@ export const TRAINING_COURSES: TrainingCourse[] = [
     description:
       "This training is for the people who actually connect and run the load tests. By the end of it operators should be able to set up a test, apply the load safely, monitor the correct readings and shut the unit down correctly.",
     modules: [
-      "Electrical safety, PPE and safe work practices as per **NFPA 70E**.",
+      "Electrical safety, PPE and safe work practices as per industry testing standards.",
       "How your load bank works: resistive and reactive loads, kW, kVA and power factor.",
       "Reading the generator nameplate ratings to select the appropriate test load.",
       "Cable sizing, connections and checking phase rotation prior to load going on.",
@@ -466,18 +466,18 @@ export const TRAINING_COURSES: TrainingCourse[] = [
     title: "Troubleshooting support",
     description:
       "If your load bank trips won't hold load or gives you readings you don't trust, our engineers can help. We'll start by discussing the symptoms with you and in many cases, we can identify faults over the phone or via a video call. If we can't identify it remotely, we'll come to site, diagnose the fault and sort it out. You'll always get a written report after each call-out detailing what failed, why it failed and anything else we found that required attention.",
-    table: {
-      head: ["Symptom", "What we check"],
-      rows: [
-        ["Load bank won't apply full load or kW reads low", "Failed elements, blown fuses, contactors, loose internal wiring, controller settings"],
-        ["Readings unstable or don't match the generator's meters", "Current transformers, voltage sensing, meter calibration"],
-        ["Over temperature trip or unit shuts down mid test", "Blocked intake or exhaust, blower motor, fan rotation, temperature sensors"],
-        ["Fan won't start or airflow fault on startup", "Fan supply, motor overloads, airflow switch, phase rotation"],
-        ["A load step won't switch in or out", "Contactor coil, control voltage, interlocks, controller outputs"],
-        ["Phase imbalance under load", "Open elements on one phase, connection faults, fuses"],
-        ["Handheld, remote or software can't control the unit", "Communication cables, network settings, Modbus configuration, firmware"],
-        ["Burning smell, discoloration or arcing", "Overheated terminals, damaged insulation, failed elements"],
-      ],
-    },
+    // table: {
+    //   head: ["Symptom", "What we check"],
+    //   rows: [
+    //     ["Load bank won't apply full load or kW reads low", "Failed elements, blown fuses, contactors, loose internal wiring, controller settings"],
+    //     ["Readings unstable or don't match the generator's meters", "Current transformers, voltage sensing, meter calibration"],
+    //     ["Over temperature trip or unit shuts down mid test", "Blocked intake or exhaust, blower motor, fan rotation, temperature sensors"],
+    //     ["Fan won't start or airflow fault on startup", "Fan supply, motor overloads, airflow switch, phase rotation"],
+    //     ["A load step won't switch in or out", "Contactor coil, control voltage, interlocks, controller outputs"],
+    //     ["Phase imbalance under load", "Open elements on one phase, connection faults, fuses"],
+    //     ["Handheld, remote or software can't control the unit", "Communication cables, network settings, Modbus configuration, firmware"],
+    //     ["Burning smell, discoloration or arcing", "Overheated terminals, damaged insulation, failed elements"],
+    //   ],
+    // },
   },
 ];

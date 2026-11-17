@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/load-bank-upgrades/hero";
-import Capabilities from "@/components/sections/load-bank-upgrades/capabilities";
+import UpgradeBrochure from "@/components/sections/load-bank-upgrades-demo/upgrade-brochure";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Load Bank Upgrades | Controls, Modbus & Remote Capability Retrofits | TestWatt",
+  title: "Load Bank Upgrades (Demo) | Controls, Modbus & Remote Capability Retrofits | TestWatt",
   description:
     "Upgrade the load bank you already own with automatic or manual control conversions, auto load leveling, Modbus communication, regenerative power handling and more.",
   keywords:
     "load bank upgrades, load bank PLC conversion, load bank Modbus, load bank auto load level, load bank Wi-Fi control, load bank networking",
-  alternates: { canonical: "/load-bank-upgrades" },
+  alternates: { canonical: "/load-bank-upgrades-demo" },
+  robots: { index: false, follow: false },
 };
 
 const PAGE_SCHEMA = {
@@ -37,7 +38,7 @@ const PAGE_SCHEMA = {
   ],
 };
 
-export default function LoadBankUpgradesPage() {
+export default function LoadBankUpgradesDemoPage() {
   return (
     <div>
       <script
@@ -46,7 +47,7 @@ export default function LoadBankUpgradesPage() {
       />
 
       <Hero />
-      <Capabilities />
+      <UpgradeBrochure />
     </div>
   );
 }

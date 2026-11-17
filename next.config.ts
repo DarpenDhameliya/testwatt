@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   // Let phones on the same Wi-Fi load the dev server by LAN IP.
   allowedDevOrigins: ["192.168.*.*", "10.*.*.*"],
+  images: { qualities: [75, 95] },
 };
 
 export default nextConfig;

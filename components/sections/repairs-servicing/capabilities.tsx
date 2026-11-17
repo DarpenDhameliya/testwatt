@@ -121,7 +121,7 @@ const SERVICE_ITEMS: ServiceItem[] = [
           Shop repair of the portable and compact units. You ship or drop them off, we repair them on the bench,
           and they go through a full load test before we return them to you.
         </p>
-        <h4 className="why-card__subheading">What a service visit covers</h4>
+        {/* <h4 className="why-card__subheading">What a service visit covers</h4>
         <div className="why-card__table-wrap troubleshooting-table-wrap">
           <table className="why-card__table troubleshooting-table">
             <thead>
@@ -139,7 +139,7 @@ const SERVICE_ITEMS: ServiceItem[] = [
               ))}
             </tbody>
           </table>
-        </div>
+        </div> */}
       </>
     ),
   },

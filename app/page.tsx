@@ -3,6 +3,7 @@ import CapabilityStrip from "@/components/sections/home/capability-strip";
 // import HomeCta from "@/components/sections/home/cta"; // CTA now lives in the footer
 import Applications, { ApplicationsNew } from "@/components/sections/home/applications";
 import Hero from "@/components/sections/home/hero";
+import P100Datasheet from "@/components/sections/home/p100-datasheet";
 import Services, { ServicesWide } from "@/components/sections/home/services";
 import Standards from "@/components/sections/home/standards";
 import TestingProcess from "@/components/sections/home/testing-process";
@@ -58,8 +59,9 @@ export default function HomePage() {
       <Hero />
       {/* <CapabilityStrip /> */}
       <Services />
-      <ServicesWide />
-      <Applications />
+      <P100Datasheet />
+      {/* <ServicesWide /> */}
+      {/* <Applications /> */}
       <ApplicationsNew />
       <WhyTestWatt />
       {/* <TestingProcess /> */}

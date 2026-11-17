@@ -119,7 +119,7 @@ export default function WhyTestWatt() {
           {/* Left Sticky Column */}
           <div className="why-grid__sticky">
             <h2 id="why-heading" className="why-grid__title">
-              Why customers call Test Watt
+              Why customers call TestWatt
             </h2>
           </div>
 
