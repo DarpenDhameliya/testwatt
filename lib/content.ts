@@ -76,25 +76,6 @@ export const SERVICES: Service[] = [
   },
   {
     number: "03",
-    title: "Training and troubleshooting",
-    tagline: "",
-    badge: "",
-    category: "servicing",
-    description:
-      "We'll show you how to run a load bank safely and read the results. We'll also be there if a unit or a test doesn't behave as it should.",
-    highlights: [
-      "Hands on operator training on your own equipment.",
-      "Safe hook up, load stepping and shutdown procedures.",
-      "Read the test data and pick up early warning signs.",
-      "Help with trips, overheating and faulty readings.",
-    ],
-    targetEquipment: [],
-    metric: { value: "", label: "" },
-    link: "/training-troubleshooting",
-    linkLabel: "Learn more about training and troubleshooting",
-  },
-  {
-    number: "04",
     title: "Upgrades",
     tagline: "",
     badge: "",
@@ -113,6 +94,25 @@ export const SERVICES: Service[] = [
     metric: { value: "", label: "" },
     link: "/load-bank-upgrades",
     linkLabel: "See upgrade options",
+  },
+  {
+    number: "04",
+    title: "Training and troubleshooting",
+    tagline: "",
+    badge: "",
+    category: "servicing",
+    description:
+      "We'll show you how to run a load bank safely and read the results. We'll also be there if a unit or a test doesn't behave as it should.",
+    highlights: [
+      "Hands on operator training on your own equipment.",
+      "Safe hook up, load stepping and shutdown procedures.",
+      "Read the test data and pick up early warning signs.",
+      "Help with trips, overheating and faulty readings.",
+    ],
+    targetEquipment: [],
+    metric: { value: "", label: "" },
+    link: "/training-troubleshooting",
+    linkLabel: "Learn more about training and troubleshooting",
   },
 ];
 
