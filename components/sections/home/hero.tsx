@@ -3,7 +3,7 @@ export default function Hero() {
     <section className="lbt-hero lbt-hero--full" aria-labelledby="hero-heading">
       <div className="container lbt-hero__container">
         <div className="lbt-hero__content">
-          <p className="hero__eyebrow">Load bank solution</p>
+          <p className="hero__eyebrow">Load bank Solutions</p>
 
           <h1 id="hero-heading" className="lbt-hero__title">
             <span className="lbt-hero__title-line lbt-hero__title-line--1">

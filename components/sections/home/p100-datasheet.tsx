@@ -12,13 +12,13 @@ const STATS = [
 
 /** [label, value]. An empty value is shown as a dash (the datasheet leaves it blank). */
 const SPECS: [string, string][] = [
-  ["Fan / Control Power", "External, 115V, 1-ph., 60Hz, 15A service"],
+  ["Fan / Control Power", "External, 115V, 1-ph., 60Hz, 10A Max"],
   ["Nominal Voltage", "240/480V AC, 3-phase"],
   ["Min Load Steps", "12.5 kW"],
   ["Frequency", "50/60 Hz"],
-  ["Duty Cycle", "Continues"],
-  ["Weight", "100 lbs Approx."],
-  ["Dimensions", "252.5 X 553.60 X 600.42 mm"],
+  ["Duty Cycle", "Continuous"],
+  ["Weight", "65 lbs (Approx.)"],
+  ["Dimensions", "10 x 22 x 24 inches (Approx.)"],
   ["Options", "Hard transport and storage case with handles and casters"],
 ];
 
@@ -178,7 +178,7 @@ export default function P100Datasheet() {
               quality={95}
               sizes="(max-width: 900px) 50vw, 240px"
             />
-            <figcaption>Front view · 252.50 W × 553.60 H</figcaption>
+            {/* <figcaption>Front view · 252.50 W × 553.60 H</figcaption> */}
           </figure>
           <figure className="ds-dims__fig">
             <Image
@@ -190,10 +190,10 @@ export default function P100Datasheet() {
               quality={95}
               sizes="(max-width: 900px) 80vw, 360px"
             />
-            <figcaption>Side view · 600.42 D</figcaption>
+            {/* <figcaption>Side view · 600.42 D</figcaption> */}
           </figure>
         </div>
-        <p className="ds-dims__caption">Dimensions in mm</p>
+        {/* <p className="ds-dims__caption">Dimensions in mm</p> */}
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import P100Datasheet from "@/components/sections/home/p100-datasheet";
 import Services, { ServicesWide } from "@/components/sections/home/services";
 import Standards from "@/components/sections/home/standards";
 import TestingProcess from "@/components/sections/home/testing-process";
+import UpcomingModels from "@/components/sections/home/upcoming-models";
 import WhyTestWatt from "@/components/sections/home/why-test-watt";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -60,6 +61,7 @@ export default function HomePage() {
       {/* <CapabilityStrip /> */}
       <Services />
       <P100Datasheet />
+      <UpcomingModels variant="tiles" />
       {/* <ServicesWide /> */}
       {/* <Applications /> */}
       <ApplicationsNew />
